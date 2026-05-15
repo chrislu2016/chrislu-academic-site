@@ -1,0 +1,463 @@
+{
+  "site": {
+    "title": "Chris Lu | Lu Hongcheng",
+    "base_path": "",
+    "description": "Lu Hongcheng (Chris Lu), Ph.D. student in Journalism and Communication at Tsinghua University. Research in economic communication, digital culture, gender studies, national image, and media industries.",
+    "last_updated": "2026-03-15"
+  },
+  "profile": {
+    "name": "Lu Hongcheng",
+    "name_cn": "陆泓承",
+    "preferred": "Chris Lu",
+    "title": "Ph.D. Student in Journalism and Communication",
+    "affiliation": "School of Journalism and Communication, Tsinghua University",
+    "location": "Beijing / Singapore",
+    "email": "luhc23@mails.tsinghua.edu.cn",
+    "phone": "(086) 18877480909",
+    "photo": "assets/profile.png",
+    "cv": "assets/ChrisLu-CV.pdf",
+    "summary": "I study how institutions, platforms, and publics negotiate confidence, identity, and power through media. My current work focuses on economic policy communication, national image, gender and sexuality, digital culture, and media industries.",
+    "links": [
+      {
+        "label": "Email",
+        "url": "mailto:luhc23@mails.tsinghua.edu.cn"
+      },
+      {
+        "label": "Google Scholar",
+        "url": "https://scholar.google.com/citations?user=Zkxbmz8AAAAJ&hl=en"
+      },
+      {
+        "label": "ORCID",
+        "url": "https://orcid.org/0009-0006-5757-0946"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/chrislu2016"
+      }
+    ],
+    "research_interests": [
+      "Economic communication",
+      "National image",
+      "Gender studies",
+      "Digital culture",
+      "Media industries"
+    ],
+    "languages": [
+      "Chinese",
+      "English (TEM-8)",
+      "French (TFU-4)",
+      "Korean (TOPIK-5)"
+    ]
+  },
+  "metrics": [
+    {
+      "value": "2",
+      "label": "SSCI articles"
+    },
+    {
+      "value": "4",
+      "label": "CSSCI / CSSCI TOP articles"
+    },
+    {
+      "value": "8",
+      "label": "conference presentations"
+    },
+    {
+      "value": "6",
+      "label": "research projects"
+    }
+  ],
+  "themes": [
+    {
+      "name": "Economic policy communication",
+      "text": "News, confidence, market expectations, and the public meaning of policy announcements."
+    },
+    {
+      "name": "Digital culture and platforms",
+      "text": "Platform governance, short-form video communities, Tuwei remix culture, and algorithmic media industries."
+    },
+    {
+      "name": "Gender, sexuality, and media",
+      "text": "Digital feminist humor, queer heterosexuality, and the cultural negotiation of gender norms."
+    }
+  ],
+  "education": [
+    {
+      "institution": "National University of Singapore",
+      "location": "Singapore",
+      "period": "Feb. 2026 - Aug. 2026",
+      "degree": "Visiting Scholar",
+      "details": "Supervisor: Dongtao Qi | East Asian Institute (EAI)"
+    },
+    {
+      "institution": "Tsinghua University",
+      "location": "China",
+      "period": "Sep. 2023 - Present",
+      "degree": "Ph.D. in Journalism and Communication",
+      "details": "GPA: 3.95/4.0 | Supervisor: Min Hang | Center for Economic Communication Research"
+    },
+    {
+      "institution": "Communication University of China",
+      "location": "China",
+      "period": "Sep. 2020 - Jun. 2023",
+      "degree": "M.A. in Media Economics",
+      "details": "GPA: 3.99/4.0 | Supervisor: Suhui Zheng | Institute of Business Brand Strategy"
+    },
+    {
+      "institution": "Beijing Foreign Studies University",
+      "location": "China",
+      "period": "Sep. 2016 - Jun. 2020",
+      "degree": "B.A. in International Economics and Trade; second degree in French Literature",
+      "details": "GPA: 3.63/4.0 | Exchange at Woosong University SolBridge (2017)"
+    }
+  ],
+  "publications": [
+    {
+      "id": "digital-feminist-humor",
+      "year": "2026",
+      "type": "Journal article",
+      "title": "Digital feminist humor as a weapon: A humor and topic analysis of the Weibo posts of the Fat Cat event",
+      "authors": "Huang, P., & Lu, H.",
+      "venue": "Feminist Media Studies",
+      "status": "0(0)",
+      "tags": [
+        "SSCI",
+        "Q2"
+      ],
+      "selected": true,
+      "url": "assets/files/Digital Feminist Humor as a Weapon - Fat Cat Event.pdf"
+    },
+    {
+      "id": "fourth-love-sexualities",
+      "year": "2026",
+      "type": "Journal article",
+      "title": "Negotiating fluidity: How China's fourth-love redoes gender within heteronormativity",
+      "authors": "Huang, P., Lu, H., & Zhu, M.",
+      "venue": "Sexualities",
+      "status": "0(0)",
+      "tags": [
+        "SSCI",
+        "Q2"
+      ],
+      "selected": true,
+      "url": ""
+    },
+    {
+      "id": "human-ai-collaboration",
+      "year": "2025",
+      "type": "Journal article",
+      "title": "From human-machine competition back to human-centered collaboration: Development paths and subjectivity reflections on human-AI collaboration",
+      "title_cn": "从人机竞争回归以人为本：人与 AI 协作的发展进路与主体性反思",
+      "authors": "Zhang, Z., & Lu, H.",
+      "venue": "Chinese Editorials",
+      "status": "(09), 82-87",
+      "tags": [
+        "CSSCI"
+      ],
+      "selected": true,
+      "url": ""
+    },
+    {
+      "id": "tuwei-remix-culture",
+      "year": "2025",
+      "type": "Journal article",
+      "title": "Marginalization and centrifugalization: Power relations in Tuwei remix culture",
+      "title_cn": "边缘化与离心化：土味二创文化中的权力关系",
+      "authors": "Lu, H.",
+      "venue": "Contemporary Youth Research",
+      "status": "(03), 34-48",
+      "tags": [
+        "CSSCI"
+      ],
+      "selected": true,
+      "url": ""
+    },
+    {
+      "id": "ai-financial-commentary",
+      "year": "2024",
+      "type": "Journal article",
+      "title": "Can AI match the expertise of financial journalists in writing news commentary? An online experimental analysis based on the HSM model",
+      "title_cn": "AI 写作财经评论能否匹配人类记者的专业度？--基于 HSM 模型的在线实验分析",
+      "authors": "Lu, H.",
+      "venue": "Chinese Journal of Journalism & Communication",
+      "status": "(10), 28-48",
+      "tags": [
+        "CSSCI TOP"
+      ],
+      "selected": true,
+      "url": "assets/files/【2024】【国际新闻界】AI写作财经评论能否匹配人类记者的专业度-基于HSM模型的在线实验分析.pdf"
+    },
+    {
+      "id": "data-empowerment-publishing",
+      "year": "2024",
+      "type": "Journal article",
+      "title": "Exploration of the paths and mechanisms for data elements empowering the development of the publishing industry",
+      "title_cn": "数据要素赋能出版业发展的路径与机制探讨",
+      "authors": "Hang, M., & Lu, H.",
+      "venue": "Chinese Editorials",
+      "status": "(07), 18-23",
+      "tags": [
+        "CSSCI"
+      ],
+      "selected": false,
+      "url": "assets/files/【2024】【中国出版】数据要素赋能出版业发展的路径与机制探讨_杭敏_.pdf"
+    },
+    {
+      "id": "digital-platforms-geopolitical-risks",
+      "year": "2024",
+      "type": "Journal article",
+      "title": "Causes and countermeasures of public opinion risks faced by transnational digital platforms in information geopolitics",
+      "title_cn": "信息地缘政治博弈中跨国数字平台舆论风险的成因与应对--以 TikTok 遭遇的多起国际制裁事件为例",
+      "authors": "Lu, H., & Zheng, S.",
+      "venue": "Modern Communication",
+      "status": "(07), 59-66",
+      "tags": [
+        "CSSCI TOP"
+      ],
+      "selected": false,
+      "url": "assets/files/【2024】【现代传播】信息地缘政治博弈中跨国数字平台舆论风险的成因与应对-陆泓承.pdf"
+    },
+    {
+      "id": "micro-drama-industry-logic",
+      "year": "2024",
+      "type": "Journal article",
+      "title": "Research on the institutional logic of short video micro-dramas industry",
+      "title_cn": "制度逻辑视角下短视频微短剧行业的发展逻辑研究",
+      "authors": "Lu, H.",
+      "venue": "Contemporary Television",
+      "status": "(02), 60-66",
+      "tags": [
+        "CSSCI"
+      ],
+      "selected": false,
+      "url": "assets/files/【2024】【当代电视】制度逻辑视角下短视频微短剧行业的发展逻辑研究_陆泓承.pdf"
+    },
+    {
+      "id": "theater-window-period",
+      "year": "2022",
+      "type": "Journal article",
+      "title": "An exploration of the driving forces behind the shortening trend of window periods from an institutional logic perspective",
+      "title_cn": "制度逻辑视角下院线窗口期缩短趋势的动因探究",
+      "authors": "Zheng, S., Lu, H., & Yin, W.",
+      "venue": "Film Art",
+      "status": "(03), 155-160",
+      "tags": [
+        "CSSCI TOP"
+      ],
+      "selected": false,
+      "url": "assets/files/【2022】【电影艺术】制度逻辑视角下院线窗口期缩短趋势的动因探究.pdf"
+    },
+    {
+      "id": "brand-management-variety-shows",
+      "year": "2022",
+      "type": "Journal article",
+      "title": "Branding strategies of cultural variety shows: A case study of The Reader",
+      "title_cn": "文化类综艺节目的品牌化经营策略--以《朗读者》为例",
+      "authors": "Zheng, S., Xi, Z., & Lu, H.",
+      "venue": "Television Research",
+      "status": "(05), 80-82",
+      "tags": [
+        "CSSCI"
+      ],
+      "selected": false,
+      "url": "assets/files/【2022】【电视研究】文化类综艺节目的品牌化经营策略——以《朗读者》为例.pdf"
+    }
+  ],
+  "conferences": [
+    {
+      "year": "2026",
+      "title": "Cognitive Offloading in the Age of Generative AI: Rethinking Critical Media Education for Combating Fake News Vulnerability",
+      "authors": "Lu, H.",
+      "venue": "IAMCR Annual Conference, Media Education Research Section",
+      "location": "Galway, Ireland"
+    },
+    {
+      "year": "2026",
+      "title": "Digital feminist humor as a weapon: A humor and topic analysis of the Weibo posts of the Fat Cat event",
+      "authors": "Lu, H., & Huang, P.",
+      "venue": "76th ICA, Feminist Scholarship Division",
+      "location": "Cape Town, South Africa"
+    },
+    {
+      "year": "2025",
+      "title": "The Role of News on the Confidence-Boosting Effect of Economic Policy Announcement",
+      "authors": "Lu, H.",
+      "venue": "111th NCA, Political Communication Division",
+      "location": "Denver, United States"
+    },
+    {
+      "year": "2025",
+      "title": "Empowerment or Exploitation: A Network Ethnography on a Tuwei Culture Content Creators' Community in Douyin",
+      "authors": "Lu, H.",
+      "venue": "111th NCA, Ethnography Division",
+      "location": "Denver, United States"
+    },
+    {
+      "year": "2025",
+      "title": "不止于信息传递：经济政策传播中新闻如何影响信心？--基于中央经济工作会议的准自然实验",
+      "authors": "陆泓承",
+      "venue": "清华大学新闻传播学博士生学术论坛·青年学者论坛",
+      "location": "Beijing, China",
+      "note": "Excellent Paper Award"
+    },
+    {
+      "year": "2025",
+      "title": "传统杂志期刊融合转型中的融媒品牌建设研究：以“三联·中读”为例",
+      "authors": "陆泓承, 黄培智 & 徐博",
+      "venue": "中国新闻史学会传媒经济与管理专业委员会学术年会",
+      "location": "Changsha, China",
+      "note": "Excellent Paper Award"
+    },
+    {
+      "year": "2024",
+      "title": "Exploring the gender attraction perceptions of the fourth queer heterosexual group in China",
+      "authors": "Huang, P., & Lu, H.",
+      "venue": "74th ICA, LGBTQ+ Panel",
+      "location": "Gold Coast, Australia"
+    },
+    {
+      "year": "2024",
+      "title": "国民财经素养能否更好解释财经媒介体制的国别差异：欧洲 19 国财经媒介体制的比较研究",
+      "authors": "陆泓承, 黄培智 & 徐博",
+      "venue": "中国新闻史学会传媒经济与管理专业委员会学术年会",
+      "location": "Hangzhou, China"
+    }
+  ],
+  "working_papers": [
+    "Transnational digital platforms in informational geopolitics: A qualitative comparative analysis of 31 countries' motives to sanction TikTok.",
+    "Informal systems for proactive disclosure: The role of Confucian culture and media monitoring on corporate ESG disclosure.",
+    "The role of news on the confidence-boosting effect of economic policy announcements: Empirical quasi-natural experiment evidence from China."
+  ],
+  "projects": [
+    {
+      "title": "The Role and Mechanisms of News in Boosting Confidence in Economic Policy Communication",
+      "type": "University-funded project, PI",
+      "period": "Dec. 2024 - Present"
+    },
+    {
+      "title": "Coordinating Economic Governance and Public Opinion Communication to Build Market Expectation Guidance Mechanisms",
+      "type": "University-funded project",
+      "period": "Jun. 2024 - Dec. 2025"
+    },
+    {
+      "title": "Brand Analysis of CHN Energy Wuhai Energy Group",
+      "type": "University-funded project",
+      "period": "Sep. 2023 - Jun. 2024"
+    },
+    {
+      "title": "Social Incentives and Mechanisms of Intimate Relationships among Chinese College Students",
+      "type": "Company-funded project",
+      "period": "Oct. 2023 - Sep. 2025"
+    },
+    {
+      "title": "Short-Form Video Empowerment in International Communication of Traditional Culture",
+      "type": "University-funded project",
+      "period": "Oct. 2022 - Aug. 2024"
+    },
+    {
+      "title": "Short-Form Video Consumption Among Gen Z",
+      "type": "University-funded project",
+      "period": "Dec. 2020 - May 2022"
+    }
+  ],
+  "experience": [
+    {
+      "organization": "Tsinghua University Education Foundation",
+      "role": "Public Relations Department",
+      "period": "Sep. 2023 - Jul. 2024",
+      "description": "Maintained donor relationships, produced brand films, and updated the foundation's media channels."
+    },
+    {
+      "organization": "Beijing Kuaishou Technology Co., Ltd.",
+      "role": "Content Operations",
+      "period": "May 2021 - Aug. 2024",
+      "description": "Managed creator communities, category activation, celebrity author introductions, and live broadcast projects."
+    },
+    {
+      "organization": "Guilin TV Station",
+      "role": "Video Journalist and Editor",
+      "period": "Dec. 2019 - Feb. 2020",
+      "description": "Reported and edited news for Guilin News."
+    }
+  ],
+  "teaching": [
+    "Journalism Economics and Basics of Accounting, Teaching Assistant, Tsinghua University, 2023F/W & 2024F/W",
+    "Economic Journalism and Communication, Teaching Assistant, Tsinghua University, 2024S/S",
+    "Media Economics Research, Teaching Assistant, Tsinghua University, 2025S/S"
+  ],
+  "honors": [
+    "Ph.D.: National Scholarship (2025), Second-Class Scholarship (2024), Outstanding TA (2024/2025)",
+    "Master: National Scholarship (2022), Second-Class Scholarship (2021), Merit Student (2021/2023), Outstanding Graduate (2023)",
+    "Bachelor: Social Work Award (2018), Outstanding Student Leader (2017/2019), Third-Class Scholarship (2019), Outstanding Graduate (2020)"
+  ],
+  "skills": [
+    {
+      "category": "Natural language processing",
+      "items": "Python (LDA, Word2Vec), Gephi"
+    },
+    {
+      "category": "Social network analysis",
+      "items": "Gephi, CiteSpace, UCINET"
+    },
+    {
+      "category": "Econometrics and statistics",
+      "items": "Stata, SPSS, OXmetrics"
+    },
+    {
+      "category": "Qualitative research",
+      "items": "NVivo"
+    }
+  ],
+  "media": [
+    {
+      "id": "perception-day",
+      "title": "Tsinghua Perception Day",
+      "type": "Video Production",
+      "venue": "Tsinghua University Education Foundation",
+      "date": "2024-05-13",
+      "location": "Beijing, China",
+      "summary": "A university foundation video project presenting Tsinghua's campus, people, and institutional culture.",
+      "video": "https://v.cic.tsinghua.edu.cn/vod/video/6/9/595041.mp4"
+    },
+    {
+      "id": "fingertip-public-welfare",
+      "title": "Fingertip Public Welfare",
+      "type": "Video Production",
+      "venue": "Tsinghua University Education Foundation",
+      "date": "2023-10-27",
+      "location": "Beijing, China",
+      "summary": "A short film for the Tsinghua University Education Foundation's public welfare communication.",
+      "video": "https://v.cic.tsinghua.edu.cn/vod/video/4/b/542327.mp4"
+    },
+    {
+      "id": "li-guoqing-live",
+      "title": "Li Guoqing on New Knowledge Broadcast",
+      "type": "Live Broadcast",
+      "venue": "Kuaishou Live",
+      "date": "2021-05-22",
+      "location": "Online",
+      "summary": "A live broadcast project for knowledge creators and platform content operations.",
+      "external_url": "https://live.kuaishou.com/playback/3xfdudqje6zxz6s"
+    },
+    {
+      "id": "cppcc-development-achievements",
+      "title": "Voices from CPPCC Members on Development Achievements",
+      "type": "TV News Report",
+      "venue": "Guilin TV Station - Guilin News",
+      "date": "2020-01-18",
+      "location": "Guilin, China",
+      "summary": "A news report produced during work at Guilin TV Station.",
+      "video": "https://video.gltvs.com/glxw/2020/01/g011813.mp4"
+    },
+    {
+      "id": "people-congress-liaison-station",
+      "title": "People's Congress Liaison Station Serves Local Communities",
+      "type": "TV News Report",
+      "venue": "Guilin TV Station - Guilin News",
+      "date": "2020-01-16",
+      "location": "Guilin, China",
+      "summary": "A local television news segment reported and edited for Guilin News.",
+      "video": "https://video.gltvs.com/glxw/2020/01/g011609.mp4"
+    }
+  ]
+}
