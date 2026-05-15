@@ -1,6 +1,7 @@
 {
   "site": {
     "title": "Chris Lu | Lu Hongcheng",
+    "title_zh": "陆泓承 / Chris Lu",
     "base_path": "",
     "description": "Lu Hongcheng (Chris Lu), Ph.D. student in Journalism and Communication at Tsinghua University. Research in economic communication, digital culture, gender studies, national image, and media industries.",
     "description_zh": "陆泓承（Chris Lu），清华大学新闻与传播学院博士研究生，研究方向包括经济传播、数字文化、性别研究、国家形象与媒介产业。",
@@ -333,7 +334,7 @@
         "Q2"
       ],
       "selected": true,
-      "url": ""
+      "url": "assets/files/【2026】【Sexualities】.pdf"
     },
     {
       "id": "human-ai-collaboration",
@@ -764,6 +765,10 @@
         {
           "label": "2026 FMS",
           "url": "assets/files/【2026】【Feminist Media Studies】Digital feminist humor as a weapon  a humor and topic analysis of the weibo posts of the fat cat event.pdf"
+        },
+        {
+          "label": "2026 Sexualities",
+          "url": "assets/files/【2026】【Sexualities】.pdf"
         },
         {
           "label": "2025 中国编辑",

@@ -64,6 +64,18 @@ def brand_name(profile: dict, lang: str) -> tuple[str, str]:
     return profile["preferred"], profile["name"]
 
 
+def hero_name(profile: dict, lang: str) -> tuple[str, str]:
+    if lang == "zh":
+        return profile["name_cn"], f'/ {profile["preferred"]}'
+    return profile["preferred"], profile["name"]
+
+
+def profile_card_name(profile: dict, lang: str) -> str:
+    if lang == "zh":
+        return f'{profile["name_cn"]} / {profile["preferred"]}'
+    return f'{profile["name_cn"]} / {profile["name"]}'
+
+
 def localized_list(data: dict, key: str, lang: str) -> list[str]:
     if lang == "zh" and data.get(f"{key}_zh"):
         return data[f"{key}_zh"]
@@ -76,10 +88,11 @@ def chips(items: list[str]) -> str:
 
 def page_title(data: dict, lang: str, title_key: str) -> str:
     site = data["site"]
+    site_title = site.get(f"title_{lang}", site["title"])
     title = t(data, lang, title_key)
     if title_key == "home":
-        return site["title"]
-    return f"{title} | {site['title']}"
+        return site_title
+    return f"{title} | {site_title}"
 
 
 def nav(data: dict, lang: str, active: str, depth: int, page_path: str) -> str:
@@ -313,6 +326,7 @@ def render_home(data: dict, lang: str) -> str:
     depth = 1
     links = profile_actions(data, lang, depth)
     interests = profile.get(f"research_interests_{lang}", profile["research_interests"])
+    hero_primary, hero_secondary = hero_name(profile, lang)
     themes = "\n".join(
         f"""<article class="theme">
           <h3>{h(item_text(item, "name", lang))}</h3>
@@ -326,7 +340,7 @@ def render_home(data: dict, lang: str) -> str:
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">{h(item_text(profile, "title", lang))} · {h(item_text(profile, "affiliation", lang))}</p>
-          <h1>{h(profile["preferred"])} <span>{h(profile["name"])}</span></h1>
+          <h1>{h(hero_primary)} <span>{h(hero_secondary)}</span></h1>
           <p class="lead">{h(item_text(profile, "summary", lang))}</p>
           <div class="button-row">{links}</div>
           <div class="research-tags">{chips(interests)}</div>
@@ -334,7 +348,7 @@ def render_home(data: dict, lang: str) -> str:
         <aside class="profile-panel" aria-label="{h(ui["profile_summary"])}">
           <img src="{h(local_url(profile["photo"], depth))}" alt="{h(profile["preferred"])} portrait">
           <div>
-            <h2>{h(profile["name_cn"])} / {h(profile["name"])}</h2>
+            <h2>{h(profile_card_name(profile, lang))}</h2>
             <p>{h(item_text(profile, "location", lang))}</p>
             <a class="text-link" href="mailto:{h(profile["email"])}">{h(profile["email"])}</a>
           </div>
