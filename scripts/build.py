@@ -301,6 +301,18 @@ def object_list(items: list[dict], lang: str, title_field: str = "title") -> str
     return "<ul>" + "".join(rows) + "</ul>"
 
 
+def hero_name(profile: dict, lang: str) -> str:
+    if lang == "zh":
+        return f'{h(profile["name_cn"])} <span>/ {h(profile["preferred"])}</span>'
+    return f'{h(profile["preferred"])} <span>{h(profile["name"])}</span>'
+
+
+def profile_card_name(profile: dict, lang: str) -> str:
+    if lang == "zh":
+        return f'{h(profile["name_cn"])} / {h(profile["preferred"])}'
+    return f'{h(profile["preferred"])} / {h(profile["name_cn"])}'
+
+
 def render_home(data: dict, lang: str) -> str:
     profile = data["profile"]
     ui = data["ui"][lang]
@@ -320,7 +332,7 @@ def render_home(data: dict, lang: str) -> str:
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">{h(item_text(profile, "title", lang))} · {h(item_text(profile, "affiliation", lang))}</p>
-          <h1>{h(profile["preferred"])} <span>{h(profile["name"])}</span></h1>
+          <h1>{hero_name(profile, lang)}</h1>
           <p class="lead">{h(item_text(profile, "summary", lang))}</p>
           <div class="button-row">{links}</div>
           <div class="research-tags">{chips(interests)}</div>
@@ -328,7 +340,7 @@ def render_home(data: dict, lang: str) -> str:
         <aside class="profile-panel" aria-label="{h(ui["profile_summary"])}">
           <img src="{h(local_url(profile["photo"], depth))}" alt="{h(profile["preferred"])} portrait">
           <div>
-            <h2>{h(profile["name_cn"])} / {h(profile["name"])}</h2>
+            <h2>{profile_card_name(profile, lang)}</h2>
             <p>{h(item_text(profile, "location", lang))}</p>
             <a class="text-link" href="mailto:{h(profile["email"])}">{h(profile["email"])}</a>
           </div>
