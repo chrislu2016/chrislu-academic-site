@@ -318,7 +318,7 @@
         "Q2"
       ],
       "selected": true,
-      "url": "assets/files/Digital Feminist Humor as a Weapon - Fat Cat Event.pdf"
+      "url": "assets/files/【2026】【Feminist Media Studies】Digital feminist humor as a weapon  a humor and topic analysis of the weibo posts of the fat cat event.pdf"
     },
     {
       "id": "fourth-love-sexualities",
@@ -348,14 +348,14 @@
         "CSSCI"
       ],
       "selected": true,
-      "url": ""
+      "url": "assets/files/【2025】【中国编辑】从人机竞争回归以人为本：人与AI协作的发展进路与主体性反思_张自中_.pdf"
     },
     {
-      "id": "tuwei-remix-culture",
+      "id": "data-empowerment-publishing-youth",
       "year": "2025",
       "type": "Journal article",
-      "title": "Marginalization and centrifugalization: Power relations in Tuwei remix culture",
-      "title_cn": "边缘化与离心化：土味二创文化中的权力关系",
+      "title": "Exploration of the paths and mechanisms for data elements empowering the development of the publishing industry",
+      "title_cn": "数据要素赋能出版业发展的路径与机制探讨",
       "authors": "Lu, H.",
       "venue": "Contemporary Youth Research",
       "status": "(03), 34-48",
@@ -363,7 +363,7 @@
         "CSSCI"
       ],
       "selected": true,
-      "url": ""
+      "url": "assets/files/【2025】【当代青年研究】数据要素赋能出版业发展的路径与机制探讨_陆泓承.pdf"
     },
     {
       "id": "ai-financial-commentary",
@@ -378,7 +378,7 @@
         "CSSCI TOP"
       ],
       "selected": true,
-      "url": "assets/files/【2024】【国际新闻界】AI写作财经评论能否匹配人类记者的专业度-基于HSM模型的在线实验分析.pdf"
+      "url": "assets/files/【2024】【国际新闻界】.pdf"
     },
     {
       "id": "data-empowerment-publishing",
@@ -393,7 +393,7 @@
         "CSSCI"
       ],
       "selected": false,
-      "url": "assets/files/【2024】【中国出版】数据要素赋能出版业发展的路径与机制探讨_杭敏_.pdf"
+      "url": "assets/files/【2024】【中国编辑】数据要素赋能出版业发展的路径与机制探讨_杭敏_.pdf"
     },
     {
       "id": "digital-platforms-geopolitical-risks",
@@ -521,8 +521,7 @@
       "title": "Exploring the gender attraction perceptions of the fourth queer heterosexual group in China",
       "authors": "Huang, P., & Lu, H.",
       "venue": "74th ICA, LGBTQ+ Panel",
-      "location": "Gold Coast, Australia",
-      "paper_url": "assets/files/【2023】【ICA】Exploring the awareness of attraction of the Fourth-love queer heterosexuality community in China - a constructivist grounded theory approach.pdf"
+      "location": "Gold Coast, Australia"
     },
     {
       "year": "2024",
@@ -742,86 +741,56 @@
   ],
   "data_resources": [
     {
-      "title": "Academic CV and publication package",
-      "title_zh": "学术简历与论文成果包",
-      "type": "CV / Publication PDFs",
-      "type_zh": "简历 / 论文 PDF",
+      "title": "Published article PDFs",
+      "title_zh": "正式发表文章 PDF",
+      "type": "Publication PDFs",
+      "type_zh": "论文 PDF",
       "project": "Personal academic profile",
       "project_zh": "个人学术主页",
       "year": "2026",
-      "description": "Current CV and selected publication PDFs gathered for academic applications, profile updates, and public sharing.",
-      "description_zh": "用于学术求职、主页更新与公开分享的当前简历和部分论文 PDF。",
+      "description": "Official publication PDFs currently shared on the academic site.",
+      "description_zh": "当前在个人主页公开展示的正式发表文章 PDF。",
       "visibility": "public",
       "files": [
         {
-          "label": "CV",
-          "url": "assets/ChrisLu-CV.pdf"
-        }
-      ]
-    },
-    {
-      "title": "Digital feminist humor as a weapon",
-      "title_zh": "数字女性主义幽默作为武器",
-      "type": "Paper PDF",
-      "type_zh": "论文 PDF",
-      "project": "Gender, sexuality, and digital culture",
-      "project_zh": "性别、性与数字文化",
-      "year": "2026",
-      "description": "Paper material for the Feminist Media Studies article on Weibo humor and the Fat Cat event.",
-      "description_zh": "关于微博幽默与“胖猫事件”的 Feminist Media Studies 论文材料。",
-      "visibility": "public",
-      "files": [
-        {
-          "label": "PDF",
-          "url": "assets/files/Digital Feminist Humor as a Weapon - Fat Cat Event.pdf"
-        }
-      ]
-    },
-    {
-      "title": "AI financial commentary experiment",
-      "title_zh": "AI 财经评论写作实验",
-      "type": "Paper PDF",
-      "type_zh": "论文 PDF",
-      "project": "AI writing and financial journalism",
-      "project_zh": "AI 写作与财经新闻",
-      "year": "2024",
-      "description": "Publication file for the online experiment comparing AI-written and journalist-written financial commentary.",
-      "description_zh": "比较 AI 与记者财经评论写作专业度的在线实验论文文件。",
-      "visibility": "public",
-      "files": [
-        {
-          "label": "PDF",
-          "url": "assets/files/【2024】【国际新闻界】AI写作财经评论能否匹配人类记者的专业度-基于HSM模型的在线实验分析.pdf"
-        }
-      ]
-    },
-    {
-      "title": "Conference papers and slides archive",
-      "title_zh": "会议论文与幻灯片归档",
-      "type": "Conference materials",
-      "type_zh": "会议材料",
-      "project": "Conference presentations",
-      "project_zh": "会议报告",
-      "year": "2023-2026",
-      "description": "Placeholder archive for conference PDFs, slides, and future presentation materials.",
-      "description_zh": "用于整理会议论文、幻灯片和后续报告材料的资料入口。",
-      "visibility": "public",
-      "files": [
-        {
-          "label": "ICA paper",
-          "url": "assets/files/【2023】【ICA】Exploring the awareness of attraction of the Fourth-love queer heterosexuality community in China - a constructivist grounded theory approach.pdf"
+          "label": "2026 FMS",
+          "url": "assets/files/【2026】【Feminist Media Studies】Digital feminist humor as a weapon  a humor and topic analysis of the weibo posts of the fat cat event.pdf"
         },
         {
-          "label": "Slides 1",
-          "url": "assets/files/slides1.pdf"
+          "label": "2025 中国编辑",
+          "url": "assets/files/【2025】【中国编辑】从人机竞争回归以人为本：人与AI协作的发展进路与主体性反思_张自中_.pdf"
         },
         {
-          "label": "Slides 2",
-          "url": "assets/files/slides2.pdf"
+          "label": "2025 当代青年研究",
+          "url": "assets/files/【2025】【当代青年研究】数据要素赋能出版业发展的路径与机制探讨_陆泓承.pdf"
         },
         {
-          "label": "Slides 3",
-          "url": "assets/files/slides3.pdf"
+          "label": "2024 中国编辑",
+          "url": "assets/files/【2024】【中国编辑】数据要素赋能出版业发展的路径与机制探讨_杭敏_.pdf"
+        },
+        {
+          "label": "2024 国际新闻界",
+          "url": "assets/files/【2024】【国际新闻界】.pdf"
+        },
+        {
+          "label": "2024 现代传播",
+          "url": "assets/files/【2024】【现代传播】信息地缘政治博弈中跨国数字平台舆论风险的成因与应对-陆泓承.pdf"
+        },
+        {
+          "label": "2024 当代电视",
+          "url": "assets/files/【2024】【当代电视】制度逻辑视角下短视频微短剧行业的发展逻辑研究_陆泓承.pdf"
+        },
+        {
+          "label": "2022 电影艺术",
+          "url": "assets/files/【2022】【电影艺术】制度逻辑视角下院线窗口期缩短趋势的动因探究.pdf"
+        },
+        {
+          "label": "2022 电视研究",
+          "url": "assets/files/【2022】【电视研究】文化类综艺节目的品牌化经营策略——以《朗读者》为例.pdf"
+        },
+        {
+          "label": "2021 国际品牌观察",
+          "url": "assets/files/【2021】【国际品牌观察】1+N不止于N：网综衍生节目如何联动？_陆泓承.pdf"
         }
       ]
     },

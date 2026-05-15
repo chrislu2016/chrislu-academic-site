@@ -260,17 +260,16 @@ def conference_rows(data: dict, lang: str, depth: int) -> str:
             actions.append(link(local_url(item["paper_url"], depth), t(data, lang, "paper"), "text-link"))
         if item.get("slides_url"):
             actions.append(link(local_url(item["slides_url"], depth), t(data, lang, "slides"), "text-link"))
-        action_html = f'<div class="card-actions">{"".join(actions)}</div>' if actions else ""
+        action_html = f'\n                <div class="card-actions">{"".join(actions)}</div>' if actions else ""
         note = item.get("note") or item.get("award")
+        title_cn_html = f'\n                <p class="pub-cn">{h(item["title_cn"])}</p>' if item.get("title_cn") else ""
+        note_html = f"\n                <small>{h(note)}</small>" if note else ""
         rows.append(
             f"""<article class="conference-row">
               <strong>{h(item["year"])}</strong>
               <div>
-                <h3>{h(item["title"])}</h3>
-                {f'<p class="pub-cn">{h(item["title_cn"])}</p>' if item.get("title_cn") else ''}
-                <p>{h(item["authors"])} · <em>{h(item["venue"])}</em> · {h(item_text(item, "location", lang))}</p>
-                {f'<small>{h(note)}</small>' if note else ''}
-                {action_html}
+                <h3>{h(item["title"])}</h3>{title_cn_html}
+                <p>{h(item["authors"])} · <em>{h(item["venue"])}</em> · {h(item_text(item, "location", lang))}</p>{note_html}{action_html}
               </div>
             </article>"""
         )
