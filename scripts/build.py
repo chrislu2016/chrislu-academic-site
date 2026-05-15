@@ -58,6 +58,12 @@ def item_text(item: dict, field: str, lang: str) -> str:
     return item.get(field, "")
 
 
+def localized_list(data: dict, key: str, lang: str) -> list[str]:
+    if lang == "zh" and data.get(f"{key}_zh"):
+        return data[f"{key}_zh"]
+    return data.get(key, [])
+
+
 def chips(items: list[str]) -> str:
     return "".join(f'<span class="chip">{h(item)}</span>' for item in items)
 
@@ -275,14 +281,23 @@ def list_items(items: list[str]) -> str:
     return "<ul>" + "".join(f"<li>{h(item)}</li>" for item in items) + "</ul>"
 
 
-def object_list(items: list[dict], title_field: str = "title") -> str:
+def object_list(items: list[dict], lang: str, title_field: str = "title") -> str:
     rows = []
     for item in items:
-        detail_parts = [part for part in (item.get("type"), item.get("role"), item.get("period")) if part]
+        detail_parts = [
+            part
+            for part in (
+                item_text(item, "type", lang),
+                item_text(item, "role", lang),
+                item_text(item, "period", lang),
+            )
+            if part
+        ]
         detail = " · ".join(detail_parts)
-        description = f'<p>{h(item["description"])}</p>' if item.get("description") else ""
+        description_text = item_text(item, "description", lang)
+        description = f"<p>{h(description_text)}</p>" if description_text else ""
         detail_html = f"<br><span>{h(detail)}</span>" if detail else ""
-        rows.append(f"<li><strong>{h(item[title_field])}</strong>{detail_html}{description}</li>")
+        rows.append(f"<li><strong>{h(item_text(item, title_field, lang))}</strong>{detail_html}{description}</li>")
     return "<ul>" + "".join(rows) + "</ul>"
 
 
@@ -333,12 +348,12 @@ def render_home(data: dict, lang: str) -> str:
     </section>
     {section(ui["publications"], ui["publications_eyebrow"], f'<div class="pub-list">{pubs}</div><p class="section-link"><a href="publications/">{h(ui["view_publications"])}</a></p>')}
     {section(ui["conference_presentations"], ui["conference_eyebrow"], f'<div class="conference-list">{conference_rows(data, lang, depth)}</div>')}
-    {section(ui["working_papers"], ui["working_eyebrow"], list_items(data["working_papers"]), "prose-section")}
-    {section(ui["research_projects"], ui["projects_eyebrow"], object_list(data["projects"]), "prose-section")}
+    {section(ui["working_papers"], ui["working_eyebrow"], list_items(localized_list(data, "working_papers", lang)), "prose-section")}
+    {section(ui["research_projects"], ui["projects_eyebrow"], object_list(data["projects"], lang), "prose-section")}
     {section(ui["media_work"], ui["media_eyebrow"], f'<div class="media-grid wide">{media}</div><p class="section-link"><a href="media/">{h(ui["view_media"])}</a></p>')}
-    {section(ui["professional_experience"], ui["experience_eyebrow"], object_list(data["experience"], "organization"), "prose-section")}
-    {section(ui["teaching"], ui["teaching_eyebrow"], list_items(data["teaching"]), "prose-section")}
-    {section(ui["honors"], ui["honors_eyebrow"], list_items(data["honors"]), "prose-section")}
+    {section(ui["professional_experience"], ui["experience_eyebrow"], object_list(data["experience"], lang, "organization"), "prose-section")}
+    {section(ui["teaching"], ui["teaching_eyebrow"], list_items(localized_list(data, "teaching", lang)), "prose-section")}
+    {section(ui["honors"], ui["honors_eyebrow"], list_items(localized_list(data, "honors", lang)), "prose-section")}
     {section(ui["skills"], ui["skills_eyebrow"], "<ul>" + "".join(f"<li><strong>{h(item_text(item, 'category', lang))}:</strong> {h(item_text(item, 'items', lang))}</li>" for item in data["skills"]) + "</ul>", "prose-section")}
     {section(ui["contact"], ui["contact_eyebrow"], f'<p><a href="mailto:{h(profile["email"])}">{h(profile["email"])}</a></p><div class="button-row">{profile_actions(data, lang, depth)}</div>', "prose-section")}
     """
@@ -349,7 +364,7 @@ def render_publications(data: dict, lang: str) -> str:
     ui = data["ui"][lang]
     depth = 2
     publications = "".join(pub_card(data, pub, lang, depth) for pub in data["publications"])
-    working = list_items(data["working_papers"])
+    working = list_items(localized_list(data, "working_papers", lang))
     body = f"""<section class="page-hero wrap">
       <p class="eyebrow">{h(ui["publications"])}</p>
       <h1>{h(ui["publications_title"])}</h1>
@@ -438,11 +453,11 @@ def render_cv(data: dict, lang: str) -> str:
       <div class="cv-main">
         <section><h2>{h(ui["publications"])}</h2><div class="pub-list">{pubs}</div></section>
         <section><h2>{h(ui["conference_presentations"])}</h2><div class="conference-list">{conference_rows(data, lang, depth)}</div></section>
-        <section><h2>{h(ui["working_papers"])}</h2>{list_items(data["working_papers"])}</section>
-        <section><h2>{h(ui["research_projects"])}</h2>{object_list(data["projects"])}</section>
-        <section><h2>{h(ui["professional_experience"])}</h2>{object_list(data["experience"], "organization")}</section>
-        <section><h2>{h(ui["teaching"])}</h2>{list_items(data["teaching"])}</section>
-        <section><h2>{h(ui["honors"])}</h2>{list_items(data["honors"])}</section>
+        <section><h2>{h(ui["working_papers"])}</h2>{list_items(localized_list(data, "working_papers", lang))}</section>
+        <section><h2>{h(ui["research_projects"])}</h2>{object_list(data["projects"], lang)}</section>
+        <section><h2>{h(ui["professional_experience"])}</h2>{object_list(data["experience"], lang, "organization")}</section>
+        <section><h2>{h(ui["teaching"])}</h2>{list_items(localized_list(data, "teaching", lang))}</section>
+        <section><h2>{h(ui["honors"])}</h2>{list_items(localized_list(data, "honors", lang))}</section>
         <section><h2>{h(ui["skills"])}</h2><ul>{"".join(f"<li><strong>{h(item_text(item, 'category', lang))}:</strong> {h(item_text(item, 'items', lang))}</li>" for item in data["skills"])}</ul></section>
       </div>
     </section>"""
@@ -464,10 +479,10 @@ def render_data(data: dict, lang: str) -> str:
         cards.append(
             f"""<article class="resource-card">
               <div>
-                <p class="eyebrow">{h(item.get("type", ""))} · {h(str(item.get("year", "")))}</p>
-                <h3>{h(item["title"])}</h3>
-                <p>{h(item.get("project", ""))}</p>
-                <p>{h(item.get("description", ""))}</p>
+                <p class="eyebrow">{h(item_text(item, "type", lang))} · {h(str(item.get("year", "")))}</p>
+                <h3>{h(item_text(item, "title", lang))}</h3>
+                <p>{h(item_text(item, "project", lang))}</p>
+                <p>{h(item_text(item, "description", lang))}</p>
               </div>
               <div class="card-actions">{"".join(actions)}</div>
             </article>"""

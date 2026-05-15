@@ -537,56 +537,94 @@
     "Informal systems for proactive disclosure: The role of Confucian culture and media monitoring on corporate ESG disclosure.",
     "The role of news on the confidence-boosting effect of economic policy announcements: Empirical quasi-natural experiment evidence from China."
   ],
+  "working_papers_zh": [
+    "陆泓承. (n.d.). 探究传媒经济学的“中国问题”——基于学科外部史的梳理和分析。",
+    "陆泓承. (n.d.). 从“媒介融合”到“主流媒体系统性变革”的理论演进——基于文献计量学的对比分析。",
+    "陆泓承. (n.d.). 经济政策传播中新闻媒体如何影响政策叙事？——以“924 一揽子金融政策”的传播实践为例。",
+    "陆泓承. (n.d.). 经济政策传播中的“时间之维”：政策新闻对市场信心提振的时变动态分析。",
+    "刘晨旭 & 陆泓承. (n.d.). 非正式制度促进主动披露：儒家文化与媒体监督对企业 ESG 信息披露的作用。",
+    "陆泓承 & 杨肇祎. (n.d.). 地缘政治或平台治理：各国制裁 TikTok 的动因组态分析。"
+  ],
   "projects": [
     {
       "title": "The Role and Mechanisms of News in Boosting Confidence in Economic Policy Communication",
+      "title_zh": "经济政策传播中新闻对信心的作用和机制研究",
       "type": "University-funded project, PI",
+      "type_zh": "校级资助项目（主持）",
       "period": "Dec. 2024 - Present"
+      ,"period_zh": "2024.12 - 至今"
     },
     {
       "title": "Coordinating Economic Governance and Public Opinion Communication to Build Market Expectation Guidance Mechanisms",
+      "title_zh": "统筹经济治理与舆论宣传构建市场预期引导机制",
       "type": "University-funded project",
+      "type_zh": "校级资助项目",
       "period": "Jun. 2024 - Dec. 2025"
+      ,"period_zh": "2024.6 - 2025.12"
     },
     {
       "title": "Brand Analysis of CHN Energy Wuhai Energy Group",
+      "title_zh": "国能能源集团乌海能源品牌状况分析",
       "type": "University-funded project",
+      "type_zh": "校级资助项目",
       "period": "Sep. 2023 - Jun. 2024"
+      ,"period_zh": "2023.9 - 2024.6"
     },
     {
       "title": "Social Incentives and Mechanisms of Intimate Relationships among Chinese College Students",
+      "title_zh": "中国大学生亲密关系的社会动因与机制研究",
       "type": "Company-funded project",
+      "type_zh": "企业资助项目",
       "period": "Oct. 2023 - Sep. 2025"
+      ,"period_zh": "2023.10 - 2025.9"
     },
     {
       "title": "Short-Form Video Empowerment in International Communication of Traditional Culture",
+      "title_zh": "短视频赋能传统文化国际传播",
       "type": "University-funded project",
+      "type_zh": "校级资助项目",
       "period": "Oct. 2022 - Aug. 2024"
+      ,"period_zh": "2022.10 - 2024.8"
     },
     {
       "title": "Short-Form Video Consumption Among Gen Z",
+      "title_zh": "Z 世代短视频消费特征研究",
       "type": "University-funded project",
+      "type_zh": "校级资助项目",
       "period": "Dec. 2020 - May 2022"
+      ,"period_zh": "2020.12 - 2022.5"
     }
   ],
   "experience": [
     {
       "organization": "Tsinghua University Education Foundation",
+      "organization_zh": "清华大学教育基金会",
       "role": "Public Relations Department",
+      "role_zh": "公共关系部",
       "period": "Sep. 2023 - Jul. 2024",
+      "period_zh": "2023.9 - 2024.7",
       "description": "Maintained donor relationships, produced brand films, and updated the foundation's media channels."
+      ,"description_zh": "维护捐赠者关系，制作品牌宣传片，更新基金会新媒体矩阵。"
     },
     {
       "organization": "Beijing Kuaishou Technology Co., Ltd.",
+      "organization_zh": "北京快手科技有限公司",
       "role": "Content Operations",
+      "role_zh": "垂类运营",
       "period": "May 2021 - Aug. 2024",
+      "period_zh": "2021.5 - 2024.8",
       "description": "Managed creator communities, category activation, celebrity author introductions, and live broadcast projects."
+      ,"description_zh": "管理创作者社区，垂类促活，引入大咖，负责直播项目。"
     },
     {
       "organization": "Guilin TV Station",
+      "organization_zh": "桂林电视台",
       "role": "Video Journalist and Editor",
+      "role_zh": "视频记者与编辑",
       "period": "Dec. 2019 - Feb. 2020",
+      "period_zh": "2019.12 - 2020.2",
       "description": "Reported and edited news for Guilin News."
+      ,"description_zh": "为桂林电视台《桂林新闻》进行新闻报道及编辑工作。"
     }
   ],
   "teaching": [
@@ -594,31 +632,45 @@
     "Economic Journalism and Communication, Teaching Assistant, Tsinghua University, 2024S/S",
     "Media Economics Research, Teaching Assistant, Tsinghua University, 2025S/S"
   ],
+  "teaching_zh": [
+    "新闻记者经济学与会计学基础，助教，清华大学，2023F/W & 2024F/W",
+    "经济新闻报道与经济传播，助教，清华大学，2024S/S",
+    "传媒经济研究，助教，清华大学，2025S/S"
+  ],
   "honors": [
     "Ph.D.: National Scholarship (2025), Second-Class Scholarship (2024), Outstanding TA (2024/2025)",
     "Master: National Scholarship (2022), Second-Class Scholarship (2021), Merit Student (2021/2023), Outstanding Graduate (2023)",
     "Bachelor: Social Work Award (2018), Outstanding Student Leader (2017/2019), Third-Class Scholarship (2019), Outstanding Graduate (2020)"
+  ],
+  "honors_zh": [
+    "本科：社会工作奖（2018）、优秀学生干部（2017/2019）、三等奖学金（2019）、优秀毕业生（2020）",
+    "研究生：二等奖学金（2021）、校级三好学生（2021/2023）、国家奖学金（2022）、优秀毕业生（2023）",
+    "博士：国家奖学金（2025）、二等奖学金（2024）、优秀助教（2024/2025）"
   ],
   "skills": [
     {
       "category": "Natural language processing",
       "category_zh": "自然语言处理",
       "items": "Python (LDA, Word2Vec), Gephi"
+      ,"items_zh": "Python (LDA, Word2Vec), Gephi（Visualization）"
     },
     {
       "category": "Social network analysis",
       "category_zh": "社会网络分析",
       "items": "Gephi, CiteSpace, UCINET"
+      ,"items_zh": "Gephi, CiteSpace, UCINET"
     },
     {
       "category": "Econometrics and statistics",
       "category_zh": "计量经济与统计",
       "items": "Stata, SPSS, OXmetrics"
+      ,"items_zh": "Stata, SPSS, OXmetrics"
     },
     {
       "category": "Qualitative research",
       "category_zh": "质性研究",
       "items": "NVivo"
+      ,"items_zh": "NVivo"
     }
   ],
   "media": [
@@ -691,10 +743,14 @@
   "data_resources": [
     {
       "title": "Academic CV and publication package",
+      "title_zh": "学术简历与论文成果包",
       "type": "CV / Publication PDFs",
+      "type_zh": "简历 / 论文 PDF",
       "project": "Personal academic profile",
+      "project_zh": "个人学术主页",
       "year": "2026",
       "description": "Current CV and selected publication PDFs gathered for academic applications, profile updates, and public sharing.",
+      "description_zh": "用于学术求职、主页更新与公开分享的当前简历和部分论文 PDF。",
       "visibility": "public",
       "files": [
         {
@@ -705,10 +761,14 @@
     },
     {
       "title": "Digital feminist humor as a weapon",
+      "title_zh": "数字女性主义幽默作为武器",
       "type": "Paper PDF",
+      "type_zh": "论文 PDF",
       "project": "Gender, sexuality, and digital culture",
+      "project_zh": "性别、性与数字文化",
       "year": "2026",
       "description": "Paper material for the Feminist Media Studies article on Weibo humor and the Fat Cat event.",
+      "description_zh": "关于微博幽默与“胖猫事件”的 Feminist Media Studies 论文材料。",
       "visibility": "public",
       "files": [
         {
@@ -719,10 +779,14 @@
     },
     {
       "title": "AI financial commentary experiment",
+      "title_zh": "AI 财经评论写作实验",
       "type": "Paper PDF",
+      "type_zh": "论文 PDF",
       "project": "AI writing and financial journalism",
+      "project_zh": "AI 写作与财经新闻",
       "year": "2024",
       "description": "Publication file for the online experiment comparing AI-written and journalist-written financial commentary.",
+      "description_zh": "比较 AI 与记者财经评论写作专业度的在线实验论文文件。",
       "visibility": "public",
       "files": [
         {
@@ -733,10 +797,14 @@
     },
     {
       "title": "Conference papers and slides archive",
+      "title_zh": "会议论文与幻灯片归档",
       "type": "Conference materials",
+      "type_zh": "会议材料",
       "project": "Conference presentations",
+      "project_zh": "会议报告",
       "year": "2023-2026",
       "description": "Placeholder archive for conference PDFs, slides, and future presentation materials.",
+      "description_zh": "用于整理会议论文、幻灯片和后续报告材料的资料入口。",
       "visibility": "public",
       "files": [
         {
@@ -759,10 +827,14 @@
     },
     {
       "title": "Future datasets and replication materials",
+      "title_zh": "未来数据集与复现材料",
       "type": "Dataset / Codebook",
+      "type_zh": "数据集 / 编码本",
       "project": "Reserved for future data releases",
+      "project_zh": "预留给未来公开数据",
       "year": "TBD",
       "description": "A reserved entry for datasets, codebooks, annotations, and replication packages that can be made public later.",
+      "description_zh": "预留给未来可公开的数据集、编码本、标注文件和复现材料。",
       "visibility": "private",
       "files": []
     }

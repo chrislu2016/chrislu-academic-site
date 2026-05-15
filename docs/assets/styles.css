@@ -472,6 +472,8 @@ code {
   background:
     linear-gradient(135deg, rgba(47, 111, 94, 0.9), rgba(45, 95, 154, 0.78)),
     linear-gradient(45deg, #2f6f5e, #b5463b);
+  background-position: center;
+  background-size: cover;
 }
 
 .media-thumb:hover {
