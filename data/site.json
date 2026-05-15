@@ -3,20 +3,179 @@
     "title": "Chris Lu | Lu Hongcheng",
     "base_path": "",
     "description": "Lu Hongcheng (Chris Lu), Ph.D. student in Journalism and Communication at Tsinghua University. Research in economic communication, digital culture, gender studies, national image, and media industries.",
+    "description_zh": "陆泓承（Chris Lu），清华大学新闻与传播学院博士研究生，研究方向包括经济传播、数字文化、性别研究、国家形象与媒介产业。",
     "last_updated": "2026-03-15"
+  },
+  "ui": {
+    "en": {
+      "nav": {
+        "home": "Home",
+        "publications": "Publications",
+        "media": "Media",
+        "cv": "CV",
+        "data": "Data"
+      },
+      "home": "Home",
+      "publications": "Publications",
+      "media": "Media",
+      "cv": "CV",
+      "data": "Data",
+      "skip": "Skip to content",
+      "main_navigation": "Main navigation",
+      "footer_source": "Built from",
+      "last_updated": "Last updated",
+      "profile_summary": "Profile summary",
+      "academic_highlights": "Academic highlights",
+      "download_cv": "Download CV",
+      "download_pdf_cv": "Download PDF CV",
+      "pdf": "PDF",
+      "paper": "Paper",
+      "slides": "Slides",
+      "file": "File",
+      "external_link": "External link",
+      "watch": "Watch",
+      "open": "Open",
+      "open_playback": "Open playback",
+      "video_fallback": "Your browser does not support the video tag.",
+      "external_media": "This item is hosted on an external platform.",
+      "details": "Details",
+      "venue": "Venue",
+      "location": "Location",
+      "date": "Date",
+      "back_to_media": "Back to media",
+      "metrics": {
+        "ssci": "SSCI articles",
+        "cssci": "CSSCI / CSSCI TOP articles",
+        "conference": "conference presentations",
+        "project": "research projects"
+      },
+      "education": "Education",
+      "education_eyebrow": "Education",
+      "research_areas": "Research Areas",
+      "research_blurb": "Focused enough to be legible, broad enough to travel.",
+      "publications_eyebrow": "Publications",
+      "view_publications": "View publications page",
+      "conference_presentations": "Conference Presentations",
+      "conference_eyebrow": "Conference Presentations",
+      "working_papers": "Working Papers",
+      "working_eyebrow": "Manuscripts",
+      "research_projects": "Research Projects",
+      "projects_eyebrow": "Projects",
+      "media_work": "Media Work",
+      "media_eyebrow": "Media",
+      "view_media": "View media page",
+      "professional_experience": "Professional Experience",
+      "experience_eyebrow": "Experience",
+      "teaching": "Teaching",
+      "teaching_eyebrow": "Teaching",
+      "honors": "Awards & Honors",
+      "honors_eyebrow": "Honors",
+      "skills": "Skills",
+      "skills_eyebrow": "Methods",
+      "contact": "Contact",
+      "contact_eyebrow": "Contact",
+      "publications_title": "Articles, conference papers, and manuscripts.",
+      "publications_intro": "This page keeps journal articles, conference presentations, and working papers together as a complete record of academic outputs.",
+      "conference_title": "Talks and papers",
+      "media_title": "Public-facing work across video, broadcast, and live platforms.",
+      "media_intro": "Videos use native browser playback with metadata-only preload to avoid unwanted downloads.",
+      "data_title": "Project archive and research materials.",
+      "data_intro": "A growing repository for papers, slides, datasets, codebooks, replication materials, and project attachments.",
+      "languages": "Languages"
+    },
+    "zh": {
+      "nav": {
+        "home": "首页",
+        "publications": "成果",
+        "media": "媒体",
+        "cv": "简历",
+        "data": "资料库"
+      },
+      "home": "首页",
+      "publications": "学术成果",
+      "media": "媒体作品",
+      "cv": "简历",
+      "data": "资料库",
+      "skip": "跳到正文",
+      "main_navigation": "主导航",
+      "footer_source": "内容生成自",
+      "last_updated": "最后更新",
+      "profile_summary": "个人简介",
+      "academic_highlights": "学术成果概览",
+      "download_cv": "下载简历",
+      "download_pdf_cv": "下载 PDF 简历",
+      "pdf": "PDF",
+      "paper": "论文",
+      "slides": "幻灯片",
+      "file": "文件",
+      "external_link": "外部链接",
+      "watch": "观看",
+      "open": "打开",
+      "open_playback": "打开回放",
+      "video_fallback": "你的浏览器不支持 video 标签。",
+      "external_media": "该作品托管在外部平台。",
+      "details": "详情",
+      "venue": "平台/机构",
+      "location": "地点",
+      "date": "日期",
+      "back_to_media": "返回媒体作品",
+      "metrics": {
+        "ssci": "SSCI 论文",
+        "cssci": "CSSCI / CSSCI TOP 论文",
+        "conference": "会议报告",
+        "project": "研究项目"
+      },
+      "education": "教育背景",
+      "education_eyebrow": "教育背景",
+      "research_areas": "研究方向",
+      "research_blurb": "聚焦经济传播、数字文化、性别研究、国家形象与媒介产业。",
+      "publications_eyebrow": "学术成果",
+      "view_publications": "查看完整成果页",
+      "conference_presentations": "会议报告",
+      "conference_eyebrow": "会议报告",
+      "working_papers": "工作论文",
+      "working_eyebrow": "在研稿件",
+      "research_projects": "研究项目",
+      "projects_eyebrow": "项目",
+      "media_work": "媒体作品",
+      "media_eyebrow": "媒体",
+      "view_media": "查看媒体作品页",
+      "professional_experience": "工作经历",
+      "experience_eyebrow": "经历",
+      "teaching": "教学经历",
+      "teaching_eyebrow": "教学",
+      "honors": "荣誉奖励",
+      "honors_eyebrow": "荣誉",
+      "skills": "技能方法",
+      "skills_eyebrow": "方法",
+      "contact": "联系方式",
+      "contact_eyebrow": "联系",
+      "publications_title": "期刊论文、会议报告与工作论文",
+      "publications_intro": "本页汇总展示学术论文、会议报告与在研稿件，作为完整成果清单。",
+      "conference_title": "会议论文与报告",
+      "media_title": "视频、新闻报道、直播与公共传播作品",
+      "media_intro": "视频使用浏览器原生播放，并仅预加载元数据，避免打开页面时自动下载。",
+      "data_title": "项目资料库与研究材料",
+      "data_intro": "用于持续整理论文、幻灯片、数据集、编码本、复现材料与项目附件。",
+      "languages": "语言能力"
+    }
   },
   "profile": {
     "name": "Lu Hongcheng",
     "name_cn": "陆泓承",
     "preferred": "Chris Lu",
     "title": "Ph.D. Student in Journalism and Communication",
+    "title_zh": "新闻与传播学博士研究生",
     "affiliation": "School of Journalism and Communication, Tsinghua University",
+    "affiliation_zh": "清华大学新闻与传播学院",
     "location": "Beijing / Singapore",
+    "location_zh": "北京 / 新加坡",
     "email": "luhc23@mails.tsinghua.edu.cn",
     "phone": "(086) 18877480909",
     "photo": "assets/profile.png",
     "cv": "assets/ChrisLu-CV.pdf",
     "summary": "I study how institutions, platforms, and publics negotiate confidence, identity, and power through media. My current work focuses on economic policy communication, national image, gender and sexuality, digital culture, and media industries.",
+    "summary_zh": "我的研究关注制度、平台与公众如何通过媒介协商信心、身份与权力。目前的研究方向包括经济政策传播、国家形象、性别与性、数字文化和媒介产业。",
     "links": [
       {
         "label": "Email",
@@ -24,7 +183,8 @@
       },
       {
         "label": "Google Scholar",
-        "url": "https://scholar.google.com/citations?user=Zkxbmz8AAAAJ&hl=en"
+        "label_zh": "Google Scholar",
+        "url": "https://scholar.google.com/citations?hl=zh-CN&user=WCUHTQQAAAAJ&view_op=list_works&gmla=AIqSsVvI3GtrA_al6kgGZpMUPcrWJ5rHB4gbrxgpIKcKor5GoFiR_Bdp5y6dQZKcTqjcwsBquyi1tT1tno9ZZ9bSTkwDn0sNCGSIHYT9mZGd6qE3p1035eCAwMuYyUhzXQtO5sg2PBuLaqM"
       },
       {
         "label": "ORCID",
@@ -41,6 +201,13 @@
       "Gender studies",
       "Digital culture",
       "Media industries"
+    ],
+    "research_interests_zh": [
+      "经济传播",
+      "国家形象",
+      "性别研究",
+      "数字文化",
+      "媒介产业"
     ],
     "languages": [
       "Chinese",
@@ -70,45 +237,71 @@
   "themes": [
     {
       "name": "Economic policy communication",
+      "name_zh": "经济政策传播",
       "text": "News, confidence, market expectations, and the public meaning of policy announcements."
+      ,"text_zh": "新闻、信心、市场预期，以及政策发布在公共传播中的意义生成。"
     },
     {
       "name": "Digital culture and platforms",
+      "name_zh": "数字文化与平台",
       "text": "Platform governance, short-form video communities, Tuwei remix culture, and algorithmic media industries."
+      ,"text_zh": "平台治理、短视频社群、土味二创文化与算法化媒介产业。"
     },
     {
       "name": "Gender, sexuality, and media",
+      "name_zh": "性别、性与媒介",
       "text": "Digital feminist humor, queer heterosexuality, and the cultural negotiation of gender norms."
+      ,"text_zh": "数字女性主义幽默、酷儿异性恋与性别规范的文化协商。"
     }
   ],
   "education": [
     {
       "institution": "National University of Singapore",
+      "institution_zh": "新加坡国立大学",
       "location": "Singapore",
+      "location_zh": "新加坡",
       "period": "Feb. 2026 - Aug. 2026",
+      "period_zh": "2026.2 - 2026.8",
       "degree": "Visiting Scholar",
+      "degree_zh": "访问学者",
       "details": "Supervisor: Dongtao Qi | East Asian Institute (EAI)"
+      ,"details_zh": "导师：祁东涛 | 东亚研究所（EAI）"
     },
     {
       "institution": "Tsinghua University",
+      "institution_zh": "清华大学",
       "location": "China",
+      "location_zh": "中国",
       "period": "Sep. 2023 - Present",
+      "period_zh": "2023.9 - 至今",
       "degree": "Ph.D. in Journalism and Communication",
+      "degree_zh": "新闻与传播学博士",
       "details": "GPA: 3.95/4.0 | Supervisor: Min Hang | Center for Economic Communication Research"
+      ,"details_zh": "GPA: 3.95/4.0 | 导师：杭敏 | 经济传播研究中心"
     },
     {
       "institution": "Communication University of China",
+      "institution_zh": "中国传媒大学",
       "location": "China",
+      "location_zh": "中国",
       "period": "Sep. 2020 - Jun. 2023",
+      "period_zh": "2020.9 - 2023.6",
       "degree": "M.A. in Media Economics",
+      "degree_zh": "传媒经济学硕士",
       "details": "GPA: 3.99/4.0 | Supervisor: Suhui Zheng | Institute of Business Brand Strategy"
+      ,"details_zh": "GPA: 3.99/4.0 | 导师：郑苏晖 | 商务品牌战略研究所"
     },
     {
       "institution": "Beijing Foreign Studies University",
+      "institution_zh": "北京外国语大学",
       "location": "China",
+      "location_zh": "中国",
       "period": "Sep. 2016 - Jun. 2020",
+      "period_zh": "2016.9 - 2020.6",
       "degree": "B.A. in International Economics and Trade; second degree in French Literature",
+      "degree_zh": "国际经济与贸易学士；法语文学双学位",
       "details": "GPA: 3.63/4.0 | Exchange at Woosong University SolBridge (2017)"
+      ,"details_zh": "GPA: 3.63/4.0 | 韩国又松大学 SolBridge 交换（2017）"
     }
   ],
   "publications": [
@@ -261,6 +454,21 @@
       ],
       "selected": false,
       "url": "assets/files/【2022】【电视研究】文化类综艺节目的品牌化经营策略——以《朗读者》为例.pdf"
+    },
+    {
+      "id": "variety-show-derivatives",
+      "year": "2021",
+      "type": "Journal article",
+      "title": "1+N is more than N: How can online variety-show derivatives connect with each other?",
+      "title_cn": "1+N 不止于 N：网综衍生节目如何联动？",
+      "authors": "Lu, H.",
+      "venue": "International Brand Observation",
+      "status": "(03), 80-81",
+      "tags": [
+        "Journal article"
+      ],
+      "selected": false,
+      "url": "assets/files/【2021】【国际品牌观察】1+N不止于N：网综衍生节目如何联动？_陆泓承.pdf"
     }
   ],
   "conferences": [
@@ -313,7 +521,8 @@
       "title": "Exploring the gender attraction perceptions of the fourth queer heterosexual group in China",
       "authors": "Huang, P., & Lu, H.",
       "venue": "74th ICA, LGBTQ+ Panel",
-      "location": "Gold Coast, Australia"
+      "location": "Gold Coast, Australia",
+      "paper_url": "assets/files/【2023】【ICA】Exploring the awareness of attraction of the Fourth-love queer heterosexuality community in China - a constructivist grounded theory approach.pdf"
     },
     {
       "year": "2024",
@@ -393,18 +602,22 @@
   "skills": [
     {
       "category": "Natural language processing",
+      "category_zh": "自然语言处理",
       "items": "Python (LDA, Word2Vec), Gephi"
     },
     {
       "category": "Social network analysis",
+      "category_zh": "社会网络分析",
       "items": "Gephi, CiteSpace, UCINET"
     },
     {
       "category": "Econometrics and statistics",
+      "category_zh": "计量经济与统计",
       "items": "Stata, SPSS, OXmetrics"
     },
     {
       "category": "Qualitative research",
+      "category_zh": "质性研究",
       "items": "NVivo"
     }
   ],
@@ -413,51 +626,145 @@
       "id": "perception-day",
       "title": "Tsinghua Perception Day",
       "type": "Video Production",
+      "type_zh": "视频制作",
       "venue": "Tsinghua University Education Foundation",
       "date": "2024-05-13",
       "location": "Beijing, China",
+      "location_zh": "北京，中国",
       "summary": "A university foundation video project presenting Tsinghua's campus, people, and institutional culture.",
+      "summary_zh": "清华大学教育基金会视频项目，呈现校园、人物与机构文化。",
       "video": "https://v.cic.tsinghua.edu.cn/vod/video/6/9/595041.mp4"
     },
     {
       "id": "fingertip-public-welfare",
       "title": "Fingertip Public Welfare",
       "type": "Video Production",
+      "type_zh": "视频制作",
       "venue": "Tsinghua University Education Foundation",
       "date": "2023-10-27",
       "location": "Beijing, China",
+      "location_zh": "北京，中国",
       "summary": "A short film for the Tsinghua University Education Foundation's public welfare communication.",
+      "summary_zh": "清华大学教育基金会公益传播短片。",
       "video": "https://v.cic.tsinghua.edu.cn/vod/video/4/b/542327.mp4"
     },
     {
       "id": "li-guoqing-live",
       "title": "Li Guoqing on New Knowledge Broadcast",
       "type": "Live Broadcast",
+      "type_zh": "直播项目",
       "venue": "Kuaishou Live",
       "date": "2021-05-22",
       "location": "Online",
+      "location_zh": "线上",
       "summary": "A live broadcast project for knowledge creators and platform content operations.",
+      "summary_zh": "面向知识创作者与平台内容运营的直播项目。",
       "external_url": "https://live.kuaishou.com/playback/3xfdudqje6zxz6s"
     },
     {
       "id": "cppcc-development-achievements",
       "title": "Voices from CPPCC Members on Development Achievements",
       "type": "TV News Report",
+      "type_zh": "电视新闻报道",
       "venue": "Guilin TV Station - Guilin News",
       "date": "2020-01-18",
       "location": "Guilin, China",
+      "location_zh": "桂林，中国",
       "summary": "A news report produced during work at Guilin TV Station.",
+      "summary_zh": "在桂林电视台工作期间参与制作的新闻报道。",
       "video": "https://video.gltvs.com/glxw/2020/01/g011813.mp4"
     },
     {
       "id": "people-congress-liaison-station",
       "title": "People's Congress Liaison Station Serves Local Communities",
       "type": "TV News Report",
+      "type_zh": "电视新闻报道",
       "venue": "Guilin TV Station - Guilin News",
       "date": "2020-01-16",
       "location": "Guilin, China",
+      "location_zh": "桂林，中国",
       "summary": "A local television news segment reported and edited for Guilin News.",
+      "summary_zh": "为《桂林新闻》采写与编辑的地方电视新闻报道。",
       "video": "https://video.gltvs.com/glxw/2020/01/g011609.mp4"
+    }
+  ],
+  "data_resources": [
+    {
+      "title": "Academic CV and publication package",
+      "type": "CV / Publication PDFs",
+      "project": "Personal academic profile",
+      "year": "2026",
+      "description": "Current CV and selected publication PDFs gathered for academic applications, profile updates, and public sharing.",
+      "visibility": "public",
+      "files": [
+        {
+          "label": "CV",
+          "url": "assets/ChrisLu-CV.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Digital feminist humor as a weapon",
+      "type": "Paper PDF",
+      "project": "Gender, sexuality, and digital culture",
+      "year": "2026",
+      "description": "Paper material for the Feminist Media Studies article on Weibo humor and the Fat Cat event.",
+      "visibility": "public",
+      "files": [
+        {
+          "label": "PDF",
+          "url": "assets/files/Digital Feminist Humor as a Weapon - Fat Cat Event.pdf"
+        }
+      ]
+    },
+    {
+      "title": "AI financial commentary experiment",
+      "type": "Paper PDF",
+      "project": "AI writing and financial journalism",
+      "year": "2024",
+      "description": "Publication file for the online experiment comparing AI-written and journalist-written financial commentary.",
+      "visibility": "public",
+      "files": [
+        {
+          "label": "PDF",
+          "url": "assets/files/【2024】【国际新闻界】AI写作财经评论能否匹配人类记者的专业度-基于HSM模型的在线实验分析.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Conference papers and slides archive",
+      "type": "Conference materials",
+      "project": "Conference presentations",
+      "year": "2023-2026",
+      "description": "Placeholder archive for conference PDFs, slides, and future presentation materials.",
+      "visibility": "public",
+      "files": [
+        {
+          "label": "ICA paper",
+          "url": "assets/files/【2023】【ICA】Exploring the awareness of attraction of the Fourth-love queer heterosexuality community in China - a constructivist grounded theory approach.pdf"
+        },
+        {
+          "label": "Slides 1",
+          "url": "assets/files/slides1.pdf"
+        },
+        {
+          "label": "Slides 2",
+          "url": "assets/files/slides2.pdf"
+        },
+        {
+          "label": "Slides 3",
+          "url": "assets/files/slides3.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Future datasets and replication materials",
+      "type": "Dataset / Codebook",
+      "project": "Reserved for future data releases",
+      "year": "TBD",
+      "description": "A reserved entry for datasets, codebooks, annotations, and replication packages that can be made public later.",
+      "visibility": "private",
+      "files": []
     }
   ]
 }

@@ -135,6 +135,13 @@ code {
   color: var(--green-dark);
 }
 
+.main-nav .language-link {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--red);
+  font-weight: 760;
+}
+
 .hero {
   padding: 5.2rem 0 3rem;
 }
@@ -294,6 +301,7 @@ code {
 .theme-grid,
 .media-grid,
 .two-column,
+.resource-grid,
 .cv-grid {
   display: grid;
   gap: 1.2rem;
@@ -306,6 +314,7 @@ code {
 .theme,
 .media-card,
 .pub-card,
+.resource-card,
 .external-panel,
 .prose-block {
   background: var(--surface);
@@ -337,6 +346,34 @@ code {
 .two-column {
   grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
   padding: 3.5rem 0;
+}
+
+.content-section {
+  padding: 3rem 0;
+}
+
+.content-section + .content-section {
+  border-top: 1px solid var(--line);
+}
+
+.content-section.education-first {
+  padding-top: 1rem;
+}
+
+.prose-section ul,
+.prose-block ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.prose-section li,
+.prose-block li {
+  margin-bottom: 0.65rem;
+}
+
+.prose-section span,
+.resource-card p {
+  color: var(--muted);
 }
 
 .pub-list {
@@ -479,6 +516,26 @@ code {
   font-weight: 760;
 }
 
+.resource-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding-bottom: 4rem;
+}
+
+.resource-card {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.resource-card h3 {
+  margin: 0 0 0.35rem;
+  line-height: 1.25;
+}
+
+.resource-card p {
+  margin: 0.35rem 0 0;
+}
+
 .prose-block {
   margin-block: 3rem;
   padding: 1.4rem;
@@ -567,6 +624,19 @@ code {
   color: var(--muted);
 }
 
+.root-choice {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.root-choice h1 {
+  margin: 0;
+  font-size: clamp(2.3rem, 7vw, 4.8rem);
+}
+
 .footer-grid {
   justify-content: space-between;
 }
@@ -586,7 +656,8 @@ code {
   .stats-grid,
   .theme-grid,
   .media-grid,
-  .media-grid.wide {
+  .media-grid.wide,
+  .resource-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -622,7 +693,8 @@ code {
   .stats-grid,
   .theme-grid,
   .media-grid,
-  .media-grid.wide {
+  .media-grid.wide,
+  .resource-grid {
     grid-template-columns: 1fr;
   }
 

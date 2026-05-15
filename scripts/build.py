@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the static academic site from data/site.json."""
+"""Build the bilingual static academic site from data/site.json."""
 
 from __future__ import annotations
 
@@ -14,6 +14,7 @@ DATA_PATH = ROOT / "data" / "site.json"
 DOCS = ROOT / "docs"
 SRC_ASSETS = ROOT / "src" / "assets"
 ASSETS = DOCS / "assets"
+LANGS = ("en", "zh")
 
 
 def h(value: object) -> str:
@@ -29,6 +30,12 @@ def rel_to_root(depth: int) -> str:
     return "../" * depth
 
 
+def local_url(url: str, depth: int) -> str:
+    if not url or url.startswith(("http://", "https://", "mailto:", "/")):
+        return url
+    return f"{rel_to_root(depth)}{url}"
+
+
 def write(path: Path, content: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(content, encoding="utf-8")
@@ -41,53 +48,87 @@ def link(url: str, label: str, classes: str = "") -> str:
     return f'<a href="{h(url)}"{class_attr}>{h(label)}</a>'
 
 
-def local_url(url: str, depth: int) -> str:
-    if not url or url.startswith(("http://", "https://", "mailto:", "/")):
-        return url
-    return f"{rel_to_root(depth)}{url}"
+def t(data: dict, lang: str, key: str) -> str:
+    return data["ui"][lang][key]
 
 
-def nav(active: str, root: str) -> str:
+def item_text(item: dict, field: str, lang: str) -> str:
+    if lang == "zh" and item.get(f"{field}_zh"):
+        return item[f"{field}_zh"]
+    return item.get(field, "")
+
+
+def chips(items: list[str]) -> str:
+    return "".join(f'<span class="chip">{h(item)}</span>' for item in items)
+
+
+def page_title(data: dict, lang: str, title_key: str) -> str:
+    site = data["site"]
+    title = t(data, lang, title_key)
+    if title_key == "home":
+        return site["title"]
+    return f"{title} | {site['title']}"
+
+
+def nav(data: dict, lang: str, active: str, depth: int, page_path: str) -> str:
+    root = rel_to_root(depth)
+    labels = data["ui"][lang]["nav"]
     items = [
-        ("Home", "index.html", "home"),
-        ("Publications", "publications/", "publications"),
-        ("Media", "media/", "media"),
-        ("CV", "cv/", "cv"),
+        ("home", ""),
+        ("publications", "publications/"),
+        ("media", "media/"),
+        ("cv", "cv/"),
+        ("data", "data/"),
     ]
-    html = []
-    for label, href, key in items:
+    nav_items = []
+    for key, path in items:
         aria = ' aria-current="page"' if key == active else ""
-        html.append(f'<a href="{root}{href}"{aria}>{label}</a>')
-    return "\n".join(html)
+        nav_items.append(f'<a href="{root}{lang}/{path}"{aria}>{h(labels[key])}</a>')
+
+    other = "zh" if lang == "en" else "en"
+    switch_label = "中文" if lang == "en" else "EN"
+    switch_href = f"{root}{other}/{page_path}"
+    nav_items.append(f'<a class="language-link" href="{switch_href}">{switch_label}</a>')
+    return "\n".join(nav_items)
 
 
-def layout(data: dict, title: str, active: str, body: str, depth: int = 0) -> str:
+def layout(
+    data: dict,
+    lang: str,
+    title_key: str,
+    active: str,
+    page_path: str,
+    body: str,
+    depth: int,
+) -> str:
     root = rel_to_root(depth)
     site = data["site"]
-    full_title = site["title"] if title == "Home" else f"{title} | {site['title']}"
-    description = h(site["description"])
+    profile = data["profile"]
+    description = site.get(f"description_{lang}", site["description"])
+    html_lang = "zh-CN" if lang == "zh" else "en"
+    skip = t(data, lang, "skip")
     return f"""<!doctype html>
-<html lang="en">
+<html lang="{html_lang}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{description}">
-  <title>{h(full_title)}</title>
+  <meta name="description" content="{h(description)}">
+  <title>{h(page_title(data, lang, title_key))}</title>
   <link rel="stylesheet" href="{root}assets/styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">{h(skip)}</a>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="{root}index.html">
+      <a class="brand" href="{root}{lang}/">
         <span class="brand-mark">CL</span>
         <span>
-          <strong>Chris Lu</strong>
-          <small>Lu Hongcheng</small>
+          <strong>{h(profile["preferred"])}</strong>
+          <small>{h(profile["name"])}</small>
         </span>
       </a>
-      <nav class="main-nav" aria-label="Main navigation">
-        {nav(active, root)}
+      <nav class="main-nav" aria-label="{h(t(data, lang, "main_navigation"))}">
+        {nav(data, lang, active, depth, page_path)}
       </nav>
     </div>
   </header>
@@ -96,8 +137,8 @@ def layout(data: dict, title: str, active: str, body: str, depth: int = 0) -> st
   </main>
   <footer class="site-footer">
     <div class="wrap footer-grid">
-      <p>© {h(data["profile"]["preferred"])}. Built from <code>data/site.json</code>.</p>
-      <p>Last updated: {h(site["last_updated"])}</p>
+      <p>{h(t(data, lang, "footer_source"))} <code>data/site.json</code>.</p>
+      <p>{h(t(data, lang, "last_updated"))}: {h(site["last_updated"])}</p>
     </div>
   </footer>
 </body>
@@ -105,26 +146,50 @@ def layout(data: dict, title: str, active: str, body: str, depth: int = 0) -> st
 """
 
 
-def chips(items: list[str]) -> str:
-    return "".join(f'<span class="chip">{h(item)}</span>' for item in items)
+def computed_metrics(data: dict, lang: str) -> list[dict]:
+    pubs = data["publications"]
+    conferences = data["conferences"]
+    projects = data["projects"]
+    labels = data["ui"][lang]["metrics"]
+    ssci = sum(1 for pub in pubs if "SSCI" in pub.get("tags", []))
+    cssci = sum(1 for pub in pubs if any("CSSCI" in tag for tag in pub.get("tags", [])))
+    return [
+        {"value": ssci, "label": labels["ssci"]},
+        {"value": cssci, "label": labels["cssci"]},
+        {"value": len(conferences), "label": labels["conference"]},
+        {"value": len(projects), "label": labels["project"]},
+    ]
 
 
-def stat_block(data: dict) -> str:
+def stat_block(data: dict, lang: str) -> str:
     return "\n".join(
         f"""<div class="stat">
           <strong>{h(item["value"])}</strong>
           <span>{h(item["label"])}</span>
         </div>"""
-        for item in data["metrics"]
+        for item in computed_metrics(data, lang)
     )
 
 
-def pub_card(pub: dict, compact: bool = False, depth: int = 0) -> str:
+def profile_actions(data: dict, lang: str, depth: int) -> str:
+    profile = data["profile"]
+    actions = [link(local_url(profile["cv"], depth), t(data, lang, "download_cv"), "button primary")]
+    for item in profile["links"]:
+        label = item.get(f"label_{lang}", item["label"])
+        actions.append(link(item["url"], label, "button ghost"))
+    return "".join(actions)
+
+
+def pub_card(data: dict, pub: dict, lang: str, depth: int, compact: bool = False) -> str:
     title_cn = pub.get("title_cn")
     cn_html = f'<p class="pub-cn">{h(title_cn)}</p>' if title_cn else ""
     tag_html = chips(pub.get("tags", []))
-    action = link(local_url(pub.get("url", ""), depth), "PDF", "text-link")
-    action_html = f'<div class="card-actions">{action}</div>' if action else ""
+    actions = []
+    if pub.get("url"):
+        actions.append(link(local_url(pub["url"], depth), t(data, lang, "pdf"), "text-link"))
+    if pub.get("slides"):
+        actions.append(link(local_url(pub["slides"], depth), t(data, lang, "slides"), "text-link"))
+    action_html = f'<div class="card-actions">{"".join(actions)}</div>' if actions else ""
     compact_class = " compact" if compact else ""
     return f"""<article class="pub-card{compact_class}">
       <div class="pub-year">{h(pub["year"])}</div>
@@ -138,256 +203,335 @@ def pub_card(pub: dict, compact: bool = False, depth: int = 0) -> str:
     </article>"""
 
 
-def timeline(items: list[dict]) -> str:
+def timeline(data: dict, items: list[dict], lang: str) -> str:
     rows = []
     for item in items:
         rows.append(
             f"""<article class="timeline-item">
-              <div class="timeline-date">{h(item["period"])}</div>
+              <div class="timeline-date">{h(item_text(item, "period", lang))}</div>
               <div>
-                <h3>{h(item["degree"])}</h3>
-                <p>{h(item["institution"])} · {h(item["location"])}</p>
-                <small>{h(item["details"])}</small>
+                <h3>{h(item_text(item, "degree", lang))}</h3>
+                <p>{h(item_text(item, "institution", lang))} · {h(item_text(item, "location", lang))}</p>
+                <small>{h(item_text(item, "details", lang))}</small>
               </div>
             </article>"""
         )
     return "\n".join(rows)
 
 
-def media_card(item: dict, depth: int = 0) -> str:
+def section(title: str, eyebrow: str, content: str, classes: str = "") -> str:
+    class_attr = f" {classes}" if classes else ""
+    return f"""<section class="wrap content-section{class_attr}">
+      <div class="section-heading tight">
+        <p class="eyebrow">{h(eyebrow)}</p>
+        <h2>{h(title)}</h2>
+      </div>
+      {content}
+    </section>"""
+
+
+def media_card(data: dict, item: dict, lang: str, depth: int) -> str:
     root = rel_to_root(depth)
-    href = f'{root}media/{item["id"]}/'
-    action = "Watch" if item.get("video") else "Open"
+    href = f'{root}{lang}/media/{item["id"]}/'
+    action = t(data, lang, "watch") if item.get("video") else t(data, lang, "open")
     return f"""<article class="media-card">
       <a class="media-thumb" href="{href}" aria-label="{h(action)} {h(item["title"])}">
-        <span>{h(item["type"])}</span>
+        <span>{h(item_text(item, "type", lang))}</span>
       </a>
       <div class="media-copy">
-        <p class="eyebrow">{h(item["date"])} · {h(item["location"])}</p>
+        <p class="eyebrow">{h(item["date"])} · {h(item_text(item, "location", lang))}</p>
         <h3><a href="{href}">{h(item["title"])}</a></h3>
-        <p>{h(item["summary"])}</p>
+        <p>{h(item_text(item, "summary", lang))}</p>
       </div>
     </article>"""
 
 
-def render_home(data: dict) -> str:
+def conference_rows(data: dict, lang: str, depth: int) -> str:
+    rows = []
+    for item in data["conferences"]:
+        actions = []
+        if item.get("paper_url"):
+            actions.append(link(local_url(item["paper_url"], depth), t(data, lang, "paper"), "text-link"))
+        if item.get("slides_url"):
+            actions.append(link(local_url(item["slides_url"], depth), t(data, lang, "slides"), "text-link"))
+        action_html = f'<div class="card-actions">{"".join(actions)}</div>' if actions else ""
+        note = item.get("note") or item.get("award")
+        rows.append(
+            f"""<article class="conference-row">
+              <strong>{h(item["year"])}</strong>
+              <div>
+                <h3>{h(item["title"])}</h3>
+                {f'<p class="pub-cn">{h(item["title_cn"])}</p>' if item.get("title_cn") else ''}
+                <p>{h(item["authors"])} · <em>{h(item["venue"])}</em> · {h(item_text(item, "location", lang))}</p>
+                {f'<small>{h(note)}</small>' if note else ''}
+                {action_html}
+              </div>
+            </article>"""
+        )
+    return "\n".join(rows)
+
+
+def list_items(items: list[str]) -> str:
+    return "<ul>" + "".join(f"<li>{h(item)}</li>" for item in items) + "</ul>"
+
+
+def object_list(items: list[dict], title_field: str = "title") -> str:
+    rows = []
+    for item in items:
+        detail_parts = [part for part in (item.get("type"), item.get("role"), item.get("period")) if part]
+        detail = " · ".join(detail_parts)
+        description = f'<p>{h(item["description"])}</p>' if item.get("description") else ""
+        detail_html = f"<br><span>{h(detail)}</span>" if detail else ""
+        rows.append(f"<li><strong>{h(item[title_field])}</strong>{detail_html}{description}</li>")
+    return "<ul>" + "".join(rows) + "</ul>"
+
+
+def render_home(data: dict, lang: str) -> str:
     profile = data["profile"]
-    selected = [p for p in data["publications"] if p.get("selected")][:5]
-    recent_media = data["media"][:3]
-    links = "\n".join(
-        link(item["url"], item["label"], "button ghost") for item in profile["links"]
-    )
-    primary = link(profile["cv"], "Download CV", "button primary")
+    ui = data["ui"][lang]
+    depth = 1
+    links = profile_actions(data, lang, depth)
+    interests = profile.get(f"research_interests_{lang}", profile["research_interests"])
     themes = "\n".join(
         f"""<article class="theme">
-          <h3>{h(item["name"])}</h3>
-          <p>{h(item["text"])}</p>
+          <h3>{h(item_text(item, "name", lang))}</h3>
+          <p>{h(item_text(item, "text", lang))}</p>
         </article>"""
         for item in data["themes"]
     )
+    pubs = "".join(pub_card(data, pub, lang, depth, compact=True) for pub in data["publications"])
+    media = "".join(media_card(data, item, lang, depth) for item in data["media"])
     body = f"""<section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">{h(profile["title"])} · {h(profile["affiliation"])}</p>
+          <p class="eyebrow">{h(item_text(profile, "title", lang))} · {h(item_text(profile, "affiliation", lang))}</p>
           <h1>{h(profile["preferred"])} <span>{h(profile["name"])}</span></h1>
-          <p class="lead">{h(profile["summary"])}</p>
-          <div class="button-row">{primary}{links}</div>
-          <div class="research-tags">{chips(profile["research_interests"])}</div>
+          <p class="lead">{h(item_text(profile, "summary", lang))}</p>
+          <div class="button-row">{links}</div>
+          <div class="research-tags">{chips(interests)}</div>
         </div>
-        <aside class="profile-panel" aria-label="Profile summary">
-          <img src="{h(profile["photo"])}" alt="{h(profile["preferred"])} portrait">
+        <aside class="profile-panel" aria-label="{h(ui["profile_summary"])}">
+          <img src="{h(local_url(profile["photo"], depth))}" alt="{h(profile["preferred"])} portrait">
           <div>
             <h2>{h(profile["name_cn"])} / {h(profile["name"])}</h2>
-            <p>{h(profile["location"])}</p>
+            <p>{h(item_text(profile, "location", lang))}</p>
             <a class="text-link" href="mailto:{h(profile["email"])}">{h(profile["email"])}</a>
           </div>
         </aside>
       </div>
     </section>
-    <section class="wrap stats-grid" aria-label="Academic highlights">
-      {stat_block(data)}
+    <section class="wrap stats-grid" aria-label="{h(ui["academic_highlights"])}">
+      {stat_block(data, lang)}
     </section>
+    {section(ui["education"], ui["education_eyebrow"], f'<div class="timeline">{timeline(data, data["education"], lang)}</div>', "education-first")}
     <section class="band">
       <div class="wrap section-heading">
-        <p class="eyebrow">Research Areas</p>
-        <h2>Focused enough to be legible, broad enough to travel.</h2>
+        <p class="eyebrow">{h(ui["research_areas"])}</p>
+        <h2>{h(ui["research_blurb"])}</h2>
       </div>
       <div class="wrap theme-grid">{themes}</div>
     </section>
-    <section class="wrap two-column">
-      <div>
-        <div class="section-heading tight">
-          <p class="eyebrow">Selected Publications</p>
-          <h2>Recent work</h2>
-        </div>
-        <div class="pub-list">{''.join(pub_card(p, True) for p in selected)}</div>
-        <p class="section-link"><a href="publications/">View all publications</a></p>
-      </div>
-      <div>
-        <div class="section-heading tight">
-          <p class="eyebrow">Education</p>
-          <h2>Training</h2>
-        </div>
-        <div class="timeline">{timeline(data["education"])}</div>
-      </div>
-    </section>
-    <section class="wrap">
-      <div class="section-heading tight">
-        <p class="eyebrow">Media Work</p>
-        <h2>Video, live broadcast, and public communication.</h2>
-      </div>
-      <div class="media-grid">{''.join(media_card(m) for m in recent_media)}</div>
-      <p class="section-link"><a href="media/">View all media work</a></p>
-    </section>"""
-    return layout(data, "Home", "home", body)
+    {section(ui["publications"], ui["publications_eyebrow"], f'<div class="pub-list">{pubs}</div><p class="section-link"><a href="publications/">{h(ui["view_publications"])}</a></p>')}
+    {section(ui["conference_presentations"], ui["conference_eyebrow"], f'<div class="conference-list">{conference_rows(data, lang, depth)}</div>')}
+    {section(ui["working_papers"], ui["working_eyebrow"], list_items(data["working_papers"]), "prose-section")}
+    {section(ui["research_projects"], ui["projects_eyebrow"], object_list(data["projects"]), "prose-section")}
+    {section(ui["media_work"], ui["media_eyebrow"], f'<div class="media-grid wide">{media}</div><p class="section-link"><a href="media/">{h(ui["view_media"])}</a></p>')}
+    {section(ui["professional_experience"], ui["experience_eyebrow"], object_list(data["experience"], "organization"), "prose-section")}
+    {section(ui["teaching"], ui["teaching_eyebrow"], list_items(data["teaching"]), "prose-section")}
+    {section(ui["honors"], ui["honors_eyebrow"], list_items(data["honors"]), "prose-section")}
+    {section(ui["skills"], ui["skills_eyebrow"], "<ul>" + "".join(f"<li><strong>{h(item_text(item, 'category', lang))}:</strong> {h(item_text(item, 'items', lang))}</li>" for item in data["skills"]) + "</ul>", "prose-section")}
+    {section(ui["contact"], ui["contact_eyebrow"], f'<p><a href="mailto:{h(profile["email"])}">{h(profile["email"])}</a></p><div class="button-row">{profile_actions(data, lang, depth)}</div>', "prose-section")}
+    """
+    return layout(data, lang, "home", "home", "", body, depth)
 
 
-def render_publications(data: dict) -> str:
-    publications = "\n".join(pub_card(pub, depth=1) for pub in data["publications"])
-    conferences = "\n".join(
-        f"""<article class="conference-row">
-          <strong>{h(item["year"])}</strong>
-          <div>
-            <h3>{h(item["title"])}</h3>
-            <p>{h(item["authors"])} · <em>{h(item["venue"])}</em> · {h(item["location"])}</p>
-            {f'<small>{h(item["note"])}</small>' if item.get("note") else ''}
-          </div>
-        </article>"""
-        for item in data["conferences"]
-    )
-    working = "".join(f"<li>{h(item)}</li>" for item in data["working_papers"])
+def render_publications(data: dict, lang: str) -> str:
+    ui = data["ui"][lang]
+    depth = 2
+    publications = "".join(pub_card(data, pub, lang, depth) for pub in data["publications"])
+    working = list_items(data["working_papers"])
     body = f"""<section class="page-hero wrap">
-      <p class="eyebrow">Publications</p>
-      <h1>Articles, conference papers, and manuscripts.</h1>
-      <p>Journal entries are kept as structured records, so tags, PDFs, and selected-work flags can be updated in one place.</p>
+      <p class="eyebrow">{h(ui["publications"])}</p>
+      <h1>{h(ui["publications_title"])}</h1>
+      <p>{h(ui["publications_intro"])}</p>
     </section>
     <section class="wrap pub-list">{publications}</section>
     <section class="band">
       <div class="wrap section-heading tight">
-        <p class="eyebrow">Conference Presentations</p>
-        <h2>Talks and papers</h2>
+        <p class="eyebrow">{h(ui["conference_presentations"])}</p>
+        <h2>{h(ui["conference_title"])}</h2>
       </div>
-      <div class="wrap conference-list">{conferences}</div>
+      <div class="wrap conference-list">{conference_rows(data, lang, depth)}</div>
     </section>
     <section class="wrap prose-block">
-      <p class="eyebrow">Working Papers</p>
-      <ul>{working}</ul>
+      <p class="eyebrow">{h(ui["working_papers"])}</p>
+      {working}
     </section>"""
-    return layout(data, "Publications", "publications", body, depth=1)
+    return layout(data, lang, "publications", "publications", "publications/", body, depth)
 
 
-def render_media_index(data: dict) -> str:
+def render_media_index(data: dict, lang: str) -> str:
+    ui = data["ui"][lang]
+    depth = 2
     body = f"""<section class="page-hero wrap">
-      <p class="eyebrow">Media</p>
-      <h1>Public-facing work across video, broadcast, and live platforms.</h1>
-      <p>Videos use native browser playback with <code>preload="metadata"</code>, so opening the page should not trigger unwanted downloads.</p>
+      <p class="eyebrow">{h(ui["media"])}</p>
+      <h1>{h(ui["media_title"])}</h1>
+      <p>{h(ui["media_intro"])}</p>
     </section>
     <section class="wrap media-grid wide">
-      {''.join(media_card(item, depth=1) for item in data["media"])}
+      {''.join(media_card(data, item, lang, depth) for item in data["media"])}
     </section>"""
-    return layout(data, "Media", "media", body, depth=1)
+    return layout(data, lang, "media", "media", "media/", body, depth)
 
 
-def render_media_detail(data: dict, item: dict) -> str:
+def render_media_detail(data: dict, lang: str, item: dict) -> str:
+    ui = data["ui"][lang]
+    depth = 3
     if item.get("video"):
         player = f"""<video controls preload="metadata" playsinline>
           <source src="{h(item["video"])}" type="video/mp4">
-          Your browser does not support the video tag.
+          {h(ui["video_fallback"])}
         </video>"""
     else:
         player = f"""<div class="external-panel">
-          <p>This item is hosted on an external platform.</p>
-          {link(item.get("external_url", ""), "Open playback", "button primary")}
+          <p>{h(ui["external_media"])}</p>
+          {link(item.get("external_url", ""), ui["open_playback"], "button primary")}
         </div>"""
     body = f"""<section class="page-hero wrap media-detail-heading">
-      <p class="eyebrow">{h(item["type"])} · {h(item["date"])}</p>
+      <p class="eyebrow">{h(item_text(item, "type", lang))} · {h(item["date"])}</p>
       <h1>{h(item["title"])}</h1>
-      <p>{h(item["summary"])}</p>
+      <p>{h(item_text(item, "summary", lang))}</p>
     </section>
     <section class="wrap media-detail">
       {player}
       <aside>
-        <h2>Details</h2>
+        <h2>{h(ui["details"])}</h2>
         <dl>
-          <dt>Venue</dt><dd>{h(item["venue"])}</dd>
-          <dt>Location</dt><dd>{h(item["location"])}</dd>
-          <dt>Date</dt><dd>{h(item["date"])}</dd>
+          <dt>{h(ui["venue"])}</dt><dd>{h(item["venue"])}</dd>
+          <dt>{h(ui["location"])}</dt><dd>{h(item_text(item, "location", lang))}</dd>
+          <dt>{h(ui["date"])}</dt><dd>{h(item["date"])}</dd>
         </dl>
-        <a class="text-link" href="../">Back to media</a>
+        <a class="text-link" href="../">{h(ui["back_to_media"])}</a>
       </aside>
     </section>"""
-    return layout(data, item["title"], "media", body, depth=2)
+    return layout(data, lang, "media", "media", f'media/{item["id"]}/', body, depth)
 
 
-def render_cv(data: dict) -> str:
+def render_cv(data: dict, lang: str) -> str:
     profile = data["profile"]
-    projects = "".join(
-        f"""<li><strong>{h(item["title"])}</strong><br><span>{h(item["type"])} · {h(item["period"])}</span></li>"""
-        for item in data["projects"]
-    )
-    experience = "".join(
-        f"""<li><strong>{h(item["organization"])}</strong>, {h(item["role"])}<br><span>{h(item["period"])} · {h(item["description"])}</span></li>"""
-        for item in data["experience"]
-    )
-    teaching = "".join(f"<li>{h(item)}</li>" for item in data["teaching"])
-    honors = "".join(f"<li>{h(item)}</li>" for item in data["honors"])
-    skills = "".join(
-        f"<li><strong>{h(item['category'])}:</strong> {h(item['items'])}</li>"
-        for item in data["skills"]
-    )
-    pubs = "".join(pub_card(pub, True, depth=1) for pub in data["publications"])
-    confs = "".join(
-        f"<li>{h(item['authors'])} ({h(item['year'])}). {h(item['title'])}. <em>{h(item['venue'])}</em>, {h(item['location'])}.</li>"
-        for item in data["conferences"]
-    )
+    ui = data["ui"][lang]
+    depth = 2
+    pubs = "".join(pub_card(data, pub, lang, depth, compact=True) for pub in data["publications"])
     body = f"""<section class="page-hero wrap cv-heading">
-      <p class="eyebrow">Curriculum Vitae</p>
+      <p class="eyebrow">{h(ui["cv"])}</p>
       <h1>{h(profile["name"])} / {h(profile["name_cn"])}</h1>
-      <p>{h(profile["affiliation"])} · <a href="mailto:{h(profile["email"])}">{h(profile["email"])}</a></p>
-      <div class="button-row">{link(local_url(profile["cv"], 1), "Download PDF CV", "button primary")}</div>
+      <p>{h(item_text(profile, "affiliation", lang))} · <a href="mailto:{h(profile["email"])}">{h(profile["email"])}</a></p>
+      <div class="button-row">{link(local_url(profile["cv"], depth), ui["download_pdf_cv"], "button primary")}</div>
     </section>
     <section class="wrap cv-grid">
       <aside class="cv-sidebar">
-        <h2>Education</h2>
-        <div class="timeline">{timeline(data["education"])}</div>
-        <h2>Languages</h2>
-        <p>{h(", ".join(profile["languages"]))}</p>
+        <h2>{h(ui["education"])}</h2>
+        <div class="timeline">{timeline(data, data["education"], lang)}</div>
+        <h2>{h(ui["languages"])}</h2>
+        <p>{h(", ".join(item_text(profile, "languages", lang) if isinstance(item_text(profile, "languages", lang), list) else profile["languages"]))}</p>
       </aside>
       <div class="cv-main">
-        <section><h2>Publications</h2><div class="pub-list">{pubs}</div></section>
-        <section><h2>Conference Papers</h2><ul>{confs}</ul></section>
-        <section><h2>Research Projects</h2><ul>{projects}</ul></section>
-        <section><h2>Professional Experience</h2><ul>{experience}</ul></section>
-        <section><h2>Teaching</h2><ul>{teaching}</ul></section>
-        <section><h2>Awards & Honors</h2><ul>{honors}</ul></section>
-        <section><h2>Skills</h2><ul>{skills}</ul></section>
+        <section><h2>{h(ui["publications"])}</h2><div class="pub-list">{pubs}</div></section>
+        <section><h2>{h(ui["conference_presentations"])}</h2><div class="conference-list">{conference_rows(data, lang, depth)}</div></section>
+        <section><h2>{h(ui["working_papers"])}</h2>{list_items(data["working_papers"])}</section>
+        <section><h2>{h(ui["research_projects"])}</h2>{object_list(data["projects"])}</section>
+        <section><h2>{h(ui["professional_experience"])}</h2>{object_list(data["experience"], "organization")}</section>
+        <section><h2>{h(ui["teaching"])}</h2>{list_items(data["teaching"])}</section>
+        <section><h2>{h(ui["honors"])}</h2>{list_items(data["honors"])}</section>
+        <section><h2>{h(ui["skills"])}</h2><ul>{"".join(f"<li><strong>{h(item_text(item, 'category', lang))}:</strong> {h(item_text(item, 'items', lang))}</li>" for item in data["skills"])}</ul></section>
       </div>
     </section>"""
-    return layout(data, "CV", "cv", body, depth=1)
+    return layout(data, lang, "cv", "cv", "cv/", body, depth)
+
+
+def render_data(data: dict, lang: str) -> str:
+    ui = data["ui"][lang]
+    depth = 2
+    cards = []
+    for item in data.get("data_resources", []):
+        if item.get("visibility") == "private":
+            continue
+        actions = []
+        for file_item in item.get("files", []):
+            actions.append(link(local_url(file_item["url"], depth), file_item.get("label", ui["file"]), "text-link"))
+        if item.get("external_url"):
+            actions.append(link(item["external_url"], ui["external_link"], "text-link"))
+        cards.append(
+            f"""<article class="resource-card">
+              <div>
+                <p class="eyebrow">{h(item.get("type", ""))} · {h(str(item.get("year", "")))}</p>
+                <h3>{h(item["title"])}</h3>
+                <p>{h(item.get("project", ""))}</p>
+                <p>{h(item.get("description", ""))}</p>
+              </div>
+              <div class="card-actions">{"".join(actions)}</div>
+            </article>"""
+        )
+    body = f"""<section class="page-hero wrap">
+      <p class="eyebrow">{h(ui["data"])}</p>
+      <h1>{h(ui["data_title"])}</h1>
+      <p>{h(ui["data_intro"])}</p>
+    </section>
+    <section class="wrap resource-grid">
+      {''.join(cards)}
+    </section>"""
+    return layout(data, lang, "data", "data", "data/", body, depth)
+
+
+def render_root(data: dict) -> str:
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="0; url=en/">
+  <title>{h(data["site"]["title"])}</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <main class="root-choice wrap">
+    <h1>{h(data["site"]["title"])}</h1>
+    <p><a class="button primary" href="en/">English</a> <a class="button ghost" href="zh/">中文</a></p>
+  </main>
+</body>
+</html>
+"""
+
+
+def clean_docs() -> None:
+    if DOCS.exists():
+        shutil.rmtree(DOCS)
+    DOCS.mkdir(parents=True)
 
 
 def copy_assets() -> None:
     ASSETS.mkdir(parents=True, exist_ok=True)
     for path in SRC_ASSETS.iterdir():
+        target = ASSETS / path.name
         if path.is_file():
-            shutil.copy2(path, ASSETS / path.name)
+            shutil.copy2(path, target)
         elif path.is_dir():
-            target = ASSETS / path.name
-            if target.exists():
-                shutil.rmtree(target)
             shutil.copytree(path, target)
 
 
 def build() -> None:
     data = read_data()
-    DOCS.mkdir(exist_ok=True)
+    clean_docs()
     copy_assets()
-    write(DOCS / "index.html", render_home(data))
-    write(DOCS / "publications" / "index.html", render_publications(data))
-    write(DOCS / "media" / "index.html", render_media_index(data))
-    for item in data["media"]:
-        write(DOCS / "media" / item["id"] / "index.html", render_media_detail(data, item))
-    write(DOCS / "cv" / "index.html", render_cv(data))
+    write(DOCS / "index.html", render_root(data))
+    for lang in LANGS:
+        write(DOCS / lang / "index.html", render_home(data, lang))
+        write(DOCS / lang / "publications" / "index.html", render_publications(data, lang))
+        write(DOCS / lang / "media" / "index.html", render_media_index(data, lang))
+        for item in data["media"]:
+            write(DOCS / lang / "media" / item["id"] / "index.html", render_media_detail(data, lang, item))
+        write(DOCS / lang / "cv" / "index.html", render_cv(data, lang))
+        write(DOCS / lang / "data" / "index.html", render_data(data, lang))
 
 
 if __name__ == "__main__":
