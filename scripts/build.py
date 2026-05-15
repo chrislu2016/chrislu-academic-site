@@ -58,6 +58,12 @@ def item_text(item: dict, field: str, lang: str) -> str:
     return item.get(field, "")
 
 
+def brand_name(profile: dict, lang: str) -> tuple[str, str]:
+    if lang == "zh":
+        return profile["name_cn"], profile["preferred"]
+    return profile["preferred"], profile["name"]
+
+
 def localized_list(data: dict, key: str, lang: str) -> list[str]:
     if lang == "zh" and data.get(f"{key}_zh"):
         return data[f"{key}_zh"]
@@ -110,6 +116,7 @@ def layout(
     root = rel_to_root(depth)
     site = data["site"]
     profile = data["profile"]
+    brand_primary, brand_secondary = brand_name(profile, lang)
     description = site.get(f"description_{lang}", site["description"])
     html_lang = "zh-CN" if lang == "zh" else "en"
     skip = t(data, lang, "skip")
@@ -129,8 +136,8 @@ def layout(
       <a class="brand" href="{root}{lang}/">
         <span class="brand-mark">CL</span>
         <span>
-          <strong>{h(profile["preferred"])}</strong>
-          <small>{h(profile["name"])}</small>
+          <strong>{h(brand_primary)}</strong>
+          <small>{h(brand_secondary)}</small>
         </span>
       </a>
       <nav class="main-nav" aria-label="{h(t(data, lang, "main_navigation"))}">
@@ -202,7 +209,7 @@ def pub_card(data: dict, pub: dict, lang: str, depth: int, compact: bool = False
       <div>
         <h3>{h(pub["title"])}</h3>
         {cn_html}
-        <p class="pub-meta">{h(pub["authors"])} · <em>{h(pub["venue"])}</em> {h(pub.get("status", ""))}</p>
+        <p class="pub-meta">{h(pub["authors"])} · <em>{h(item_text(pub, "venue", lang))}</em> {h(pub.get("status", ""))}</p>
         <div class="chip-row">{tag_html}</div>
         {action_html}
       </div>
@@ -269,7 +276,7 @@ def conference_rows(data: dict, lang: str, depth: int) -> str:
               <strong>{h(item["year"])}</strong>
               <div>
                 <h3>{h(item["title"])}</h3>{title_cn_html}
-                <p>{h(item["authors"])} · <em>{h(item["venue"])}</em> · {h(item_text(item, "location", lang))}</p>{note_html}{action_html}
+                <p>{h(item["authors"])} · <em>{h(item_text(item, "venue", lang))}</em> · {h(item_text(item, "location", lang))}</p>{note_html}{action_html}
               </div>
             </article>"""
         )
