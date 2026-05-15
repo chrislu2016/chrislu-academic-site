@@ -329,29 +329,28 @@ def render_home(data: dict, lang: str) -> str:
     pubs = "".join(pub_card(data, pub, lang, depth, compact=True) for pub in data["publications"])
     media = "".join(media_card(data, item, lang, depth) for item in data["media"])
     body = f"""<section class="hero">
-      <div class="wrap intro-panel">
-        <aside class="intro-card" aria-label="{h(ui["profile_summary"])}">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">{h(item_text(profile, "title", lang))} · {h(item_text(profile, "affiliation", lang))}</p>
+          <h1>{hero_name(profile, lang)}</h1>
+          <p class="lead">{h(item_text(profile, "summary", lang))}</p>
+          <div class="button-row">{links}</div>
+          <div class="research-tags">{chips(interests)}</div>
+        </div>
+        <aside class="profile-panel" aria-label="{h(ui["profile_summary"])}">
           <img src="{h(local_url(profile["photo"], depth))}" alt="{h(profile["preferred"])} portrait">
-          <div class="intro-card-copy">
+          <div>
             <h2>{profile_card_name(profile, lang)}</h2>
-            <p>{h(profile["name"] if lang == "zh" else profile["name_cn"])}</p>
             <p>{h(item_text(profile, "location", lang))}</p>
             <a class="text-link" href="mailto:{h(profile["email"])}">{h(profile["email"])}</a>
           </div>
         </aside>
-        <div class="intro-main">
-          <p class="eyebrow">{h(item_text(profile, "title", lang))} · {h(item_text(profile, "affiliation", lang))}</p>
-          <h1>{hero_name(profile, lang)}</h1>
-          <p class="lead">{h(item_text(profile, "summary", lang))}</p>
-          <div class="button-row intro-actions">{links}</div>
-          <div class="research-tags">{chips(interests)}</div>
-        </div>
       </div>
     </section>
-    {section(ui["education"], ui["education_eyebrow"], f'<div class="timeline">{timeline(data, data["education"], lang)}</div>', "education-first")}
     <section class="wrap stats-grid" aria-label="{h(ui["academic_highlights"])}">
       {stat_block(data, lang)}
     </section>
+    {section(ui["education"], ui["education_eyebrow"], f'<div class="timeline">{timeline(data, data["education"], lang)}</div>', "education-first")}
     <section class="band">
       <div class="wrap section-heading">
         <p class="eyebrow">{h(ui["research_areas"])}</p>
