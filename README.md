@@ -28,6 +28,16 @@ python3 scripts/build.py
 
 For a standalone repository, set GitHub Pages to deploy from the `docs/` folder on the default branch.
 
+## Vercel
+
+This repository is also configured for Vercel as a static site:
+
+- Framework Preset: Other
+- Build Command: `python3 scripts/build.py`
+- Output Directory: `docs`
+
+Import the GitHub repository into Vercel and keep the default generated domain for the first public version.
+
 ## Media Notes
 
 Video pages use:
