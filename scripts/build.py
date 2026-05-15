@@ -477,11 +477,16 @@ def render_data(data: dict, lang: str) -> str:
     for item in data.get("data_resources", []):
         if item.get("visibility") == "private":
             continue
-        actions = []
+        files = []
         for file_item in item.get("files", []):
-            actions.append(link(local_url(file_item["url"], depth), file_item.get("label", ui["file"]), "text-link"))
+            label = file_item.get(f"label_{lang}", file_item.get("label", ui["file"]))
+            files.append(f'                <li>{link(local_url(file_item["url"], depth), label, "resource-link")}</li>')
+        file_rows = "\n".join(files)
+        file_html = f'\n              <ul class="resource-files">\n{file_rows}\n              </ul>' if files else ""
+        actions = []
         if item.get("external_url"):
             actions.append(link(item["external_url"], ui["external_link"], "text-link"))
+        action_html = f'\n              <div class="card-actions">{"".join(actions)}</div>' if actions else ""
         cards.append(
             f"""<article class="resource-card">
               <div>
@@ -489,8 +494,7 @@ def render_data(data: dict, lang: str) -> str:
                 <h3>{h(item_text(item, "title", lang))}</h3>
                 <p>{h(item_text(item, "project", lang))}</p>
                 <p>{h(item_text(item, "description", lang))}</p>
-              </div>
-              <div class="card-actions">{"".join(actions)}</div>
+              </div>{file_html}{action_html}
             </article>"""
         )
     body = f"""<section class="page-hero wrap">

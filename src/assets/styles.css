@@ -414,9 +414,14 @@ code {
 
 .card-actions {
   margin-top: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
 }
 
 .text-link {
+  display: inline-block;
   font-weight: 760;
 }
 
@@ -536,6 +541,33 @@ code {
 
 .resource-card p {
   margin: 0.35rem 0 0;
+}
+
+.resource-files {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.55rem;
+  margin: 0.2rem 0 0;
+  padding: 0;
+}
+
+.resource-link {
+  display: flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  color: var(--green-dark);
+  font-weight: 760;
+  line-height: 1.25;
+}
+
+.resource-link:hover {
+  border-color: var(--green);
+  text-decoration: none;
 }
 
 .prose-block {
