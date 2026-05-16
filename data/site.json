@@ -5,7 +5,7 @@
     "base_path": "",
     "description": "Lu Hongcheng (Chris Lu), Ph.D. student in Journalism and Communication at Tsinghua University. Research in economic communication, digital culture, gender studies, national image, and media industries.",
     "description_zh": "陆泓承（Chris Lu），清华大学新闻与传播学院博士研究生，研究方向包括经济传播、数字文化、性别研究、国家形象与媒介产业。",
-    "last_updated": "2026-03-15"
+    "last_updated": "2026-05-16"
   },
   "ui": {
     "en": {
@@ -482,6 +482,14 @@
     }
   ],
   "conferences": [
+    {
+      "year": "2026",
+      "title": "How Does Public Attention Dynamically Shape the Effects of Economic Policy on Public Confidence?",
+      "authors": "Lu, H.",
+      "venue": "AEJMC Annual Conference, Political Communication Division",
+      "location": "New Orleans, United States",
+      "note": "Accepted for poster presentation"
+    },
     {
       "year": "2026",
       "title": "Cognitive Offloading in the Age of Generative AI: Rethinking Critical Media Education for Combating Fake News Vulnerability",
