@@ -102,15 +102,13 @@ code {
 }
 
 .brand-mark {
-  display: grid;
-  place-items: center;
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: var(--green);
-  color: #fff;
-  font-weight: 800;
-  letter-spacing: 0;
+  object-fit: cover;
+  object-position: top center;
+  background: #e9eee7;
+  border: 1px solid var(--line);
 }
 
 .brand small {
@@ -239,9 +237,9 @@ code {
 .profile-panel img {
   display: block;
   width: 100%;
-  aspect-ratio: 1 / 1.05;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  object-position: top center;
+  object-position: center 18%;
   border-radius: 6px;
   background: #e9eee7;
 }

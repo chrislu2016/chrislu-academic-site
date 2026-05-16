@@ -147,7 +147,7 @@ def layout(
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="{root}{lang}/">
-        <span class="brand-mark">CL</span>
+        <img class="brand-mark" src="{h(local_url(profile["photo"], depth))}" alt="{h(profile["preferred"])} portrait">
         <span>
           <strong>{h(brand_primary)}</strong>
           <small>{h(brand_secondary)}</small>
@@ -261,13 +261,14 @@ def media_card(data: dict, item: dict, lang: str, depth: int) -> str:
     root = rel_to_root(depth)
     href = f'{root}{lang}/media/{item["id"]}/'
     action = t(data, lang, "watch") if item.get("video") else t(data, lang, "open")
+    title = item_text(item, "title", lang)
     return f"""<article class="media-card">
-      <a class="media-thumb" href="{href}" aria-label="{h(action)} {h(item["title"])}">
+      <a class="media-thumb" href="{href}" aria-label="{h(action)} {h(title)}">
         <span>{h(item_text(item, "type", lang))}</span>
       </a>
       <div class="media-copy">
         <p class="eyebrow">{h(item["date"])} · {h(item_text(item, "location", lang))}</p>
-        <h3><a href="{href}">{h(item["title"])}</a></h3>
+        <h3><a href="{href}">{h(title)}</a></h3>
         <p>{h(item_text(item, "summary", lang))}</p>
       </div>
     </article>"""
@@ -435,7 +436,7 @@ def render_media_detail(data: dict, lang: str, item: dict) -> str:
         </div>"""
     body = f"""<section class="page-hero wrap media-detail-heading">
       <p class="eyebrow">{h(item_text(item, "type", lang))} · {h(item["date"])}</p>
-      <h1>{h(item["title"])}</h1>
+      <h1>{h(item_text(item, "title", lang))}</h1>
       <p>{h(item_text(item, "summary", lang))}</p>
     </section>
     <section class="wrap media-detail">
@@ -443,7 +444,7 @@ def render_media_detail(data: dict, lang: str, item: dict) -> str:
       <aside>
         <h2>{h(ui["details"])}</h2>
         <dl>
-          <dt>{h(ui["venue"])}</dt><dd>{h(item["venue"])}</dd>
+          <dt>{h(ui["venue"])}</dt><dd>{h(item_text(item, "venue", lang))}</dd>
           <dt>{h(ui["location"])}</dt><dd>{h(item_text(item, "location", lang))}</dd>
           <dt>{h(ui["date"])}</dt><dd>{h(item["date"])}</dd>
         </dl>
