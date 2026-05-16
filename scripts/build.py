@@ -199,7 +199,8 @@ def stat_block(data: dict, lang: str) -> str:
 
 def profile_actions(data: dict, lang: str, depth: int) -> str:
     profile = data["profile"]
-    actions = [link(local_url(profile["cv"], depth), t(data, lang, "download_cv"), "button primary")]
+    cv_url = item_text(profile, "cv", lang)
+    actions = [link(local_url(cv_url, depth), t(data, lang, "download_cv"), "button primary")]
     for item in profile["links"]:
         label = item.get(f"label_{lang}", item["label"])
         actions.append(link(item["url"], label, "button ghost"))
@@ -461,7 +462,7 @@ def render_cv(data: dict, lang: str) -> str:
       <p class="eyebrow">{h(ui["cv"])}</p>
       <h1>{h(profile["name"])} / {h(profile["name_cn"])}</h1>
       <p>{h(item_text(profile, "affiliation", lang))} · <a href="mailto:{h(profile["email"])}">{h(profile["email"])}</a></p>
-      <div class="button-row">{link(local_url(profile["cv"], depth), ui["download_pdf_cv"], "button primary")}</div>
+      <div class="button-row">{link(local_url(item_text(profile, "cv", lang), depth), ui["download_pdf_cv"], "button primary")}</div>
     </section>
     <section class="wrap cv-grid">
       <aside class="cv-sidebar">
