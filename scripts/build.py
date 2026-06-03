@@ -283,7 +283,7 @@ def conference_rows(data: dict, lang: str, depth: int) -> str:
         if item.get("slides_url"):
             actions.append(link(local_url(item["slides_url"], depth), t(data, lang, "slides"), "text-link"))
         action_html = f'\n                <div class="card-actions">{"".join(actions)}</div>' if actions else ""
-        note = item.get("note") or item.get("award")
+        note = item_text(item, "note", lang) or item_text(item, "award", lang)
         title_cn_html = f'\n                <p class="pub-cn">{h(item["title_cn"])}</p>' if item.get("title_cn") else ""
         note_html = f"\n                <small>{h(note)}</small>" if note else ""
         rows.append(
