@@ -5,7 +5,7 @@
     "base_path": "",
     "description": "Lu Hongcheng (Chris Lu), Ph.D. student in Journalism and Communication at Tsinghua University. Research in economic communication, digital culture, gender studies, national image, and media industries.",
     "description_zh": "陆泓承（Chris Lu），清华大学新闻与传播学院博士研究生，研究方向包括经济传播、数字文化、性别研究、国家形象与媒介产业。",
-    "last_updated": "2026-05-16"
+    "last_updated": "2026-06-13"
   },
   "ui": {
     "en": {
@@ -495,7 +495,9 @@
       "title": "How AI Addiction Exacerbates Fake News Risks: An Online Experimental Study Based on Cognitive Offloading",
       "authors": "Lu, H.",
       "venue": "AEJMC Annual Conference, CTEC Division",
-      "location": "New Orleans, United States"
+      "location": "New Orleans, United States",
+      "note": "Top Student Paper Winner",
+      "note_zh": "最佳学生论文奖"
     },
     {
       "year": "2026",
@@ -664,14 +666,14 @@
     "传媒经济研究，助教，清华大学，2025S/S"
   ],
   "honors": [
-    "Ph.D.: National Scholarship (2025), Second-Class Scholarship (2024), Outstanding TA (2024/2025)",
+    "Ph.D.: AEJMC Top Student Paper Winner (2026), National Scholarship (2025), Second-Class Scholarship (2024), Outstanding TA (2024/2025)",
     "Master: National Scholarship (2022), Second-Class Scholarship (2021), Merit Student (2021/2023), Outstanding Graduate (2023)",
     "Bachelor: Social Work Award (2018), Outstanding Student Leader (2017/2019), Third-Class Scholarship (2019), Outstanding Graduate (2020)"
   ],
   "honors_zh": [
     "本科：社会工作奖（2018）、优秀学生干部（2017/2019）、三等奖学金（2019）、优秀毕业生（2020）",
     "研究生：二等奖学金（2021）、校级三好学生（2021/2023）、国家奖学金（2022）、优秀毕业生（2023）",
-    "博士：国家奖学金（2025）、二等奖学金（2024）、优秀助教（2024/2025）"
+    "博士：AEJMC 最佳学生论文奖（2026）、国家奖学金（2025）、二等奖学金（2024）、优秀助教（2024/2025）"
   ],
   "skills": [
     {
