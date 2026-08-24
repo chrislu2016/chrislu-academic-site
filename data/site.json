@@ -3,9 +3,9 @@
     "title": "Chris Lu | Lu Hongcheng",
     "title_zh": "陆泓承 ｜ Lu Hongcheng",
     "base_path": "",
-    "description": "Lu Hongcheng (Chris Lu), Ph.D. student in Journalism and Communication at Tsinghua University. Research in economic communication, digital culture, gender studies, national image, and media industries.",
-    "description_zh": "陆泓承（Chris Lu），清华大学新闻与传播学院博士研究生，研究方向包括经济传播、数字文化、性别研究、国家形象与媒介产业。",
-    "last_updated": "2026-06-13"
+    "description": "Lu Hongcheng (Chris Lu), Ph.D. student in Journalism and Communication at Tsinghua University. Research in economic communication, financial journalism, policy communication, digital culture, and AI journalism.",
+    "description_zh": "陆泓承（Chris Lu），清华大学新闻与传播学院博士研究生，研究方向包括经济传播、财经新闻、政策传播、数字文化与 AI 新闻。",
+    "last_updated": "2026-08-24"
   },
   "ui": {
     "en": {
@@ -176,8 +176,8 @@
     "photo": "assets/profile.png",
     "cv": "assets/ChrisLu-CV.pdf",
     "cv_zh": "assets/Lu-Hongcheng-CV-CN.pdf",
-    "summary": "Lu Hongcheng is a Ph.D. student in Journalism and Communication at Tsinghua University. His research focuses on economic policy communication, financial communication, national image, digital culture, gender and sexuality, and media industries. As first or sole author, his work has appeared in Chinese Journal of Journalism & Communication and Modern Communication, and has been presented at ICA, AEJMC, IAMCR, and NCA.",
-    "summary_zh": "陆泓承为清华大学新闻与传播学院博士研究生，研究方向包括经济政策传播、财经传播、国家形象、数字文化、性别与性及媒介产业。其以第一作者或独立作者身份在《国际新闻界》《现代传播（中国传媒大学学报）》等期刊发表成果，并在 ICA、AEJMC、IAMCR、NCA 等国际传播学会议发表论文。",
+    "summary": "Lu Hongcheng is a Ph.D. student in Journalism and Communication at Tsinghua University. His research focuses on economic communication, financial journalism, policy communication, digital culture, and AI journalism. His work has appeared in Feminist Media Studies, Sexualities, Chinese Journal of Journalism & Communication, Modern Communication, and other journals, and has been presented at ICA, AEJMC, IAMCR, and NCA.",
+    "summary_zh": "陆泓承为清华大学新闻与传播学院博士研究生，研究方向包括经济传播、财经新闻、政策传播、数字文化与 AI 新闻。其研究成果发表于 Feminist Media Studies、Sexualities、《国际新闻界》《现代传播（中国传媒大学学报）》等期刊，并在 ICA、AEJMC、IAMCR、NCA 等国际传播学会议发表论文。",
     "links": [
       {
         "label": "Email",
@@ -199,17 +199,17 @@
     ],
     "research_interests": [
       "Economic communication",
-      "National image",
-      "Gender studies",
+      "Financial journalism",
+      "Policy communication",
       "Digital culture",
-      "Media industries"
+      "AI journalism"
     ],
     "research_interests_zh": [
       "经济传播",
-      "国家形象",
-      "性别研究",
+      "财经新闻",
+      "政策传播",
       "数字文化",
-      "媒介产业"
+      "AI 新闻"
     ],
     "languages": [
       "Chinese",
@@ -314,10 +314,10 @@
       "title": "Digital feminist humor as a weapon: A humor and topic analysis of the Weibo posts of the Fat Cat event",
       "authors": "Huang, P., & Lu, H.",
       "venue": "Feminist Media Studies",
-      "status": "0(0)",
+      "status": "1-20",
       "tags": [
         "SSCI",
-        "Q2"
+        "Q1"
       ],
       "selected": true,
       "url": "assets/files/【2026】【Feminist Media Studies】Digital feminist humor as a weapon  a humor and topic analysis of the weibo posts of the fat cat event.pdf"
@@ -357,17 +357,17 @@
       "id": "data-empowerment-publishing-youth",
       "year": "2025",
       "type": "Journal article",
-      "title": "Exploration of the paths and mechanisms for data elements empowering the development of the publishing industry",
-      "title_cn": "数据要素赋能出版业发展的路径与机制探讨",
+      "title": "Marginalization and decentralization: Power relations in Tuwei remix culture",
+      "title_cn": "边缘化与离心化：土味二创文化中的权力关系",
       "authors": "Lu, H.",
       "venue": "Contemporary Youth Research",
       "venue_zh": "当代青年研究",
       "status": "(03), 34-48",
       "tags": [
-        "CSSCI"
+        "CSSCI Extended"
       ],
       "selected": true,
-      "url": "assets/files/【2025】【当代青年研究】数据要素赋能出版业发展的路径与机制探讨_陆泓承.pdf"
+      "url": "assets/files/【2025】【当代青年研究】边缘化与离心化：土味二创文化中的权力关系_陆泓承.pdf"
     },
     {
       "id": "ai-financial-commentary",
@@ -561,9 +561,12 @@
     }
   ],
   "working_papers": [
-    "Transnational digital platforms in informational geopolitics: A qualitative comparative analysis of 31 countries' motives to sanction TikTok.",
-    "Informal systems for proactive disclosure: The role of Confucian culture and media monitoring on corporate ESG disclosure.",
-    "The role of news on the confidence-boosting effect of economic policy announcements: Empirical quasi-natural experiment evidence from China."
+    "The Chinese questions of media economics: A disciplinary external-history review and analysis.",
+    "From media convergence to systemic transformation of mainstream media: A bibliometric comparison of theoretical evolution.",
+    "How news media shape policy narratives in economic policy communication: The communication practice of the September 24 financial policy package.",
+    "The temporal dimension of economic policy communication: Time-varying effects of policy news on market confidence.",
+    "Informal institutions and proactive disclosure: The role of Confucian culture and media supervision in corporate ESG information disclosure.",
+    "Geopolitics or platform governance: A configurational analysis of countries' motives for sanctioning TikTok."
   ],
   "working_papers_zh": [
     "陆泓承. (n.d.). 探究传媒经济学的“中国问题”——基于学科外部史的梳理和分析。",
@@ -574,6 +577,14 @@
     "陆泓承 & 杨肇祎. (n.d.). 地缘政治或平台治理：各国制裁 TikTok 的动因组态分析。"
   ],
   "projects": [
+    {
+      "title": "Stimulating Cultural Innovation and Creativity Across the Whole Nation through Institutional and Mechanism Innovation",
+      "title_zh": "以体制机制创新激发全民族文化创新创造活力研究",
+      "type": "Major project of the National Social Science Fund of China",
+      "type_zh": "国社科重大项目",
+      "period": "Jul. 2026 - Present"
+      ,"period_zh": "2026.7 - 至今"
+    },
     {
       "title": "The Role and Mechanisms of News in Boosting Confidence in Economic Policy Communication",
       "title_zh": "经济政策传播中新闻对信心的作用和机制研究",
@@ -595,8 +606,8 @@
       "title_zh": "国能能源集团乌海能源品牌状况分析",
       "type": "University-funded project",
       "type_zh": "校级资助项目",
-      "period": "Sep. 2023 - Jun. 2024"
-      ,"period_zh": "2023.9 - 2024.6"
+      "period": "Jun. 2024 - Aug. 2024"
+      ,"period_zh": "2024.6 - 2024.8"
     },
     {
       "title": "Social Incentives and Mechanisms of Intimate Relationships among Chinese College Students",
@@ -666,14 +677,14 @@
     "传媒经济研究，助教，清华大学，2025S/S"
   ],
   "honors": [
-    "Ph.D.: AEJMC Top Student Paper Winner (2026), National Scholarship (2025), Second-Class Scholarship (2024), Outstanding TA (2024/2025)",
-    "Master: National Scholarship (2022), Second-Class Scholarship (2021), Merit Student (2021/2023), Outstanding Graduate (2023)",
-    "Bachelor: Social Work Award (2018), Outstanding Student Leader (2017/2019), Third-Class Scholarship (2019), Outstanding Graduate (2020)"
+    "Research awards: AEJMC CTEC Top Student Paper (2026), Excellent Paper Award at the Tsinghua Doctoral Forum in Journalism and Communication / Young Scholars Forum (2025), Excellent Paper Award at the Annual Conference of the Communication Economics and Management Committee of the Chinese Association for History of Journalism and Communication (2025)",
+    "Honors: Outstanding TA, Tsinghua University (2024/2025); Outstanding Graduate, Communication University of China (2023); Merit Student, Communication University of China (2021/2023); Outstanding Graduate, Beijing Foreign Studies University (2020); Outstanding Student Leader, Beijing Foreign Studies University (2017/2019); Social Work Award, Beijing Foreign Studies University (2018)",
+    "Scholarships: Ph.D. National Scholarship (2025), Tsinghua Second-Class Scholarship (2024), Master's National Scholarship (2022), Communication University of China Second-Class Scholarship (2021), Beijing Foreign Studies University Third-Class Scholarship (2019)"
   ],
   "honors_zh": [
-    "本科：社会工作奖（2018）、优秀学生干部（2017/2019）、三等奖学金（2019）、优秀毕业生（2020）",
-    "研究生：二等奖学金（2021）、校级三好学生（2021/2023）、国家奖学金（2022）、优秀毕业生（2023）",
-    "博士：AEJMC 最佳学生论文奖（2026）、国家奖学金（2025）、二等奖学金（2024）、优秀助教（2024/2025）"
+    "科研获奖类：AEJMC 传播技术分会学生最佳论文（2026）、清华大学新闻传播学博士生学术论坛·青年学者论坛优秀论文奖（2025）、中国新闻史学会传媒经济与管理专业委员会学术年会优秀论文奖（2025）",
+    "荣誉称号类：清华大学优秀助教（2024、2025）、中国传媒大学优秀毕业生（2023）、中国传媒大学三好学生（2021、2023）、北京外国语大学优秀毕业生（2020）、北京外国语大学优秀学生干部（2017、2019）、北京外国语大学社会工作奖（2018）",
+    "奖学金类：博士生国家奖学金（2025）、清华大学二等奖学金（2024）、硕士生国家奖学金（2022）、中国传媒大学二等奖学金（2021）、北京外国语大学三等奖学金（2019）"
   ],
   "skills": [
     {
@@ -805,7 +816,7 @@
         },
         {
           "label": "2025 当代青年研究",
-          "url": "assets/files/【2025】【当代青年研究】数据要素赋能出版业发展的路径与机制探讨_陆泓承.pdf"
+          "url": "assets/files/【2025】【当代青年研究】边缘化与离心化：土味二创文化中的权力关系_陆泓承.pdf"
         },
         {
           "label": "2024 中国编辑",
