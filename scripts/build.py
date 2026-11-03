@@ -209,7 +209,9 @@ def profile_actions(data: dict, lang: str, depth: int) -> str:
 
 def pub_card(data: dict, pub: dict, lang: str, depth: int, compact: bool = False) -> str:
     title_cn = pub.get("title_cn")
-    cn_html = f'<p class="pub-cn">{h(title_cn)}</p>' if title_cn else ""
+    title = title_cn if lang == "zh" and title_cn else pub["title"]
+    secondary_title = pub["title"] if lang == "zh" and title_cn else title_cn
+    cn_html = f'<p class="pub-cn">{h(secondary_title)}</p>' if secondary_title else ""
     tag_html = chips(pub.get("tags", []))
     actions = []
     if pub.get("url"):
@@ -221,7 +223,7 @@ def pub_card(data: dict, pub: dict, lang: str, depth: int, compact: bool = False
     return f"""<article class="pub-card{compact_class}">
       <div class="pub-year">{h(pub["year"])}</div>
       <div>
-        <h3>{h(pub["title"])}</h3>
+        <h3>{h(title)}</h3>
         {cn_html}
         <p class="pub-meta">{h(pub["authors"])} · <em>{h(item_text(pub, "venue", lang))}</em> {h(pub.get("status", ""))}</p>
         <div class="chip-row">{tag_html}</div>
