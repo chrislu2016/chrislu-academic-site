@@ -3,9 +3,9 @@
     "title": "Chris Lu | Lu Hongcheng",
     "title_zh": "陆泓承 ｜ Lu Hongcheng",
     "base_path": "",
-    "description": "Lu Hongcheng (Chris Lu), Tsinghua University Ph.D. student researching AI and financial communication, economic policy communication, and international communication of China’s economy.",
-    "description_zh": "陆泓承，清华大学新闻与传播学院博士研究生，研究方向为智能财经传播、经济政策传播与中国经济国际传播。",
-    "last_updated": "2026-10-09"
+    "description": "Lu Hongcheng, Tsinghua University Ph.D. student researching human–machine communication and AI journalism, platform and information governance, and national economic and technological images.",
+    "description_zh": "陆泓承，清华大学博士研究生，研究人机传播与AI新闻学、平台与信息治理、国家经济与科技形象。",
+    "last_updated": "2026-11-03"
   },
   "ui": {
     "en": {
@@ -53,7 +53,7 @@
       "education": "Education",
       "education_eyebrow": "Education",
       "research_areas": "Research Areas",
-      "research_blurb": "AI, public economic perceptions, and the international communication of China’s economy.",
+      "research_blurb": "Human–AI interaction, platform governance, and the formation of national images.",
       "publications_eyebrow": "Publications",
       "view_publications": "View publications page",
       "conference_presentations": "Conference Presentations",
@@ -129,7 +129,7 @@
       "education": "教育背景",
       "education_eyebrow": "教育背景",
       "research_areas": "研究方向",
-      "research_blurb": "智能财经传播、公众经济认知与中国经济国际传播",
+      "research_blurb": "理解人与AI的互动、平台治理与国家形象的形成",
       "publications_eyebrow": "学术成果",
       "view_publications": "查看完整成果页",
       "conference_presentations": "会议报告",
@@ -176,8 +176,8 @@
     "photo": "assets/profile.png",
     "cv": "assets/ChrisLu-CV.pdf",
     "cv_zh": "assets/Lu-Hongcheng-CV-CN.pdf",
-    "summary": "Lu Hongcheng (Chris Lu) is a Ph.D. student at Tsinghua University’s School of Journalism and Communication, with graduation expected in 2027. He studies AI and financial communication and the international communication of China’s economy. He has published 11 articles (2 SSCI, 6 CSSCI, and 2 CSSCI Expanded), including 4 as first author, with work in Feminist Media Studies, Sexualities, Chinese Journal of Journalism & Communication, and Modern Communication, among others; 2 further works are forthcoming. He has delivered 7 presentations across four major international communication conferences—AEJMC, ICA, IAMCR, and NCA—and received the 2026 AEJMC CTEC Top Student Paper award.",
-    "summary_zh": "陆泓承，清华大学新闻与传播学院博士研究生，预计2027年毕业。研究聚焦智能财经传播与中国经济国际传播。已发表论文11篇（SSCI 2篇、CSSCI 6篇、CSSCI扩展版2篇），其中第一作者论文4篇，成果见于 Feminist Media Studies、Sexualities、《国际新闻界》《现代传播》等期刊，另有2项成果待刊或待出版。在AEJMC、ICA、IAMCR、NCA四大国际传播学会议报告7次，获2026年AEJMC传播技术分会最佳学生论文。",
+    "summary": "Lu Hongcheng (Chris Lu) is a Ph.D. student in Journalism and Communication at Tsinghua University, with graduation expected in 2027. His research focuses on human–machine communication and AI journalism, platform and information governance, and national economic and technological images. He has published 11 articles (2 SSCI, 6 CSSCI, and 2 CSSCI Expanded), including 4 as first author, with work in Feminist Media Studies, Sexualities, Chinese Journal of Journalism & Communication, and Modern Communication; 2 further works are forthcoming. He has presented at AEJMC, ICA, IAMCR, and NCA and received the 2026 AEJMC CTEC Top Student Paper award.",
+    "summary_zh": "陆泓承，清华大学新闻与传播学院博士研究生，预计2027年毕业。研究聚焦人机传播与AI新闻学、平台与信息治理、国家经济与科技形象。已发表论文11篇（SSCI 2篇、CSSCI 6篇、CSSCI扩展版2篇），其中第一作者论文4篇，成果见于 Feminist Media Studies、Sexualities、《国际新闻界》《现代传播》等期刊，另有2项成果待刊。研究曾在AEJMC、ICA、IAMCR、NCA国际传播学会议报告，获2026年AEJMC传播技术分会最佳学生论文。",
     "links": [
       {
         "label": "Email",
@@ -198,16 +198,14 @@
       }
     ],
     "research_interests": [
-      "AI and financial communication",
-      "Economic policy communication",
-      "Public economic perceptions",
-      "International communication of China’s economy"
+      "Human–machine communication and AI journalism",
+      "Platform and information governance",
+      "National economic and technological images"
     ],
     "research_interests_zh": [
-      "智能财经传播",
-      "经济政策传播",
-      "公众经济认知",
-      "中国经济国际传播"
+      "人机传播与AI新闻学",
+      "平台与信息治理",
+      "国家经济与科技形象"
     ],
     "languages": [
       "Chinese",
@@ -236,22 +234,22 @@
   ],
   "themes": [
     {
-      "name": "AI and financial communication",
-      "name_zh": "智能财经传播",
-      "text": "How does AI change the production and reception of financial information? This research examines human–AI collaboration in financial journalism and how AI-generated content affects assessments of expertise, information credibility, and public understanding of the economy.",
-      "text_zh": "关注人工智能如何改变财经信息的生产与接受，研究财经新闻中的人机协作，以及 AI 生成内容如何影响公众对专业性、信息可信度与经济议题的判断。"
+      "name_zh": "人机传播与AI新闻学",
+      "name": "Human–machine communication and AI journalism",
+      "text_zh": "关注生成式人工智能如何改变信息生产、新闻判断与人机关系，重点研究人机协作、认知让渡、批判性思维与虚假新闻易感性。结合在线实验与计算文本分析，考察人们如何使用、信任和评价AI生成的信息。",
+      "text": "How does generative AI change information production, news judgments, and human–machine relationships? This research examines human–AI collaboration, cognitive offloading, critical thinking, and vulnerability to misinformation through online experiments and computational text analysis."
     },
     {
-      "name": "Economic policy communication and public perceptions",
-      "name_zh": "经济政策传播与公众认知",
-      "text": "How does news shape public understanding of economic policy, confidence, and expectations? This research examines policy narratives, the timing of news coverage, and changes in communication effects, connecting empirical analysis with policy advisory work.",
-      "text_zh": "关注新闻如何影响公众对经济政策的理解、信心与预期，研究政策叙事、新闻传播的时间特征及其效果变化，以实证分析连接经济传播研究与咨政实践。"
+      "name_zh": "平台与信息治理",
+      "name": "Platform and information governance",
+      "text_zh": "关注数字平台中的权力关系、内容生产与信息秩序，研究创作者与平台的互动、跨国平台治理及其地缘政治环境，考察技术规则、制度安排与用户实践如何共同塑造信息传播。",
+      "text": "This research examines power relations, content production, and information governance on digital platforms. It connects creator–platform relations with transnational platform governance and geopolitics, asking how technical rules, institutions, and user practices shape communication."
     },
     {
-      "name": "International communication of China’s economy",
-      "name_zh": "中国经济国际传播",
-      "text": "How are narratives about China’s economy constructed, circulated, and interpreted across national and cultural contexts? This research focuses on economic issues in international news, cross-cultural differences in understanding, and the effects of communication on perceptions of China’s economy.",
-      "text_zh": "关注中国经济议题如何在不同国家与文化语境中被叙述、传播与理解，重点研究国际新闻中的经济叙事、跨文化认知差异，以及传播对中国经济形象与认知的影响。"
+      "name_zh": "国家经济与科技形象",
+      "name": "National economic and technological images",
+      "text_zh": "关注国际新闻中的经济与科技叙事如何塑造国家形象，结合多语种文本与计算分析，研究中国经济威胁叙事、跨文化认知与传播效果。经济政策作为观察新闻叙事、公众注意力与信心变化的具体场景。",
+      "text": "This research examines how international news narratives about economies and technology shape national images. Using multilingual texts and computational analysis, it investigates narratives of China as an economic threat, cross-cultural perceptions, and communication effects. Economic policy provides one context for examining news narratives, public attention, and confidence."
     }
   ],
   "education": [
@@ -264,8 +262,8 @@
       "period_zh": "2026.2 - 2026.8",
       "degree": "Visiting Scholar",
       "degree_zh": "访问学者",
-      "details": "Supervisor: Dongtao Qi | East Asian Institute (EAI)"
-      ,"details_zh": "导师：祁东涛 | 东亚研究所（EAI）"
+      "details": "Supervisor: Dongtao Qi | East Asian Institute (EAI)",
+      "details_zh": "导师：祁东涛 | 东亚研究所（EAI）"
     },
     {
       "institution": "Tsinghua University",
@@ -276,8 +274,8 @@
       "period_zh": "2023.9 - 至今",
       "degree": "Ph.D. in Journalism and Communication",
       "degree_zh": "新闻与传播学博士",
-      "details": "GPA: 3.95/4.0 | Supervisor: Min Hang | Center for Economic Communication Research"
-      ,"details_zh": "GPA: 3.95/4.0 | 导师：杭敏 | 经济传播研究中心"
+      "details": "GPA: 3.95/4.0 | Supervisor: Min Hang | Center for Economic Communication Research",
+      "details_zh": "GPA: 3.95/4.0 | 导师：杭敏 | 经济传播研究中心"
     },
     {
       "institution": "Communication University of China",
@@ -288,8 +286,8 @@
       "period_zh": "2020.9 - 2023.6",
       "degree": "M.A. in Media Economics",
       "degree_zh": "传媒经济学硕士",
-      "details": "GPA: 3.99/4.0 | Supervisor: Suhui Zheng | Institute of Business Brand Strategy"
-      ,"details_zh": "GPA: 3.99/4.0 | 导师：郑苏晖 | 商务品牌战略研究所"
+      "details": "GPA: 3.99/4.0 | Supervisor: Suhui Zheng | Institute of Business Brand Strategy",
+      "details_zh": "GPA: 3.99/4.0 | 导师：郑苏晖 | 商务品牌战略研究所"
     },
     {
       "institution": "Beijing Foreign Studies University",
@@ -300,8 +298,8 @@
       "period_zh": "2016.9 - 2020.6",
       "degree": "B.A. in International Economics and Trade; second degree in French Literature",
       "degree_zh": "国际经济与贸易学士；法语文学双学位",
-      "details": "GPA: 3.63/4.0 | Exchange at Woosong University SolBridge (2017)"
-      ,"details_zh": "GPA: 3.63/4.0 | 韩国又松大学 SolBridge 交换（2017）"
+      "details": "GPA: 3.63/4.0 | Exchange at Woosong University SolBridge (2017)",
+      "details_zh": "GPA: 3.63/4.0 | 韩国又松大学 SolBridge 交换（2017）"
     }
   ],
   "publications": [
@@ -573,20 +571,12 @@
     }
   ],
   "working_papers": [
-    "The Chinese questions of media economics: A disciplinary external-history review and analysis.",
-    "From media convergence to systemic transformation of mainstream media: A bibliometric comparison of theoretical evolution.",
-    "How news media shape policy narratives in economic policy communication: The communication practice of the September 24 financial policy package.",
-    "The temporal dimension of economic policy communication: Time-varying effects of policy news on market confidence.",
-    "Informal institutions and proactive disclosure: The role of Confucian culture and media supervision in corporate ESG information disclosure.",
-    "Geopolitics or platform governance: A configurational analysis of countries' motives for sanctioning TikTok."
+    "Lu, H., & Qi, D. China Economic Threat Narrative in English Reporting, 2015–2025.",
+    "Lu, H., & Yang, Z. Geopolitics or platform governance: A configurational analysis of countries’ motives for sanctioning TikTok."
   ],
   "working_papers_zh": [
-    "陆泓承. (n.d.). 探究传媒经济学的“中国问题”——基于学科外部史的梳理和分析。",
-    "陆泓承. (n.d.). 从“媒介融合”到“主流媒体系统性变革”的理论演进——基于文献计量学的对比分析。",
-    "陆泓承. (n.d.). 经济政策传播中新闻媒体如何影响政策叙事？——以“924 一揽子金融政策”的传播实践为例。",
-    "陆泓承. (n.d.). 经济政策传播中的“时间之维”：政策新闻对市场信心提振的时变动态分析。",
-    "刘晨旭 & 陆泓承. (n.d.). 非正式制度促进主动披露：儒家文化与媒体监督对企业 ESG 信息披露的作用。",
-    "陆泓承 & 杨肇祎. (n.d.). 地缘政治或平台治理：各国制裁 TikTok 的动因组态分析。"
+    "陆泓承、祁冬涛. China Economic Threat Narrative in English Reporting, 2015–2025.",
+    "陆泓承、杨肇祎. 地缘政治或平台治理：各国制裁TikTok的动因组态分析。"
   ],
   "projects": [
     {
@@ -594,56 +584,56 @@
       "title_zh": "以体制机制创新激发全民族文化创新创造活力研究",
       "type": "Major project of the National Social Science Fund of China",
       "type_zh": "国社科重大项目",
-      "period": "Jul. 2026 - Present"
-      ,"period_zh": "2026.7 - 至今"
+      "period": "Jul. 2026 - Present",
+      "period_zh": "2026.7 - 至今"
     },
     {
       "title": "The Role and Mechanisms of News in Boosting Confidence in Economic Policy Communication",
       "title_zh": "经济政策传播中新闻对信心的作用和机制研究",
       "type": "University-funded project, PI",
       "type_zh": "校级资助项目（主持）",
-      "period": "Dec. 2024 - Present"
-      ,"period_zh": "2024.12 - 至今"
+      "period": "Dec. 2024 - Present",
+      "period_zh": "2024.12 - 至今"
     },
     {
       "title": "Coordinating Economic Governance and Public Opinion Communication to Build Market Expectation Guidance Mechanisms",
       "title_zh": "统筹经济治理与舆论宣传构建市场预期引导机制",
       "type": "University-funded project",
       "type_zh": "校级资助项目",
-      "period": "Jun. 2024 - Dec. 2025"
-      ,"period_zh": "2024.6 - 2025.12"
+      "period": "Jun. 2024 - Dec. 2025",
+      "period_zh": "2024.6 - 2025.12"
     },
     {
       "title": "Brand Analysis of CHN Energy Wuhai Energy Group",
       "title_zh": "国能能源集团乌海能源品牌状况分析",
       "type": "University-funded project",
       "type_zh": "校级资助项目",
-      "period": "Jun. 2024 - Aug. 2024"
-      ,"period_zh": "2024.6 - 2024.8"
+      "period": "Jun. 2024 - Aug. 2024",
+      "period_zh": "2024.6 - 2024.8"
     },
     {
       "title": "Social Incentives and Mechanisms of Intimate Relationships among Chinese College Students",
       "title_zh": "中国大学生亲密关系的社会动因与机制研究",
       "type": "Company-funded project",
       "type_zh": "企业资助项目",
-      "period": "Oct. 2023 - Sep. 2025"
-      ,"period_zh": "2023.10 - 2025.9"
+      "period": "Oct. 2023 - Sep. 2025",
+      "period_zh": "2023.10 - 2025.9"
     },
     {
       "title": "Short-Form Video Empowerment in International Communication of Traditional Culture",
       "title_zh": "短视频赋能传统文化国际传播",
       "type": "University-funded project",
       "type_zh": "校级资助项目",
-      "period": "Oct. 2022 - Aug. 2024"
-      ,"period_zh": "2022.10 - 2024.8"
+      "period": "Oct. 2022 - Aug. 2024",
+      "period_zh": "2022.10 - 2024.8"
     },
     {
       "title": "Short-Form Video Consumption Among Gen Z",
       "title_zh": "Z 世代短视频消费特征研究",
       "type": "University-funded project",
       "type_zh": "校级资助项目",
-      "period": "Dec. 2020 - May 2022"
-      ,"period_zh": "2020.12 - 2022.5"
+      "period": "Dec. 2020 - May 2022",
+      "period_zh": "2020.12 - 2022.5"
     }
   ],
   "experience": [
@@ -654,8 +644,8 @@
       "role_zh": "公共关系部",
       "period": "Sep. 2023 - Jul. 2024",
       "period_zh": "2023.9 - 2024.7",
-      "description": "Maintained donor relationships, produced brand films, and updated the foundation's media channels."
-      ,"description_zh": "维护捐赠者关系，制作品牌宣传片，更新基金会新媒体矩阵。"
+      "description": "Maintained donor relationships, produced brand films, and updated the foundation's media channels.",
+      "description_zh": "维护捐赠者关系，制作品牌宣传片，更新基金会新媒体矩阵。"
     },
     {
       "organization": "Beijing Kuaishou Technology Co., Ltd.",
@@ -664,8 +654,8 @@
       "role_zh": "垂类运营",
       "period": "May 2021 - Aug. 2024",
       "period_zh": "2021.5 - 2024.8",
-      "description": "Managed creator communities, category activation, celebrity author introductions, and live broadcast projects."
-      ,"description_zh": "管理创作者社区，垂类促活，引入大咖，负责直播项目。"
+      "description": "Managed creator communities, category activation, celebrity author introductions, and live broadcast projects.",
+      "description_zh": "管理创作者社区，垂类促活，引入大咖，负责直播项目。"
     },
     {
       "organization": "Guilin TV Station",
@@ -674,8 +664,8 @@
       "role_zh": "视频记者与编辑",
       "period": "Dec. 2019 - Feb. 2020",
       "period_zh": "2019.12 - 2020.2",
-      "description": "Reported and edited news for Guilin News."
-      ,"description_zh": "为桂林电视台《桂林新闻》进行新闻报道及编辑工作。"
+      "description": "Reported and edited news for Guilin News.",
+      "description_zh": "为桂林电视台《桂林新闻》进行新闻报道及编辑工作。"
     }
   ],
   "teaching": [
@@ -702,26 +692,26 @@
     {
       "category": "Natural language processing",
       "category_zh": "自然语言处理",
-      "items": "Python (LDA, Word2Vec), Gephi"
-      ,"items_zh": "Python (LDA, Word2Vec), Gephi（Visualization）"
+      "items": "Python (LDA, Word2Vec), Gephi",
+      "items_zh": "Python (LDA, Word2Vec), Gephi（Visualization）"
     },
     {
       "category": "Social network analysis",
       "category_zh": "社会网络分析",
-      "items": "Gephi, CiteSpace, UCINET"
-      ,"items_zh": "Gephi, CiteSpace, UCINET"
+      "items": "Gephi, CiteSpace, UCINET",
+      "items_zh": "Gephi, CiteSpace, UCINET"
     },
     {
       "category": "Econometrics and statistics",
       "category_zh": "计量经济与统计",
-      "items": "Stata, SPSS, OXmetrics"
-      ,"items_zh": "Stata, SPSS, OXmetrics"
+      "items": "Stata, SPSS, OXmetrics",
+      "items_zh": "Stata, SPSS, OXmetrics"
     },
     {
       "category": "Qualitative research",
       "category_zh": "质性研究",
-      "items": "NVivo"
-      ,"items_zh": "NVivo"
+      "items": "NVivo",
+      "items_zh": "NVivo"
     }
   ],
   "media": [
