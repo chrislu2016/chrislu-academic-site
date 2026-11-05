@@ -336,16 +336,18 @@
       "id": "fourth-love-sexualities",
       "year": "2026",
       "type": "Journal article",
-      "title": "Negotiating fluidity: How China's fourth-love redoes gender within heteronormativity",
+      "title": "Negotiating fluidity: How China’s “fourth-love” redoes gender within heteronormativity",
       "authors": "Huang, P., Lu, H., & Zhu, M.",
       "venue": "Sexualities",
-      "status": "0(0)",
+      "status": "29(7), 1143–1165",
       "tags": [
         "SSCI",
         "Q2"
       ],
       "selected": true,
-      "url": "assets/files/【2026】【Sexualities】.pdf"
+      "url": "assets/files/【2026】【Sexualities】.pdf",
+      "doi": "https://doi.org/10.1177/13634607251413102",
+      "published_online": "2026-01-03"
     },
     {
       "id": "human-ai-collaboration",

@@ -216,6 +216,8 @@ def pub_card(data: dict, pub: dict, lang: str, depth: int, compact: bool = False
     actions = []
     if pub.get("url"):
         actions.append(link(local_url(pub["url"], depth), t(data, lang, "pdf"), "text-link"))
+    if pub.get("doi"):
+        actions.append(link(pub["doi"], "DOI", "text-link"))
     if pub.get("slides"):
         actions.append(link(local_url(pub["slides"], depth), t(data, lang, "slides"), "text-link"))
     action_html = f'<div class="card-actions">{"".join(actions)}</div>' if actions else ""
