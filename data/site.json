@@ -905,8 +905,8 @@
         "分析：议题榜、国别议程对比与 36 个叙事追踪。",
         "每周一自动更新；方法说明公开。"
       ],
-      "url": "https://china-econ-monitor.vercel.app/",
-      "methods_url": "https://china-econ-monitor.vercel.app/methods.html",
+      "url": "https://monitor.luhongcheng.cn/",
+      "methods_url": "https://monitor.luhongcheng.cn/methods.html",
       "image": "assets/products/china-econ-monitor.jpg",
       "status": "Live · v1.0 · weekly (Chinese interface)",
       "status_zh": "运行中 · v1.0 · 每周一更新",
@@ -945,8 +945,8 @@
         "信息观念：会议怎样谈论预期、信心、舆论与政策传播。",
         "全部通稿可按句检索；每年12月会议结束后更新。"
       ],
-      "url": "https://cewc-yearbook.vercel.app/",
-      "methods_url": "https://cewc-yearbook.vercel.app/#about",
+      "url": "https://cewc.luhongcheng.cn/",
+      "methods_url": "https://cewc.luhongcheng.cn/#about",
       "image": "assets/products/cewc-yearbook.jpg",
       "status": "Live · v1.0 · updated yearly (Chinese interface)",
       "status_zh": "运行中 · v1.0 · 每年会议后更新",
