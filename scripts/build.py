@@ -521,12 +521,7 @@ def render_products(data: dict, lang: str) -> str:
     depth = 2
     blocks = []
     for item in data.get("products", []):
-        blocks.append(f"""{product_card(data, item, lang, depth, featured=True)}
-    <div class="product-embed">
-      <p class="eyebrow">{h(ui["live_preview"])}</p>
-      <p class="product-note">{h(ui["product_note"])}</p>
-      <iframe src="{h(item["url"])}" title="{h(item_text(item, "title", lang))}" loading="lazy" referrerpolicy="no-referrer"></iframe>
-    </div>""")
+        blocks.append(f"""{product_card(data, item, lang, depth, featured=True)}""")
     body = f"""<section class="page-hero wrap">
       <p class="eyebrow">{h(ui["products_eyebrow"])}</p>
       <h1>{h(ui["products_title"])}</h1>

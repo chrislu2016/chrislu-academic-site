@@ -90,9 +90,7 @@
       "products_intro": "Open, continuously updated research tools built from my work on economic communication and China's international image.",
       "open_product": "Open dashboard",
       "product_methods": "Methods & validation",
-      "live_preview": "Live preview",
-      "view_products": "View all products",
-      "product_note": "The embedded view below is the live dashboard. Open it in a new tab for the full experience."
+      "view_products": "View all products"
     },
     "zh": {
       "nav": {
@@ -176,9 +174,7 @@
       "products_intro": "基于经济传播与中国国际形象研究开发、持续更新的开放研究工具。",
       "open_product": "打开看板",
       "product_methods": "方法与验证",
-      "live_preview": "实时预览",
-      "view_products": "查看全部产品",
-      "product_note": "下方为实时嵌入的看板，建议在新标签页打开以获得完整体验。"
+      "view_products": "查看全部产品"
     }
   },
   "profile": {
@@ -893,8 +889,8 @@
   "products": [
     {
       "id": "china-econ-monitor",
-      "title": "China Economic News Monitor",
-      "title_zh": "涉华经济新闻周度监测",
+      "title": "Global China Economic Opinion Monitor & Economic Securitization Index",
+      "title_zh": "全球涉华经济舆情监测及经济安全化指数",
       "tagline": "A weekly, auto-updating monitor of how global English-language media cover China's economy: issues, countries, narratives, and a security-framing index.",
       "tagline_zh": "每周自动更新的全球英文涉华经济报道监测：议题、国别、叙事与安全框架化指数。",
       "highlights": [
