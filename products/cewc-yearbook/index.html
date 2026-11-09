@@ -42,7 +42,7 @@ header.top{border-bottom:1px solid var(--rule);padding-block:32px 22px}
 h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,4.4vw,42px);line-height:1.25;margin:8px 0 10px}
 .lede{max-width:46em;margin:0}
 .facts{display:flex;flex-wrap:wrap;gap:6px 26px;margin-top:16px;font-size:13px;color:var(--muted)}
-.facts b{font-family:var(--mono);font-weight:500;color:var(--ink);font-size:15px;margin-right:4px}
+.facts b{font-family:var(--mono);font-weight:500;color:var(--ink);font-size:15px;margin:0 4px}
 nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--rule)}
 nav.tabs .wrap{display:flex;gap:2px;overflow-x:auto}
 nav.tabs a{padding:12px 14px;color:var(--muted);text-decoration:none;font-size:14px;white-space:nowrap;border-bottom:2px solid transparent}
@@ -178,9 +178,9 @@ footer{border-top:1px solid var(--rule);padding-block:20px 40px;color:var(--mute
 <body>
 
 <header class="top"><div class="wrap">
-  <div class="eyebrow">中央经济工作会议 · 1994—2025</div>
+  <div class="eyebrow">中央经济工作会议文本库 · 1994—2025</div>
   <h1>经济工作年鉴</h1>
-  <p class="lede">把1994年以来三十多次中央经济工作会议的新闻通稿放在一起逐年读：每年提出了哪些新提法，先部署什么、后部署什么，财政和货币政策怎么定调，会议怎样谈论预期、信心和舆论。每年会议结束后更新。</p>
+  <p class="lede">本站以1994年以来历次中央经济工作会议的新闻通稿为材料，逐年整理会议提出的新提法、重点任务的部署次序、财政与货币政策的定调，以及会议有关预期、信心与舆论的表述。每年会议召开后更新。</p>
   <div class="facts" id="facts"></div>
 </div></header>
 
@@ -191,14 +191,14 @@ footer{border-top:1px solid var(--rule);padding-block:20px 40px;color:var(--mute
 <main class="wrap">
 <section class="view" id="v-brief">
   <h2>年度速览</h2>
-  <p class="sub">选一年，看这次会议和上一次比变了什么，并把每个提法放回三十年里看：它是第一次出现，还是隔了多少年又回来。年份为会议召开年份，部署的是下一年的工作。</p>
+  <p class="sub">选择年份，查看该年度会议与上一年度相比的主要变化，并将相关提法置于1994年以来的完整序列中考察：是否为首次出现，或在间隔若干年后再次使用。年份为会议召开年份，所部署的是下一年度的工作。</p>
   <div class="yearstrip" id="ystrip" role="group" aria-label="会议年份"></div>
   <div id="brief"></div>
 </section>
 
 <section class="view" id="v-terms" hidden>
   <h2>新提法</h2>
-  <p class="sub">会议通稿里第一次出现的提法，按年份和类型排成一张表。点任一提法，上方显示原句和此后的去向：有没有写进次年的政府工作报告，通稿又沿用了几年，中间有没有中断。右上角数字是此后在通稿中又出现的年数；蓝框表示2023年以后仍在使用，虚线框表示已不再使用。</p>
+  <p class="sub">收录会议通稿中首次出现的提法，按年份与类型排列。选择任一提法，可查看其首次出现的原文语境及后续使用情况，包括是否写入次年政府工作报告、此后在通稿中的沿用年数以及是否存在中断。提法右上角数字为此后在通稿中再次出现的年数；蓝框表示2023年以后仍在使用，虚线框表示已不再使用。</p>
   <div class="tstats" id="tStats"></div>
   <div class="controls"><div class="seg" role="group" aria-label="去向" id="tFate"></div></div>
   <div id="tDetail"></div>
@@ -208,7 +208,7 @@ footer{border-top:1px solid var(--rule);padding-block:20px 40px;color:var(--mute
 
 <section class="view" id="v-trends" hidden>
   <h2>长期趋势</h2>
-  <p class="sub">财政、货币政策的定调怎样分段变化；每年排在第一位的重点任务属于哪个领域；各领域在任务清单里排第几。</p>
+  <p class="sub">呈现财政与货币政策定调的阶段变化、历年首项重点任务所属领域，以及各领域在年度任务中的位次。</p>
   <h3 class="sec">政策定调</h3>
   <div class="box"><svg id="stanceSvg" role="img" aria-label="财政与货币政策定调变化"></svg></div>
   <h3 class="sec">每年的头号任务</h3>
@@ -221,7 +221,7 @@ footer{border-top:1px solid var(--rule);padding-block:20px 40px;color:var(--mute
 
 <section class="view" id="v-info" hidden>
   <h2>信息观念</h2>
-  <p class="sub">会议通稿怎样谈论预期、信心、社会心理、舆论民意和国家传播。上图每格是该年通稿中含有该类说法的句子数，点开看原句；下面是从原文中选出的转折性表述。可切换到政府工作报告作对照。</p>
+  <p class="sub">整理会议通稿中有关预期、信心、社会心理、舆论民意与国家传播的表述。上图各格为该年度通稿中包含相应表述的语句数，可点击查看原文；下方为原文中具有转折意义的表述。政府工作报告可作对照。</p>
   <div class="controls">
     <div class="seg" role="group" aria-label="文本"><button id="srcC" aria-pressed="true">会议通稿</button><button id="srcG" aria-pressed="false">对照：政府工作报告</button></div>
     <div class="seg" role="group" aria-label="预期义项"><button id="senseAll" aria-pressed="true">预期：全部义项</button><button id="senseB" aria-pressed="false">只看主体心理</button></div>
@@ -238,12 +238,12 @@ footer{border-top:1px solid var(--rule);padding-block:20px 40px;color:var(--mute
   <h2>原文</h2>
   <div class="controls"><div class="seg" role="group"><button id="tabCmp" aria-pressed="true">逐年原文</button><button id="tabSearch" aria-pressed="false">提法检索</button></div></div>
   <div id="cmpPane">
-    <p class="sub">每年通稿的重点任务清单，以及五类信息观念句子和研究者注释。</p>
+    <p class="sub">列示各年度通稿的重点任务、五类信息观念语句及研究者注释。</p>
     <div class="controls"><select id="yearSel" aria-label="年份"></select><div class="seg" role="group"><button id="yPrev">上一年</button><button id="yNext">下一年</button></div></div>
     <div id="yearBody"></div>
   </div>
   <div id="searchPane" hidden>
-    <p class="sub">在1994年以来的会议通稿中按句检索，看一个提法最早何时出现、中断过几年。需要对照时可勾选政府工作报告（浅色柱）。</p>
+    <p class="sub">在1994年以来的会议通稿中逐句检索，考察某一提法的首次出现时间与中断情况。如需对照，可同时检索政府工作报告（浅色柱）。</p>
     <div class="controls"><input type="search" id="q" placeholder="例如：以进促稳、投资于人、透明度" aria-label="检索词">
       <div class="seg" role="group"><button id="qC" aria-pressed="true">通稿</button><button id="qG" aria-pressed="false">含政府工作报告</button></div></div>
     <div class="presets" id="presets"></div>
@@ -491,7 +491,7 @@ async function init(){
   try{S.D=await (await fetch("data/site.json")).json()}catch(e){$("#brief").innerHTML=`<div class="empty">数据没有载入成功，请刷新页面。</div>`;return}
   const D=S.D;
   [...D.usages].sort((a,b)=>a.y-b.y).forEach(u=>u.w.forEach(w=>{const k=u.s+"|"+w;if(!(k in FIRST))FIRST[k]=u.y}));
-  $("#facts").innerHTML=`<span><b>32</b>次会议</span><span><b>${D.terms.length}</b>个新提法</span><span><b>${CYEARS.reduce((a,y)=>a+tasksOf(y).length,0)}</b>项重点任务</span><span><b>${D.usages.filter(u=>u.s==="C").length}</b>条信息观念句</span>`;
+  $("#facts").innerHTML=`<span>收录会议通稿<b>32</b>份</span><span>新提法<b>${D.terms.length}</b>个</span><span>重点任务<b>${CYEARS.reduce((a,y)=>a+tasksOf(y).length,0)}</b>项</span><span>信息观念语句<b>${D.usages.filter(u=>u.s==="C").length}</b>条</span>`;
   bind();renderBrief();renderTerms();renderRibbon();renderRank();renderCal();renderHist();renderCompare();route();
 }
 init();
