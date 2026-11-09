@@ -891,13 +891,13 @@
       "id": "china-econ-monitor",
       "title": "Global China Economic Opinion Monitor & Economic Securitization Index",
       "title_zh": "全球涉华经济舆情监测及经济安全化指数",
-      "tagline": "A weekly, auto-updating monitor of how global English-language media cover China's economy: issues, countries, narratives, and a security-framing index.",
+      "tagline": "Weekly monitor of how global English-language media cover China's economy.",
       "tagline_zh": "每周自动更新的全球英文涉华经济报道监测：议题、国别、叙事与安全框架化指数。",
       "highlights": [
-        "Data: GDELT Global Knowledge Graph; weekly headline-level corpus of foreign news on China's economy since 2019 Q4, with a URL-based long series back to 2015.",
-        "Measures: a security-framing index built from a validated headline coding scheme (starting from the Baele & Sterck securitization lexicon), with 95% intervals, threat/measure sub-indices and robustness checks.",
-        "Features: weekly / quarterly / annual issue rankings via semantic clustering, country-level agenda contrasts, and 36 narrative trackers in four layers.",
-        "Operations: fetched, computed and published automatically every Monday; methods, codebook and validation are documented openly."
+        "Data: GDELT news headlines, 2019 Q4 onward; URL-based series back to 2015.",
+        "Index: weekly securitization index with confidence intervals and robustness checks.",
+        "Analysis: issue rankings, country agendas and 36 narrative trackers.",
+        "Updated every Monday; methods and codebook are public."
       ],
       "highlights_zh": [
         "数据：GDELT 全球知识图谱。2019 年第四季度以来逐周的海外涉华经济报道标题库，另有基于 URL 的长期序列回溯至 2015 年。",
@@ -908,7 +908,7 @@
       "url": "https://china-econ-monitor.vercel.app/",
       "methods_url": "https://china-econ-monitor.vercel.app/methods.html",
       "image": "assets/products/china-econ-monitor.jpg",
-      "status": "Live · v1.0 · updated weekly (interface in Chinese)",
+      "status": "Live · v1.0 · weekly (Chinese interface)",
       "status_zh": "运行中 · v1.0 · 每周一更新",
       "tags": [
         "GDELT",
