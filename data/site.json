@@ -892,18 +892,18 @@
       "title": "Global China Economic Opinion Monitor & Economic Securitization Index",
       "title_zh": "全球涉华经济舆情监测及经济安全化指数",
       "tagline": "Weekly monitor of how global English-language media cover China's economy.",
-      "tagline_zh": "每周自动更新的全球英文涉华经济报道监测：议题、国别、叙事与安全框架化指数。",
+      "tagline_zh": "每周自动更新的全球英文涉华经济报道监测：议题、国别、叙事与经济安全化指数。",
       "highlights": [
         "Data: GDELT news headlines, 2019 Q4 onward; URL-based series back to 2015.",
         "Index: weekly securitization index with confidence intervals and robustness checks.",
         "Analysis: issue rankings, country agendas and 36 narrative trackers.",
-        "Updated every Monday; methods and codebook are public."
+        "Updated every Monday; methods are public."
       ],
       "highlights_zh": [
-        "数据：GDELT 全球知识图谱。2019 年第四季度以来逐周的海外涉华经济报道标题库，另有基于 URL 的长期序列回溯至 2015 年。",
-        "测量：以 Baele & Sterck 安全化词表为起点、经样本外验证的标题编码规则，构建安全框架化指数，附 95% 置信区间、话语/措施分项与稳健性检验。",
-        "功能：基于语义聚类的周/季/年议题榜、国别议程对比（加权对数几率）、四层共 36 个叙事追踪。",
-        "运行：每周一自动取数、计算、发布；方法、编码手册与验证结果全部公开。"
+        "数据：GDELT 英文新闻标题，2019 年第四季度起逐周收录；另有基于网址的长期序列回溯至 2015 年。",
+        "指数：周度经济安全化指数，附置信区间与稳健性对照。",
+        "分析：议题榜、国别议程对比与 36 个叙事追踪。",
+        "每周一自动更新；方法说明公开。"
       ],
       "url": "https://china-econ-monitor.vercel.app/",
       "methods_url": "https://china-econ-monitor.vercel.app/methods.html",
