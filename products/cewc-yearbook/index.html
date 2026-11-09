@@ -3,11 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta property="og:type" content="website">
+<meta property="og:title" content="经济工作年鉴">
+<meta property="og:description" content="1994年以来中央经济工作会议通稿逐年解读：新提法、重点任务排序、财政货币定调与信息观念。">
+<meta property="og:url" content="https://cewc-yearbook.vercel.app/">
+<meta property="og:image" content="https://cewc-yearbook.vercel.app/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="陆泓承 Lu Hongcheng">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231f4e79'/%3E%3Ctext x='32' y='46' font-size='40' text-anchor='middle' fill='%23fff' font-family='serif'%3E%E9%89%B4%3C/text%3E%3C/svg%3E">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>经济工作年鉴</title>
 <meta name="description" content="1994年以来中央经济工作会议通稿逐年解读：新提法、重点任务排序、财政货币定调与信息观念。">
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Noto+Sans+SC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: archival register — year-first reading, ruled tables, ink-blue ramp for intensity, ochre reserved for "首次" */
 :root{
@@ -15,9 +22,9 @@
   --blue:#1f4e79; --blue-soft:#e3ecf4; --ochre:#a8641a; --ochre-soft:#f6ead9;
   --h0:#eef1ee; --h1:#cddbe7; --h2:#9cbad3; --h3:#5f8fb8; --h4:#2f6596; --h5:#173f66;
   --c1:#1f4e79; --c2:#a8641a; --c3:#4f7a5a; --c4:#7a4f86; --c5:#b0423a; --c6:#3f7f95; --c7:#9aa3ab;
-  --display:"Noto Serif SC","Songti SC","STSong",serif;
-  --body:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --display:"Songti SC","STSongti-SC-Regular","Noto Serif CJK SC","Source Han Serif SC","SimSun",serif;
+  --body:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --paper:#11161b; --surface:#182028; --ink:#e4e8ec; --muted:#9aa5b0; --rule:#2c3640;
@@ -100,6 +107,7 @@ button.cell:hover{box-shadow:inset 0 0 0 1px var(--ink)}
 .bigyear{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:14px}
 .bigyear .y{font-family:var(--display);font-size:40px;font-weight:700;line-height:1}
 .bigyear .t{color:var(--muted);font-size:14px}
+.copylink{order:3;font:inherit;font-size:12.5px;border:1px solid var(--rule);background:var(--surface);color:var(--muted);border-radius:999px;padding:2px 10px;cursor:pointer}
 .bgrid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
 .s5{grid-column:span 5}.s7{grid-column:span 7}.s12{grid-column:span 12}
 @media (max-width:860px){.s5,.s7{grid-column:span 12}}
@@ -229,10 +237,10 @@ footer a{text-decoration:none}footer .mail{user-select:all}
   <h3 class="sec">政策定调</h3>
   <div class="box"><svg id="stanceSvg" role="img" aria-label="财政与货币政策定调变化"></svg></div>
   <h3 class="sec">每年的头号任务</h3>
-  <div class="box"><div id="ribbon"></div></div>
+  <div class="box scrollend"><div id="ribbon"></div></div>
   <h3 class="sec">各领域每年排第几</h3>
   <p class="sub">数字为该领域在当年任务清单中的位次，越靠前颜色越深；空格表示当年未单列。领域按任务标题关键词自动归类，点格子可看当年完整清单。</p>
-  <div class="box"><div class="grid" id="rankGrid" style="grid-template-columns:100px repeat(32,minmax(20px,1fr));min-width:860px"></div><div class="legend" id="rankLegend"></div></div>
+  <div class="box scrollend"><div class="grid" id="rankGrid" style="grid-template-columns:100px repeat(32,minmax(20px,1fr));min-width:860px"></div><div class="legend" id="rankLegend"></div></div>
   <div id="rankPanel" style="margin-top:16px"></div>
 </section>
 
@@ -243,7 +251,7 @@ footer a{text-decoration:none}footer .mail{user-select:all}
     <div class="seg" role="group" aria-label="文本"><button id="srcC" aria-pressed="true">会议通稿</button><button id="srcG" aria-pressed="false">对照：政府工作报告</button></div>
     <div class="seg" role="group" aria-label="预期义项"><button id="senseAll" aria-pressed="true">预期：全部义项</button><button id="senseB" aria-pressed="false">只看主体心理</button></div>
   </div>
-  <div class="box"><div class="grid" id="cal" style="grid-template-columns:92px repeat(33,minmax(20px,1fr));min-width:860px"></div><div class="legend" id="calLegend"></div></div>
+  <div class="box scrollend"><div class="grid" id="cal" style="grid-template-columns:92px repeat(33,minmax(20px,1fr));min-width:860px"></div><div class="legend" id="calLegend"></div></div>
   <div id="calPanel" style="margin-top:16px"></div>
   <h3 class="sec">转折性表述</h3>
   <p class="sub">引文为原文；灰字为作者解读；橙色节点表示该表述在所考察文本中首次出现。</p>
@@ -287,7 +295,7 @@ footer a{text-decoration:none}footer .mail{user-select:all}
   <p>陆泓承（清华大学新闻与传播学院）。个人主页：<a href="https://chrislu-academic-site.vercel.app/zh/" target="_blank" rel="noopener">chrislu-academic-site.vercel.app</a>；联系邮箱：<span class="mail" style="user-select:all">luhc23@mails.tsinghua.edu.cn</span>。可自由引用，请注明出处；原文版权归原发布机构。</p>
   <p class="muted" style="font-size:13.5px">建议引用：陆泓承. 经济工作年鉴：中央经济工作会议通稿逐年解读 [数据库与网站]. 2026. https://cewc-yearbook.vercel.app/ （访问日期）</p>
   <h3>更新记录</h3>
-  <p class="num" style="font-size:13px">v1.1 · 2026-11 · “原文”改为通稿全文并标注重点。<br>v1.0 · 2026-11 · 正式上线；以会议通稿为主线，政府工作报告只作对照。<br>v0.5 · 2026-11 · 重新整理结构，数据由一个构建脚本统一生成。<br>v0.4 · 新提法表。v0.3 · 年度速览。v0.2 · 部署顺序与政策定调。v0.1 · 信息观念日历。</p>
+  <p class="num" style="font-size:13px">v1.2 · 2026-11 · 改用系统字体，页面体积由约2MB降至约0.4MB；新增按年份分享的链接；统一卡片用语。<br>v1.1 · 2026-11 · “原文”改为通稿全文并标注重点。<br>v1.0 · 2026-11 · 正式上线；以会议通稿为主线，政府工作报告只作对照。<br>v0.5 · 2026-11 · 重新整理结构，数据由一个构建脚本统一生成。<br>v0.4 · 新提法表。v0.3 · 年度速览。v0.2 · 部署顺序与政策定调。v0.1 · 信息观念日历。</p>
 </section>
 </main>
 <footer><div class="wrap"><span>经济工作年鉴 · 陆泓承</span><span>个人主页：<a href="https://chrislu-academic-site.vercel.app/zh/" target="_blank" rel="noopener">chrislu-academic-site.vercel.app</a></span><span>联系邮箱：<span class="mail">luhc23@mails.tsinghua.edu.cn</span></span><span>更多研究产品：<a href="https://chrislu-academic-site.vercel.app/zh/products/" target="_blank" rel="noopener">产品页</a></span></div></footer>
@@ -321,67 +329,68 @@ const stOf=y=>S.D.stance[y]||{};
 const yearHead=(ys,cls="yr")=>ys.map(y=>`<div class="${cls}">${String(y).slice(2)}</div>`).join("");
 
 /* ===== 新提法：通用片段 ===== */
-function fate(t){const later=t.c.filter(v=>v>t.y).length;if(t.y>=2025)return "刚提出";if(!later)return "仅用一年";return t.c.some(v=>v>=2023)?"沿用至今":"已不再用"}
+function fate(t){const later=t.c.filter(v=>v>t.y).length;if(t.y>=2025)return "新近提出";if(!later)return "仅出现一年";return t.c.some(v=>v>=2023)?"沿用至今":"已不再用"}
 function lifeStrip(t){let h='<div class="life" aria-hidden="true">';for(const s of ["c","g"])for(const y of YEARS){h+=`<i class="${s}${t[s].includes(y)?" on":""}${s==="c"&&y===t.y?" f":""}"></i>`}return h+'</div><div class="lifecap">1994 ······ 2026　上：通稿　下：报告</div>'}
 function fateNotes(t){const later=t.c.filter(v=>v>t.y).length,gl=t.g.filter(v=>v>t.y),a=[];
   if(t.gBefore)a.push(`${t.gBefore}年政府工作报告已先提`);else if(t.g.includes(t.y+1))a.push("次年写入政府工作报告");else if(gl.length)a.push(`${gl[0]}年写入政府工作报告`);else if(t.y<2025)a.push("未进入政府工作报告");
-  a.push(later?`此后通稿又用${later}年`:(t.y>=2025?"刚提出":"此后通稿未再用"));
-  t.gaps.forEach(([y,g])=>a.push(`${y}年隔${g}年重提`));return a}
+  a.push(later?`此后通稿沿用${later}年`:(t.y>=2025?"新近提出":"此后通稿未再使用"));
+  t.gaps.forEach(([y,g])=>a.push(`${y}年间隔${g}年后再次使用`));return a}
 const tag=t=>`<span class="tag" style="background:var(${TCOL[t.t]})">${t.t}</span>`;
 
 /* ===== 视图：年度速览 ===== */
 function stanceRun(k,y){const v=stOf(y)[k];let a=y;while(a>1994&&stOf(a-1)[k]===v)a--;let z=a-1;while(z>=1994&&stOf(z)[k]!==v)z--;return {from:a,last:z>=1994?z:null}}
 function toneRow(lab,k,y){const cur=stOf(y)[k]||"—",prev=stOf(y-1)[k];let note="";
-  if(y>1994){const r=stanceRun(k,y);note=prev!==cur?`<small class="chg">较上年调整；${r.last?`上一次用“${cur}”是${r.last}年`:"首次使用这一定调"}</small>`:`<small>延续，自${r.from}年起连续${y-r.from+1}年</small>`}
+  if(y>1994){const r=stanceRun(k,y);note=prev!==cur?`<small class="chg">较上年调整；${r.last?`上次采用“${cur}”为${r.last}年`:"首次采用该定调"}</small>`:`<small>延续上年定调，自${r.from}年起已连续${y-r.from+1}年</small>`}
   return `<div class="k">${lab}</div><div class="v">${prev&&y>1994&&prev!==cur?`<span class="muted" style="font-weight:500">${esc(prev)}</span> → `:""}${esc(cur)}${note}</div>`}
 function renderBrief(){
   const y=S.briefY,D=S.D,T=tasksOf(y),P=tasksOf(y-1),meet=D.meet[y];
   $("#ystrip").innerHTML=CYEARS.map(v=>`<button aria-pressed="${v===y}" data-y="${v}">${v}</button>`).join("");
-  $("#ystrip").querySelectorAll("button").forEach(b=>b.onclick=()=>{S.briefY=+b.dataset.y;renderBrief()});
+  $("#ystrip").querySelectorAll("button").forEach(b=>b.onclick=()=>{S.briefY=+b.dataset.y;try{history.replaceState(null,"","#y"+S.briefY)}catch(e){}renderBrief()});
   $("#ystrip").querySelector('[aria-pressed="true"]')?.scrollIntoView({block:"nearest",inline:"center"});
-  const mv=t=>{if(!P.length)return "";const p=P.find(x=>x.cat===t.cat);if(!p)return `<span class="mv nw">新增领域</span>`;const d=p.r-t.r;return d>0?`<span class="mv up">↑${d}（去年第${p.r}）</span>`:d<0?`<span class="mv">↓${-d}（去年第${p.r}）</span>`:`<span class="mv">＝ 去年也是第${p.r}</span>`};
-  const top=t=>{if(t.r!==1)return "";const pv=CYEARS.filter(v=>v<y&&tasksOf(v)[0]?.cat===t.cat);return pv.length?`<span class="chip">上次排第一：${pv.at(-1)}年</span>`:`<span class="chip first">首次排第一</span>`};
+  const mv=t=>{if(!P.length)return "";const p=P.find(x=>x.cat===t.cat);if(!p)return `<span class="mv nw">本年新列领域</span>`;const d=p.r-t.r;return d>0?`<span class="mv up">较上年前移${d}位（上年第${p.r}项）</span>`:d<0?`<span class="mv">较上年后移${-d}位（上年第${p.r}项）</span>`:`<span class="mv">与上年位次相同（第${p.r}项）</span>`};
+  const top=t=>{if(t.r!==1)return "";const pv=CYEARS.filter(v=>v<y&&tasksOf(v)[0]?.cat===t.cat);return pv.length?`<span class="chip">上次居首：${pv.at(-1)}年</span>`:`<span class="chip first">该领域首次居首</span>`};
   const dropped=P.filter(p=>!T.find(t=>t.cat===p.cat));
   const NT=D.terms.filter(t=>t.y===y),RT=D.terms.filter(t=>t.gaps.some(([g])=>g===y));
   const QO=(D.quotes[y]||[]).filter(q=>q.prev);
   const rl=D.rules[y],rp=D.rules[y-1];
   const keyM=D.milestones.filter(m=>m.y===y&&m.s==="C");
   $("#brief").innerHTML=`
-  <div class="bigyear"><span class="y">${y}</span><span class="t">中央经济工作会议${meet?` · ${esc(meet.meet)} · 通稿 ${esc(meet.pub)}`:""} · 部署${y+1}年工作${D.themes[y]?` · 主题（作者概括）：${esc(D.themes[y])}`:""}</span></div>
+  <div class="bigyear"><span class="y">${y}</span><button class="copylink" id="copyY" title="复制本年速览的链接">复制本年链接</button><span class="t">中央经济工作会议${meet?` · ${esc(meet.meet)} · 通稿 ${esc(meet.pub)}`:""} · 部署${y+1}年工作${D.themes[y]?` · 主题（作者概括）：${esc(D.themes[y])}`:""}</span></div>
   <div class="bgrid">
    <div class="card s5"><h3>政策定调</h3><div class="tone">${toneRow("财政","f",y)}${toneRow("货币","m",y)}</div><div class="note" style="font-size:12.5px">${esc(stOf(y).fs)}</div></div>
    <div class="card s7"><h3>形势判断</h3><div class="vs"><div class="now"><div class="lbl">${y}</div><p>${esc(D.diag[y]||"本年通稿未单列问题判断。")}</p></div><div><div class="lbl">${y-1}</div><p class="muted">${esc(D.diag[y-1]||"—")}</p></div></div></div>
-   <div class="card s7"><h3>重点任务：顺序与变化</h3><ol class="tasks">${T.map(t=>`<li><span class="r">${t.r}</span><span>${esc(t.h)}<br>${mv(t)} ${top(t)}</span><span class="chip">${t.cat}</span></li>`).join("")}</ol>
-     ${dropped.length?`<div class="note">去年单列、今年未单列：${dropped.map(p=>`<b>${p.cat}</b>（去年第${p.r}）`).join("、")}</div>`:""}</div>
+   <div class="card s7"><h3>重点任务部署及其变化</h3><ol class="tasks">${T.map(t=>`<li><span class="r">${t.r}</span><span>${esc(t.h)}<br>${mv(t)} ${top(t)}</span><span class="chip">${t.cat}</span></li>`).join("")}</ol>
+     ${dropped.length?`<div class="note">上年单列、本年未单列的领域：${dropped.map(p=>`<b>${p.cat}</b>（上年第${p.r}项）`).join("、")}</div>`:""}</div>
    <div class="card s5"><h3>新提法</h3>
-     ${NT.length?`<p style="margin:0 0 6px;font-size:13px">在1994年以来的通稿中第一次出现：</p><div class="pills">${NT.map(t=>`<span class="first" title="${esc(t.ctx)}">${esc(t.k)}<small>${t.t}</small></span>`).join("")}</div>`:`<p class="sub" style="margin:0">精选清单中暂无这一年首次出现的提法。</p>`}
-     ${RT.length?`<p style="margin:12px 0 6px;font-size:13px">隔多年重新启用：</p><div class="pills">${RT.map(t=>`<span title="${esc(t.ctx)}">${esc(t.k)}<small>首见${t.y}</small></span>`).join("")}</div>`:""}
-     <p style="margin:8px 0 0;font-size:12.5px"><a href="#terms">每个提法的来龙去脉 →</a></p>
-     ${QO.length?`<p style="margin:14px 0 6px;font-size:13px">沿用的引号提法（上次出现年份）：</p><div class="pills">${QO.map(q=>`<span>${esc(q.q)}<small>${q.prev}</small></span>`).join("")}</div>`:""}
+     ${NT.length?`<p style="margin:0 0 6px;font-size:13px">在1994年以来的通稿中第一次出现：</p><div class="pills">${NT.map(t=>`<span class="first" title="${esc(t.ctx)}">${esc(t.k)}<small>${t.t}</small></span>`).join("")}</div>`:`<p class="sub" style="margin:0">精选清单暂未收录本年首次出现的提法。</p>`}
+     ${RT.length?`<p style="margin:12px 0 6px;font-size:13px">间隔多年后再次使用：</p><div class="pills">${RT.map(t=>`<span title="${esc(t.ctx)}">${esc(t.k)}<small>首见${t.y}</small></span>`).join("")}</div>`:""}
+     <p style="margin:8px 0 0;font-size:12.5px"><a href="#terms">查看各提法的演变 →</a></p>
+     ${QO.length?`<p style="margin:14px 0 6px;font-size:13px">沿用的引号提法（括号内为上次出现年份）：</p><div class="pills">${QO.map(q=>`<span>${esc(q.q)}<small>${q.prev}</small></span>`).join("")}</div>`:""}
      <h3 style="margin:18px 0 8px">经验总结${rl.anchor?`：${esc(rl.anchor)}`:""}</h3>
-     ${rl.items.length?`<ol class="rules">${rl.items.map(i=>`<li>${esc(i)}</li>`).join("")}</ol>${rp?.items.length?`<p class="sub" style="margin-top:8px">${y-1}年为：${rp.items.map(esc).join("；")}</p>`:""}`:`<p class="sub" style="margin:0">本年通稿没有单列“规律性认识”一类的经验总结。</p>`}</div>
-   <div class="card s12"><h3>信息观念这一年</h3><div class="pills" style="margin-bottom:8px">${NODES.map(n=>`<span>${n}<small>${D.usages.filter(u=>u.s==="C"&&u.y===y&&u.n===n).length}句</small></span>`).join("")}</div>
+     ${rl.items.length?`<ol class="rules">${rl.items.map(i=>`<li>${esc(i)}</li>`).join("")}</ol>${rp?.items.length?`<p class="sub" style="margin-top:8px">${y-1}年为：${rp.items.map(esc).join("；")}</p>`:""}`:`<p class="sub" style="margin:0">本年通稿未单列“规律性认识”一类的经验总结。</p>`}</div>
+   <div class="card s12"><h3>本年信息观念表述</h3><div class="pills" style="margin-bottom:8px">${NODES.map(n=>`<span>${n}<small>${D.usages.filter(u=>u.s==="C"&&u.y===y&&u.n===n).length}句</small></span>`).join("")}</div>
      ${keyM.map(m=>`<p style="margin:6px 0 2px;font-family:var(--display)">“${esc(m.q)}”</p><p class="sub" style="margin:0 0 6px">${esc(m.g)}</p>`).join("")}
      <p style="margin:6px 0 0;font-size:13px"><a href="#texts" data-goyear="${y}">阅读本年通稿全文 →</a></p></div>
   </div>`;
+  $("#copyY").onclick=async()=>{const u=location.origin+location.pathname+"#y"+y;try{await navigator.clipboard.writeText(u);$("#copyY").textContent="已复制"}catch(e){$("#copyY").textContent=u}setTimeout(()=>{const b=$("#copyY");if(b)b.textContent="复制本年链接"},2000)};
   $("#brief").querySelector("[data-goyear]").onclick=e=>{$("#yearSel").value=e.target.dataset.goyear;S.textsDone=1;renderCompare()};
 }
 
 /* ===== 视图：新提法 ===== */
 function renderTerms(){
-  const D=S.D,F=["全部","沿用至今","已不再用","仅用一年","刚提出"];
+  const D=S.D,F=["全部","沿用至今","已不再用","仅出现一年","新近提出"];
   $("#tFate").innerHTML=F.map(f=>`<button aria-pressed="${f===S.termFate}">${f}</button>`).join("");
   $("#tFate").querySelectorAll("button").forEach(b=>b.onclick=()=>{S.termFate=b.textContent;renderTerms()});
   const L=D.terms.filter(t=>S.termFate==="全部"||fate(t)===S.termFate);
   const fresh=D.terms.filter(t=>!t.gBefore&&t.y<=2024),adopt=fresh.filter(t=>t.g.includes(t.y+1)).length;
-  $("#tStats").innerHTML=`<span><b>${D.terms.length}</b>个提法</span><span><b>${adopt}/${fresh.length}</b>由通稿首提、次年即写入政府工作报告</span><span><b>${D.terms.filter(t=>t.gBefore).length}</b>个是报告先提、会议后用</span><span><b>${D.terms.filter(t=>t.gaps.length).length}</b>个隔四年以上重新启用</span>`;
+  $("#tStats").innerHTML=`<span><b>${D.terms.length}</b>个提法</span><span><b>${adopt}/${fresh.length}</b>由通稿首提、次年即写入政府工作报告</span><span><b>${D.terms.filter(t=>t.gBefore).length}</b>个是报告先提、会议后用</span><span><b>${D.terms.filter(t=>t.gaps.length).length}</b>个间隔四年以上后再次使用</span>`;
   const types=Object.keys(TCOL);
   let h=`<thead><tr><th>年份</th>${types.map(k=>`<th><span style="color:var(${TCOL[k]})">■</span> ${k}<span class="d">${TDESC[k]}</span></th>`).join("")}</tr></thead><tbody>`;
   for(const [a,b,lab] of [...ERAS].reverse()){
     const ys=[];for(let y=b;y>=a;y--)if(L.some(t=>t.y===y))ys.push(y);if(!ys.length)continue;
     h+=`<tr class="era"><td colspan="6">${lab} · ${a}—${b}年</td></tr>`;
     for(const y of ys)h+=`<tr><td class="yr">${y}</td>`+types.map(k=>`<td><div class="tc">${L.filter(t=>t.y===y&&t.t===k).map(t=>{const n=t.c.filter(v=>v>t.y).length,f=fate(t);
-      return `<button class="tb${f==="沿用至今"?" live":""}${f==="仅用一年"||f==="已不再用"?" fade":""}${S.termSel===t.k?" sel":""}" data-k="${esc(t.k)}" title="${f}">${esc(t.k)}${n?`<sup>${n}</sup>`:""}</button>`}).join("")}</div></td>`).join("")+`</tr>`}
+      return `<button class="tb${f==="沿用至今"?" live":""}${f==="仅出现一年"||f==="已不再用"?" fade":""}${S.termSel===t.k?" sel":""}" data-k="${esc(t.k)}" title="${f}">${esc(t.k)}${n?`<sup>${n}</sup>`:""}</button>`}).join("")}</div></td>`).join("")+`</tr>`}
   $("#tMatrix").innerHTML=h+"</tbody>";
   $("#tMatrix").querySelectorAll(".tb").forEach(b=>b.onclick=()=>{S.termSel=b.dataset.k;renderTerms();$("#tDetail").scrollIntoView({block:"nearest",behavior:"smooth"})});
   const t=D.terms.find(x=>x.k===S.termSel)||D.terms.filter(x=>x.y===2025)[0];
@@ -398,7 +407,7 @@ function renderStance(){
     let a=1994;for(let y=1995;y<=2026;y++){const va=stOf(a)[k];if(y===2026||stOf(y)[k]!==va){const x0=x(a),x1=x(y)-2,c=STCOL[va]||"--h0";
       g+=`<rect x="${x0}" y="${top}" width="${x1-x0}" height="36" rx="3" fill="var(${c})"><title>${a}—${y-1}：${va}</title></rect>`;
       if(x1-x0>34)g+=`<text x="${x0+6}" y="${top+23}" font-size="12.5" fill="${["--h5","--c2","--h3"].includes(c)?"var(--surface)":"var(--ink)"}">${va}</text>`;a=y}}});
-  for(let y=1994;y<=2025;y+=4)g+=`<text x="${x(y)}" y="142" font-size="11" fill="var(--muted)" font-family="IBM Plex Mono,monospace">${y}</text>`;
+  for(let y=1994;y<=2025;y+=4)g+=`<text x="${x(y)}" y="142" font-size="11" fill="var(--muted)" font-family="ui-monospace,Menlo,Consolas,monospace">${y}</text>`;
   svg.setAttribute("viewBox",`0 0 ${W} ${H}`);svg.innerHTML=g;
 }
 function renderRibbon(){
@@ -444,7 +453,7 @@ function renderCal(){
   $("#calLegend").innerHTML="句数 "+[["1",1],["2",2],["3–4",3],["5–7",4],["8+",5]].map(([l,b])=>`<span><i style="background:var(${RAMP[b]})"></i>${l}</span>`).join("")+"<span>斜线：该年无此类文本</span>";
   $("#cal").querySelectorAll("button.cell").forEach(b=>b.onclick=()=>{S.calSel={n:b.dataset.n,y:+b.dataset.y};renderCal()});
   const c=S.calSel;
-  $("#calPanel").innerHTML=c?`<h3 class="sec" style="margin-top:0">${c.y}年${SRC[S.calSrc]} · ${c.n}</h3><div class="list">${S.D.usages.filter(u=>u.s===S.calSrc&&u.n===c.n&&u.y===c.y&&useU(u)).map(usageItem).join("")}</div>`:`<div class="empty">点击上方格子查看原句。</div>`;
+  $("#calPanel").innerHTML=c?`<h3 class="sec" style="margin-top:0">${c.y}年${SRC[S.calSrc]} · ${c.n}</h3><div class="list">${S.D.usages.filter(u=>u.s===S.calSrc&&u.n===c.n&&u.y===c.y&&useU(u)).map(usageItem).join("")}</div>`:`<div class="empty">点击上方格子查看原文语句。</div>`;
 }
 function renderHist(){
   const lines=["全部",...NODES,"国家认识"];
@@ -493,12 +502,15 @@ async function runSearch(){
 }
 
 /* ===== 路由与初始化 ===== */
-const VIEWS={brief:null,terms:null,trends:()=>renderStance(),info:null,texts:()=>{if(!S.textsDone){S.textsDone=1;renderCompare()}},about:null};
+const VIEWS={brief:()=>{if(S.pendingY){S.briefY=S.pendingY;S.pendingY=null;renderBrief()}},terms:null,trends:()=>renderStance(),info:null,texts:()=>{if(!S.textsDone){S.textsDone=1;renderCompare()}},about:null};
+function scrollBoxesEnd(){document.querySelectorAll(".box.scrollend").forEach(b=>{if(b.scrollWidth>b.clientWidth+4)b.scrollLeft=b.scrollWidth})}
 function route(){
-  const v=(location.hash||"#brief").slice(1),ok=v in VIEWS?v:"brief";
+  let v=(location.hash||"#brief").slice(1);const m=v.match(/^y(\d{4})$/);if(m&&+m[1]>=1994&&+m[1]<=2025){S.pendingY=+m[1];v="brief"}const ok=v in VIEWS?v:"brief";
   document.querySelectorAll("section.view").forEach(s=>s.hidden=s.id!=="v-"+ok);
   document.querySelectorAll("nav.tabs a").forEach(a=>a.setAttribute("aria-current",a.getAttribute("href")==="#"+ok?"page":"false"));
+  if(ok!=="brief"||!m)window.scrollTo(0,0);
   VIEWS[ok]?.();
+  requestAnimationFrame(scrollBoxesEnd);
 }
 function bind(){
   $("#srcC").onclick=()=>{S.calSrc="C";S.calSel=null;pressed($("#srcC"),true);pressed($("#srcG"),false);renderCal()};
