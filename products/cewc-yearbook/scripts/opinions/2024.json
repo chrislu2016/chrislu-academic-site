@@ -1,0 +1,257 @@
+{
+ "year": 2024,
+ "updated": "2026-11-09",
+ "note": "观点均为本站对原文的概括，非原文引述；数字预测为各机构当时的判断，不代表实际结果。",
+ "summary": [
+  {
+   "k": "共识",
+   "t": "各方都把本次会议读作明确转向：财政“更加积极”、货币由“稳健”改为“适度宽松”，并提出“超常规逆周期调节”；提振消费被列为首要任务。"
+  },
+  {
+   "k": "分歧",
+   "t": "分歧在力度与效果：国内机构多给出降息降准的具体幅度，部分海外机构怀疑刺激能否扭转增长放缓；对“货币早已宽松、改名只是追认”也有不同看法。"
+  },
+  {
+   "k": "国内外差异",
+   "t": "国内解读聚焦工具和数字（赤字率、降息基点、以旧换新资金）；海外机构更关注结构性改革细节、外资准入和公共采购，以及美国新一轮关税的压力。"
+  }
+ ],
+ "topics": [
+  {
+   "id": "tone",
+   "title": "总基调：“超常规逆周期调节”与政策转向",
+   "takeaway": "国内外都认为这是近年最明显的扩张信号；海外更常追问力度未量化、改革细节不足。",
+   "positions": [
+    {
+     "src": "cfo",
+     "view": "预计全年增长5%左右，9月26日政治局会议后一揽子增量政策推动经济回升；困难包括内需不足、企业经营困难和就业压力，但强调只要信心不滑坡，办法总比困难多。"
+    },
+    {
+     "src": "nbd",
+     "view": "银河证券章俊认为会议意义重大，归纳了货币更宽松、财政更积极、提振消费等八大看点。"
+    },
+    {
+     "src": "cbd",
+     "view": "政策立场从“审慎、定向”转向更具扩张性；但可持续增长取决于结构性改革，而会议给出的改革细节有限，前景存在不确定性；预计2025年增长约4.5%，刺激或使其略高。"
+    },
+    {
+     "src": "afp",
+     "view": "Capital Economics的Julian Evans-Pritchard认为更多支持政策可能带来短期提振，但未必能阻止经济进一步放缓，刺激规模也尚不清楚。"
+    }
+   ]
+  },
+  {
+   "id": "fiscal",
+   "title": "财政：提高赤字率、加大债券发行",
+   "takeaway": "“提高赤字率”被普遍视为增量；分歧主要在扩张的持续时间和规模。",
+   "positions": [
+    {
+     "src": "cfo",
+     "view": "2025年实施更加积极的财政政策，提高赤字率，增加超长期特别国债和地方专项债发行。"
+    },
+    {
+     "src": "wt",
+     "view": "预计赤字率在未来两年累计扩大数个百分点，2025年政府债券发行总量明显上升，专项债用途扩大。"
+    },
+    {
+     "src": "hsbc",
+     "view": "预计财政立场明显加强，赤字扩大并增加超长期特别国债和地方专项债。"
+    },
+    {
+     "src": "nbd",
+     "view": "德邦证券预计2025年增长目标在5%左右，财政与货币仍有发力空间。"
+    }
+   ]
+  },
+  {
+   "id": "monetary",
+   "title": "货币：时隔多年重提“适度宽松”",
+   "takeaway": "降息降准是共识，幅度预测从20基点到60基点不等；也有观点认为实际宽松早已发生。",
+   "positions": [
+    {
+     "src": "jjck",
+     "view": "东方金诚王青预计2025年政策利率降幅可达0.5个百分点；光大证券张旭预计全年降准约1.5个百分点、降息0.2—0.3个百分点。"
+    },
+    {
+     "src": "jjck2",
+     "view": "招联董希淼认为2024年货币政策实际上已是适度宽松；广开首席产业研究院连平认为转向后可与更积极的财政形成“双宽松”组合。"
+    },
+    {
+     "src": "nbd",
+     "view": "银河证券章俊预计降息40—60个基点、降准150—250个基点。"
+    },
+    {
+     "src": "wt",
+     "view": "预计2025年降息30—40个基点、2026年再降20—30个基点，并伴随降准及LPR、房贷利率更大幅度下行。"
+    },
+    {
+     "src": "hsbc",
+     "view": "预计适时降准降息、保持流动性充裕，央行可能在二级市场买卖国债。"
+    }
+   ],
+   "divergence": "降息幅度：国内机构预测从20—30基点（光大张旭）到40—60基点（银河章俊）不等。"
+  },
+  {
+   "id": "demand",
+   "title": "提振消费：首次单列为首要任务",
+   "takeaway": "各方都认可“提振消费专项行动”的方向；分歧在于收入和社保投入能否足以改善居民信心。",
+   "positions": [
+    {
+     "src": "cfo",
+     "view": "实施提振消费专项行动，提高居民收入和社保水平，加力扩围“两新”；发展医疗、养老、托育等服务消费和首发经济、冰雪经济、银发经济。"
+    },
+    {
+     "src": "wt",
+     "view": "预计以旧换新补贴大致翻倍至3000亿元以上；养老金和医保补助提高将逐步改善信心，但2025年社保支出增幅可能有限。"
+    },
+    {
+     "src": "cbd",
+     "view": "提振消费是2025年首要任务，途径包括增收、减负和提高养老金；持续的消费复苏需要恢复信心。"
+    },
+    {
+     "src": "eucc",
+     "view": "欢迎更明确的需求侧刺激，并认为这说明此前措施力度不足；但通稿对如何提振需求的具体安排着墨有限。"
+    }
+   ]
+  },
+  {
+   "id": "property",
+   "title": "稳住楼市股市",
+   "takeaway": "“稳住楼市股市”首次写入，国内更多从资产价格和预期角度解读；海外机构普遍预期支持加码，但不认为房地产会重新成为增长引擎。",
+   "positions": [
+    {
+     "src": "cfo",
+     "view": "稳住楼市股市是稳预期的重要内容；持续用力推动房地产止跌回稳，加力实施城中村和危旧房改造，用专项债收购存量商品房，构建房地产发展新模式。"
+    },
+    {
+     "src": "nbd",
+     "view": "创金合信基金魏凤春认为无风险利率和风险溢价下降将支撑估值，股市先受益于利率下行、后受益于盈利修复；偏好硬科技。"
+    },
+    {
+     "src": "hsbc",
+     "view": "政策层已将住房视为具有系统重要性，若现有政策不足以稳住市场，预计会推出更有力的措施。"
+    },
+    {
+     "src": "cbd",
+     "view": "预计对房地产的支持会加大，但房地产不会重回主要增长动力，重点转向管控土地供应和盘活存量住房。"
+    },
+    {
+     "src": "wt",
+     "view": "城中村改造提速有助于去库存，银行信贷支持保交房；关键在执行。"
+    }
+   ]
+  },
+  {
+   "id": "external",
+   "title": "对外开放与外部压力",
+   "takeaway": "官方强调制度型开放和多元化市场；海外商会认为对外资的着墨少于上年，海外报道普遍把会议放在美国新一轮关税的背景下解读。",
+   "positions": [
+    {
+     "src": "cfo",
+     "view": "扩大制度型开放，主动对接CPTPP、DEPA等高标准规则，支持企业开拓多元化市场，扩大免签。"
+    },
+    {
+     "src": "eucc",
+     "view": "通稿对外资的论述比2023年更少，鼓励外资的方案似乎仍在酝酿；希望更多关注市场准入和公共采购等长期问题以恢复企业信心。"
+    },
+    {
+     "src": "hsbc",
+     "view": "11月出口同比增长6.7%，部分来自美国加征关税前的抢出口；下一步或减少贸易和投资限制。"
+    }
+   ]
+  }
+ ],
+ "blindspot": "本年通稿新写入“加强预期管理”，与“稳住楼市股市”一起构成稳预期的表述；所收录的解读多把它当作资产价格政策，很少讨论预期管理本身。",
+ "sources": [
+  {
+   "id": "cfo",
+   "org": "中央财办",
+   "who": "有关负责同志",
+   "type": "官方",
+   "title": "中央财办有关负责同志深入解读2024年中央经济工作会议精神",
+   "outlet": "科技日报（转新华社）",
+   "date": "2024-12-16",
+   "url": "https://www.stdaily.com/web/2024-12/16/content_274275.html"
+  },
+  {
+   "id": "nbd",
+   "org": "每日经济新闻",
+   "who": "引述银河证券章俊、创金合信基金魏凤春、德邦证券",
+   "type": "国内机构",
+   "title": "中央经济工作会议定调 A股跨年行情有启动迹象",
+   "outlet": "每日经济新闻",
+   "date": "2024-12-15",
+   "url": "https://www.nbd.com.cn/articles/2024-12-15/3686550.html"
+  },
+  {
+   "id": "jjck",
+   "org": "经济参考报",
+   "who": "引述东方金诚王青、光大证券张旭",
+   "type": "国内机构",
+   "title": "货币政策开启“适度宽松”周期 适时降息降准可期",
+   "outlet": "经济参考报（新华网转载）",
+   "date": "2024-12-17",
+   "url": "https://www.news.cn/fortune/20241217/a7411923ad6044df98e5736e9d7faf11/c.html"
+  },
+  {
+   "id": "jjck2",
+   "org": "经济参考报",
+   "who": "引述招联董希淼、广开首席产业研究院连平",
+   "type": "国内学者",
+   "title": "货币政策开启“适度宽松”周期 适时降息降准可期",
+   "outlet": "经济参考报（新华网转载）",
+   "date": "2024-12-17",
+   "url": "https://www.news.cn/fortune/20241217/a7411923ad6044df98e5736e9d7faf11/c.html"
+  },
+  {
+   "id": "wt",
+   "org": "财新",
+   "who": "专栏作者汪涛",
+   "type": "国内机构",
+   "title": "Wang Tao: Raising the Deficit Ratio, Further Interest Rate Cuts and Increasing Policy Support — Analysis of the Central Economic Work Conference",
+   "outlet": "Caixin Global（付费文章，据页面摘要整理）",
+   "date": "2024-12-13",
+   "url": "https://www.caixinglobal.com/2024-12-13/wang-tao-raising-the-deficit-ratio-further-interest-rate-cuts-and-increasing-policy-support-analysis-of-the-central-economic-work-conference-102267898.html"
+  },
+  {
+   "id": "afp",
+   "org": "AFP",
+   "who": "法新社报道（引述Capital Economics）",
+   "type": "海外媒体",
+   "title": "China zeroes in on weak consumption at key economic meeting",
+   "outlet": "AFP（TerraDaily转载）",
+   "date": "2024-12-12",
+   "url": "https://www.terradaily.com/reports/China_zeroes_in_on_weak_consumption_at_key_economic_meeting_999.html"
+  },
+  {
+   "id": "hsbc",
+   "org": "HSBC",
+   "who": "汇丰环球投资管理",
+   "type": "海外机构",
+   "title": "China's Central Economic Work Conference 2024: Building resolve in the face of uncertainties",
+   "outlet": "HSBC",
+   "date": "2024-12-17",
+   "url": "https://hsbc.com.hk/wealth/insights/market-outlook/china-in-focus/2024-12"
+  },
+  {
+   "id": "cbd",
+   "org": "The Conference Board",
+   "who": "Alfredo Montufar-Helu",
+   "type": "海外智库",
+   "title": "China Policy Brief: China 2024 Central Economic Work Conference",
+   "outlet": "The Conference Board",
+   "date": "2024-12-19",
+   "url": "https://conference-board.org/publications/China-Policy-Brief-China-2024-Central-Economic-Work-Conference"
+  },
+  {
+   "id": "eucc",
+   "org": "中国欧盟商会",
+   "who": "商会立场声明",
+   "type": "海外商会",
+   "title": "Stance on 2024 Annual Central Economic Work Conference",
+   "outlet": "European Chamber",
+   "date": "2024-12-20",
+   "url": "https://www.europeanchamber.com.cn/en/press-releases/3680/stance_on_2024_annual_central_economic_work_conference"
+  }
+ ]
+}

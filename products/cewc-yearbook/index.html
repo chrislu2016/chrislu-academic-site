@@ -271,6 +271,7 @@ footer a{text-decoration:none}footer .mail{user-select:all}
 <section class="view" id="v-views" hidden>
   <h2>舆情与评价</h2>
   <p class="sub">汇集会议闭幕后国内外机构、学者与媒体的公开解读，按议题整理为观点地图：各方的共识、分歧，以及国内与海外关注点的差异。每条观点均为本站对原文的概括并附出处链接；数字预测为各机构发布时的判断，不代表实际结果。</p>
+  <div class="yearstrip" id="opYears" role="group" aria-label="会议年份"></div>
   <div class="controls"><div class="seg" role="group" aria-label="来源" id="opFilter"></div></div>
   <div id="opBody"></div>
 </section>
@@ -384,12 +385,13 @@ function renderBrief(){
      ${QO.length?`<p style="margin:14px 0 6px;font-size:13px">沿用的引号提法（括号内为上次出现年份）：</p><div class="pills">${QO.map(q=>`<span>${esc(q.q)}<small>${q.prev}</small></span>`).join("")}</div>`:""}
      <h3 style="margin:18px 0 8px">经验总结${rl.anchor?`：${esc(rl.anchor)}`:""}</h3>
      ${rl.items.length?`<ol class="rules">${rl.items.map(i=>`<li>${esc(i)}</li>`).join("")}</ol>${rp?.items.length?`<p class="sub" style="margin-top:8px">${y-1}年为：${rp.items.map(esc).join("；")}</p>`:""}`:`<p class="sub" style="margin:0">本年通稿未单列“规律性认识”一类的经验总结。</p>`}</div>
-   ${D.opinions?.[y]?`<div class="card s12"><h3>会后舆情与评价</h3><div class="opsum" style="margin:0">${D.opinions[y].summary.map(x=>`<div><b style="font-size:12.5px;color:var(--muted);font-weight:500">${x.k}</b><p style="margin:2px 0 0;font-size:13.5px">${esc(x.t)}</p></div>`).join("")}</div><p style="margin:10px 0 0;font-size:13px"><a href="#views">按议题查看${D.opinions[y].sources.length}篇国内外解读 →</a></p></div>`:""}
+   ${D.opinions?.[y]?`<div class="card s12"><h3>会后舆情与评价</h3><div class="opsum" style="margin:0">${D.opinions[y].summary.map(x=>`<div><b style="font-size:12.5px;color:var(--muted);font-weight:500">${x.k}</b><p style="margin:2px 0 0;font-size:13.5px">${esc(x.t)}</p></div>`).join("")}</div><p style="margin:10px 0 0;font-size:13px"><a href="#views" data-opy="${y}">按议题查看${D.opinions[y].sources.length}篇国内外解读 →</a></p></div>`:""}
    <div class="card s12"><h3>本年信息观念表述</h3><div class="pills" style="margin-bottom:8px">${NODES.map(n=>`<span>${n}<small>${D.usages.filter(u=>u.s==="C"&&u.y===y&&u.n===n).length}句</small></span>`).join("")}</div>
      ${keyM.map(m=>`<p style="margin:6px 0 2px;font-family:var(--display)">“${esc(m.q)}”</p><p class="sub" style="margin:0 0 6px">${esc(m.g)}</p>`).join("")}
      <p style="margin:6px 0 0;font-size:13px"><a href="#texts" data-goyear="${y}">阅读本年通稿全文 →</a></p></div>
   </div>`;
   $("#copyY").onclick=async()=>{const u=location.origin+location.pathname+"#y"+y;try{await navigator.clipboard.writeText(u);$("#copyY").textContent="已复制"}catch(e){$("#copyY").textContent=u}setTimeout(()=>{const b=$("#copyY");if(b)b.textContent="复制本年链接"},2000)};
+  const oy=$("#brief").querySelector("[data-opy]");if(oy)oy.onclick=()=>{S.opY=oy.dataset.opy;S.viewsDone=1;renderViews()};
   $("#brief").querySelector("[data-goyear]").onclick=e=>{$("#yearSel").value=e.target.dataset.goyear;S.textsDone=1;renderCompare()};
 }
 
@@ -523,7 +525,10 @@ const isFor=x=>/^海外/.test(x.type);
 function opWho(o,x){return `<div class="who">${esc(x.org)}${x.who?` · ${esc(x.who)}`:""} · ${x.date}${x.url?` · <a href="${esc(x.url)}" target="_blank" rel="noopener">原文</a>`:` · ${esc(x.outlet)}`}</div>`}
 function renderViews(){
   const ys=Object.keys(S.D.opinions||{}).sort();if(!ys.length){$("#opBody").innerHTML=`<div class="empty">暂无收录。</div>`;return}
-  const o=S.D.opinions[ys.at(-1)],src=Object.fromEntries(o.sources.map(x=>[x.id,x])),F=["全部","国内","海外"];
+  if(!S.opY||!S.D.opinions[S.opY])S.opY=ys.at(-1);
+  $("#opYears").innerHTML=ys.map(v=>`<button aria-pressed="${v===S.opY}" data-y="${v}">${v}</button>`).join("");
+  $("#opYears").querySelectorAll("button").forEach(b=>b.onclick=()=>{S.opY=b.dataset.y;renderViews()});
+  const o=S.D.opinions[S.opY],src=Object.fromEntries(o.sources.map(x=>[x.id,x])),F=["全部","国内","海外"];
   $("#opFilter").innerHTML=F.map(f=>`<button aria-pressed="${f===(S.opF||"全部")}">${f}</button>`).join("");
   $("#opFilter").querySelectorAll("button").forEach(b=>b.onclick=()=>{S.opF=b.textContent;renderViews()});
   const keep=x=>!S.opF||S.opF==="全部"||(S.opF==="海外")===isFor(x);
@@ -568,7 +573,7 @@ function bind(){
   window.addEventListener("hashchange",route);
   window.addEventListener("resize",()=>{if(!$("#v-trends").hidden)renderStance()});
 }
-const DV="20261109b";
+const DV="20261109c";
 async function init(){
   try{S.D=await (await fetch("data/site.json?v="+DV)).json()}catch(e){$("#brief").innerHTML=`<div class="empty">数据没有载入成功，请刷新页面。</div>`;return}
   const D=S.D;
