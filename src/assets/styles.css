@@ -737,3 +737,97 @@ code {
     grid-template-columns: 1fr;
   }
 }
+
+/* ---------- Research products ---------- */
+.product-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.product-shot {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.product-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.product-shot:hover img {
+  transform: scale(1.015);
+}
+
+.product-body h3 {
+  margin: 0.2rem 0 0.5rem;
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+.product-tagline {
+  margin: 0 0 0.75rem;
+  color: var(--ink);
+}
+
+.product-points {
+  margin: 0 0 0.9rem;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.product-points li {
+  margin: 0.3rem 0;
+}
+
+.product-body .research-tags {
+  margin-bottom: 1rem;
+}
+
+.product-list {
+  display: grid;
+  gap: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+.product-embed {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.product-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.product-embed iframe {
+  width: 100%;
+  height: 82vh;
+  min-height: 560px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+@media (max-width: 860px) {
+  .product-card {
+    grid-template-columns: 1fr;
+  }
+
+  .product-embed iframe {
+    height: 70vh;
+    min-height: 480px;
+  }
+}

@@ -14,7 +14,8 @@
         "publications": "Publications",
         "media": "Media",
         "cv": "CV",
-        "data": "Data"
+        "data": "Data",
+        "products": "Products"
       },
       "home": "Home",
       "publications": "Publications",
@@ -82,7 +83,16 @@
       "media_intro": "Videos use native browser playback with metadata-only preload to avoid unwanted downloads.",
       "data_title": "Project archive and research materials.",
       "data_intro": "A growing repository for papers, slides, datasets, codebooks, replication materials, and project attachments.",
-      "languages": "Languages"
+      "languages": "Languages",
+      "products": "Products",
+      "products_eyebrow": "Research products",
+      "products_title": "Research products",
+      "products_intro": "Open, continuously updated research tools built from my work on economic communication and China's international image.",
+      "open_product": "Open dashboard",
+      "product_methods": "Methods & validation",
+      "live_preview": "Live preview",
+      "view_products": "View all products",
+      "product_note": "The embedded view below is the live dashboard. Open it in a new tab for the full experience."
     },
     "zh": {
       "nav": {
@@ -90,7 +100,8 @@
         "publications": "成果",
         "media": "媒体",
         "cv": "简历",
-        "data": "资料库"
+        "data": "资料库",
+        "products": "产品"
       },
       "home": "首页",
       "publications": "学术成果",
@@ -158,7 +169,16 @@
       "media_intro": "视频使用浏览器原生播放，并仅预加载元数据，避免打开页面时自动下载。",
       "data_title": "项目资料库与研究材料",
       "data_intro": "用于持续整理论文、幻灯片、数据集、编码本、复现材料与项目附件。",
-      "languages": "语言能力"
+      "languages": "语言能力",
+      "products": "产品",
+      "products_eyebrow": "研究产品",
+      "products_title": "研究产品",
+      "products_intro": "基于经济传播与中国国际形象研究开发、持续更新的开放研究工具。",
+      "open_product": "打开看板",
+      "product_methods": "方法与验证",
+      "live_preview": "实时预览",
+      "view_products": "查看全部产品",
+      "product_note": "下方为实时嵌入的看板，建议在新标签页打开以获得完整体验。"
     }
   },
   "profile": {
@@ -868,6 +888,48 @@
       "description_zh": "预留给未来可公开的数据集、编码本、标注文件和复现材料。",
       "visibility": "private",
       "files": []
+    }
+  ],
+  "products": [
+    {
+      "id": "china-econ-monitor",
+      "title": "China Economic News Monitor",
+      "title_zh": "涉华经济新闻周度监测",
+      "tagline": "A weekly, auto-updating monitor of how global English-language media cover China's economy: issues, countries, narratives, and a security-framing index.",
+      "tagline_zh": "每周自动更新的全球英文涉华经济报道监测：议题、国别、叙事与安全框架化指数。",
+      "highlights": [
+        "Data: GDELT Global Knowledge Graph; weekly headline-level corpus of foreign news on China's economy since 2019 Q4, with a URL-based long series back to 2015.",
+        "Measures: a security-framing index built from a validated headline coding scheme (starting from the Baele & Sterck securitization lexicon), with 95% intervals, threat/measure sub-indices and robustness checks.",
+        "Features: weekly / quarterly / annual issue rankings via semantic clustering, country-level agenda contrasts, and 36 narrative trackers in four layers.",
+        "Operations: fetched, computed and published automatically every Monday; methods, codebook and validation are documented openly."
+      ],
+      "highlights_zh": [
+        "数据：GDELT 全球知识图谱。2019 年第四季度以来逐周的海外涉华经济报道标题库，另有基于 URL 的长期序列回溯至 2015 年。",
+        "测量：以 Baele & Sterck 安全化词表为起点、经样本外验证的标题编码规则，构建安全框架化指数，附 95% 置信区间、话语/措施分项与稳健性检验。",
+        "功能：基于语义聚类的周/季/年议题榜、国别议程对比（加权对数几率）、四层共 36 个叙事追踪。",
+        "运行：每周一自动取数、计算、发布；方法、编码手册与验证结果全部公开。"
+      ],
+      "url": "https://china-econ-monitor.vercel.app/",
+      "methods_url": "https://china-econ-monitor.vercel.app/methods.html",
+      "image": "assets/products/china-econ-monitor.jpg",
+      "status": "Live · v1.0 · updated weekly (interface in Chinese)",
+      "status_zh": "运行中 · v1.0 · 每周一更新",
+      "tags": [
+        "GDELT",
+        "Securitization",
+        "Computational communication",
+        "LLM-assisted",
+        "Python",
+        "GitHub Actions"
+      ],
+      "tags_zh": [
+        "GDELT",
+        "安全化",
+        "计算传播",
+        "大模型辅助",
+        "Python",
+        "GitHub Actions"
+      ]
     }
   ]
 }

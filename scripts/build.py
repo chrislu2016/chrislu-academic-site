@@ -102,6 +102,7 @@ def nav(data: dict, lang: str, active: str, depth: int, page_path: str) -> str:
         ("home", ""),
         ("publications", "publications/"),
         ("media", "media/"),
+        ("products", "products/"),
         ("cv", "cv/"),
         ("data", "data/"),
     ]
@@ -364,6 +365,7 @@ def render_home(data: dict, lang: str) -> str:
     <section class="wrap stats-grid" aria-label="{h(ui["academic_highlights"])}">
       {stat_block(data, lang)}
     </section>
+    {section(ui["products"], ui["products_eyebrow"], "".join(product_card(data, item, lang, depth) for item in data.get("products", [])) + f'<p class="section-link"><a href="products/">{h(ui["view_products"])}</a></p>') if data.get("products") else ""}
     {section(ui["education"], ui["education_eyebrow"], f'<div class="timeline">{timeline(data, data["education"], lang)}</div>', "education-first")}
     <section class="band">
       <div class="wrap section-heading">
@@ -490,6 +492,52 @@ def render_cv(data: dict, lang: str) -> str:
     return layout(data, lang, "cv", "cv", "cv/", body, depth)
 
 
+def product_card(data: dict, item: dict, lang: str, depth: int, featured: bool = False) -> str:
+    ui = data["ui"][lang]
+    tags = item.get(f"tags_{lang}", item.get("tags", []))
+    highlights = item.get(f"highlights_{lang}", item.get("highlights", []))
+    bullets = "".join(f"<li>{h(x)}</li>" for x in highlights)
+    cls = "product-card featured" if featured else "product-card"
+    return f"""<article class="{cls}">
+      <a class="product-shot" href="{h(item["url"])}" target="_blank" rel="noopener">
+        <img src="{h(local_url(item["image"], depth))}" alt="{h(item_text(item, "title", lang))}" loading="lazy">
+      </a>
+      <div class="product-body">
+        <p class="eyebrow">{h(item_text(item, "status", lang))}</p>
+        <h3>{h(item_text(item, "title", lang))}</h3>
+        <p class="product-tagline">{h(item_text(item, "tagline", lang))}</p>
+        <ul class="product-points">{bullets}</ul>
+        <div class="research-tags">{chips(tags)}</div>
+        <div class="button-row">
+          <a class="button primary" href="{h(item["url"])}" target="_blank" rel="noopener">{h(ui["open_product"])}</a>
+          <a class="button ghost" href="{h(item["methods_url"])}" target="_blank" rel="noopener">{h(ui["product_methods"])}</a>
+        </div>
+      </div>
+    </article>"""
+
+
+def render_products(data: dict, lang: str) -> str:
+    ui = data["ui"][lang]
+    depth = 2
+    blocks = []
+    for item in data.get("products", []):
+        blocks.append(f"""{product_card(data, item, lang, depth, featured=True)}
+    <div class="product-embed">
+      <p class="eyebrow">{h(ui["live_preview"])}</p>
+      <p class="product-note">{h(ui["product_note"])}</p>
+      <iframe src="{h(item["url"])}" title="{h(item_text(item, "title", lang))}" loading="lazy" referrerpolicy="no-referrer"></iframe>
+    </div>""")
+    body = f"""<section class="page-hero wrap">
+      <p class="eyebrow">{h(ui["products_eyebrow"])}</p>
+      <h1>{h(ui["products_title"])}</h1>
+      <p>{h(ui["products_intro"])}</p>
+    </section>
+    <section class="wrap product-list">
+      {''.join(blocks)}
+    </section>"""
+    return layout(data, lang, "products", "products", "products/", body, depth)
+
+
 def render_data(data: dict, lang: str) -> str:
     ui = data["ui"][lang]
     depth = 2
@@ -575,6 +623,7 @@ def build() -> None:
         write(DOCS / lang / "media" / "index.html", render_media_index(data, lang))
         for item in data["media"]:
             write(DOCS / lang / "media" / item["id"] / "index.html", render_media_detail(data, lang, item))
+        write(DOCS / lang / "products" / "index.html", render_products(data, lang))
         write(DOCS / lang / "cv" / "index.html", render_cv(data, lang))
         write(DOCS / lang / "data" / "index.html", render_data(data, lang))
 
