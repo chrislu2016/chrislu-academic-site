@@ -168,6 +168,19 @@ button.cell:hover{box-shadow:inset 0 0 0 1px var(--ink)}
 .presets{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;align-items:center;font-size:12.5px;color:var(--muted)}
 .presets button{font:inherit;font-size:12.5px;border:1px dashed var(--rule);background:none;color:var(--muted);border-radius:999px;padding:3px 10px;cursor:pointer}
 
+
+.marks{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;font-size:13px}
+.marks label{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--rule);border-radius:999px;padding:3px 10px;background:var(--surface);cursor:pointer}
+.marks i{display:inline-block;width:18px;height:12px;border-radius:2px}
+.doc{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:clamp(18px,4vw,40px);max-width:820px}
+.doc h3{font-family:var(--display);font-size:22px;margin:0 0 6px;text-align:center}
+.doc .dm{color:var(--muted);font-size:13px;text-align:center;margin:0 0 22px}
+.doc p{margin:0 0 1em;font-size:15.5px;line-height:1.95;text-indent:2em}
+.doc .x-nt{background:var(--ochre-soft);border-bottom:2px solid var(--ochre);padding:0 1px}
+.doc .x-tk{font-weight:700;color:var(--blue)}
+.doc .x-st{border-bottom:2px solid var(--h3)}
+.doc .x-iw{background:var(--blue-soft);border-radius:2px;padding:0 1px}
+.doc.off-nt .x-nt{background:none;border:0}.doc.off-tk .x-tk{font-weight:inherit;color:inherit}.doc.off-st .x-st{border:0}.doc.off-iw .x-iw{background:none}
 .about{max-width:48em}.about h3{font-size:16px;margin:24px 0 6px}
 .about table{border-collapse:collapse;font-size:13.5px;width:100%}
 .about td,.about th{border-bottom:1px solid var(--rule);padding:6px 8px;text-align:left;vertical-align:top}
@@ -236,9 +249,9 @@ footer{border-top:1px solid var(--rule);padding-block:20px 40px;color:var(--mute
 
 <section class="view" id="v-texts" hidden>
   <h2>原文</h2>
-  <div class="controls"><div class="seg" role="group"><button id="tabCmp" aria-pressed="true">逐年原文</button><button id="tabSearch" aria-pressed="false">提法检索</button></div></div>
+  <div class="controls"><div class="seg" role="group"><button id="tabCmp" aria-pressed="true">通稿全文</button><button id="tabSearch" aria-pressed="false">提法检索</button></div></div>
   <div id="cmpPane">
-    <p class="sub">列示各年度通稿的重点任务、五类信息观念语句及研究者注释。</p>
+    <p class="sub">各年度会议新闻通稿全文。文中标出本年新提法、重点任务、财政与货币政策定调及信息观念用语，可按类型显示或隐藏。</p>
     <div class="controls"><select id="yearSel" aria-label="年份"></select><div class="seg" role="group"><button id="yPrev">上一年</button><button id="yNext">下一年</button></div></div>
     <div id="yearBody"></div>
   </div>
@@ -269,7 +282,7 @@ footer{border-top:1px solid var(--rule);padding-block:20px 40px;color:var(--mute
   <h3>作者</h3>
   <p>陆泓承（清华大学新闻与传播学院）。可自由引用，请注明出处；原文版权归原发布机构。</p>
   <h3>更新记录</h3>
-  <p class="num" style="font-size:13px">v1.0 · 2026-11 · 正式上线；以会议通稿为主线，政府工作报告只作对照。<br>v0.5 · 2026-11 · 重新整理结构，数据由一个构建脚本统一生成。<br>v0.4 · 新提法表。v0.3 · 年度速览。v0.2 · 部署顺序与政策定调。v0.1 · 信息观念日历。</p>
+  <p class="num" style="font-size:13px">v1.1 · 2026-11 · “原文”改为通稿全文并标注重点。<br>v1.0 · 2026-11 · 正式上线；以会议通稿为主线，政府工作报告只作对照。<br>v0.5 · 2026-11 · 重新整理结构，数据由一个构建脚本统一生成。<br>v0.4 · 新提法表。v0.3 · 年度速览。v0.2 · 部署顺序与政策定调。v0.1 · 信息观念日历。</p>
 </section>
 </main>
 <footer><div class="wrap">经济工作年鉴 · 数据与编码持续修订中 · 陆泓承</div></footer>
@@ -344,9 +357,9 @@ function renderBrief(){
      ${rl.items.length?`<ol class="rules">${rl.items.map(i=>`<li>${esc(i)}</li>`).join("")}</ol>${rp?.items.length?`<p class="sub" style="margin-top:8px">${y-1}年为：${rp.items.map(esc).join("；")}</p>`:""}`:`<p class="sub" style="margin:0">本年通稿没有单列“规律性认识”一类的经验总结。</p>`}</div>
    <div class="card s12"><h3>信息观念这一年</h3><div class="pills" style="margin-bottom:8px">${NODES.map(n=>`<span>${n}<small>${D.usages.filter(u=>u.s==="C"&&u.y===y&&u.n===n).length}句</small></span>`).join("")}</div>
      ${keyM.map(m=>`<p style="margin:6px 0 2px;font-family:var(--display)">“${esc(m.q)}”</p><p class="sub" style="margin:0 0 6px">${esc(m.g)}</p>`).join("")}
-     <p style="margin:6px 0 0;font-size:13px"><a href="#texts" data-goyear="${y}">在原文里查看这一年的全部相关句子 →</a></p></div>
+     <p style="margin:6px 0 0;font-size:13px"><a href="#texts" data-goyear="${y}">阅读本年通稿全文 →</a></p></div>
   </div>`;
-  $("#brief").querySelector("[data-goyear]").onclick=e=>{$("#yearSel").value=e.target.dataset.goyear;renderCompare()};
+  $("#brief").querySelector("[data-goyear]").onclick=e=>{$("#yearSel").value=e.target.dataset.goyear;S.textsDone=1;renderCompare()};
 }
 
 /* ===== 视图：新提法 ===== */
@@ -436,13 +449,28 @@ function renderHist(){
 }
 
 /* ===== 视图：原文 ===== */
-function renderCompare(){
-  const y=+$("#yearSel").value,D=S.D,meet=D.meet[y],T=tasksOf(y),extra=D.ann.filter(a=>a.y===y&&a.match==null);
-  const body=NODES.map(n=>{const L=D.usages.filter(u=>u.s==="C"&&u.y===y&&u.n===n);return L.length?`<div class="nodehdr">${n}<span class="n">${L.length}</span></div><div class="list">${L.map(usageItem).join("")}</div>`:""}).join("")||`<div class="empty">本年通稿无相关句子。</div>`;
-  $("#yearBody").innerHTML=`<p class="sub">${y}年中央经济工作会议${meet?`（${esc(meet.meet)}，通稿${esc(meet.pub)}）`:""} · 部署${y+1}年工作 · <a href="#brief" id="cmpBrief">看这一年的速览 →</a></p>
-   ${T.length?`<div class="nodehdr">重点任务<span class="n">${T.length}</span></div><ol class="tasks">${T.map(t=>`<li><span class="r">${t.r}</span><span>${esc(t.h)}</span><span class="chip">${t.cat}</span></li>`).join("")}</ol>`:""}
-   <h3 class="sec">信息观念句子</h3>${body}
-   ${extra.length?`<div class="nodehdr">其他研究者注释<span class="n">${extra.length}</span></div><div class="list">${extra.map(a=>`<div class="item"><div class="meta">${a.rank?`<span class="chip">${esc(a.rank)}</span>`:""}</div><p>${esc(a.e)}</p><div class="note"><b>研究者注释</b>　${esc(a.open)}</div></div>`).join("")}</div>`:""}`;
+function markPara(t,keys){
+  const R=[];for(const k of keys){if(!k.s)continue;let i=t.indexOf(k.s);while(i>=0){R.push([i,i+k.s.length,k]);i=t.indexOf(k.s,i+k.s.length)}}
+  const re=/(更加积极|积极|稳健|适度从紧|适度宽松|从紧|适当)的(财政政策|货币政策|财政货币政策)/g;let m;while((m=re.exec(t)))R.push([m.index,m.index+m[0].length,{c:"st",p:1}]);
+  R.sort((a,b)=>a[0]-b[0]||(b[1]-b[0])-(a[1]-a[0])||a[2].p-b[2].p);
+  let out="",pos=0;for(const [s0,e,k] of R){if(s0<pos)continue;out+=esc(t.slice(pos,s0))+`<span class="x-${k.c}"${k.title?` title="${esc(k.title)}"`:""}>${esc(t.slice(s0,e))}</span>`;pos=e}
+  return out+esc(t.slice(pos));
+}
+async function renderCompare(){
+  const y=+$("#yearSel").value,D=S.D,meet=D.meet[y];
+  if(!S.full){$("#yearBody").innerHTML=`<div class="empty">正在载入全文……</div>`;try{S.full=await (await fetch("data/fulltext.json")).json()}catch(e){$("#yearBody").innerHTML=`<div class="empty">全文没有载入成功，请刷新页面再试。</div>`;return}}
+  const P=S.full[y]||[];
+  const words=new Set();D.usages.filter(u=>u.s==="C"&&u.y===y).forEach(u=>u.w.forEach(w=>words.add(w)));
+  const keys=[...D.terms.filter(t=>t.y===y).map(t=>({s:t.k,c:"nt",p:0,title:`新提法 · ${t.t}`})),
+    ...tasksOf(y).map(t=>({s:t.h,c:"tk",p:2,title:`重点任务第${t.r}项 · ${t.cat}`})),
+    ...[...words].map(w=>({s:w,c:"iw",p:3}))];
+  const off=S.off||(S.off={});
+  const M=[["nt","本年新提法","background:var(--ochre-soft);border-bottom:2px solid var(--ochre)"],["tk","重点任务","background:var(--blue);opacity:.8"],["st","政策定调","border-bottom:2px solid var(--h3)"],["iw","信息观念用语","background:var(--blue-soft)"]];
+  const title=P[0]||"",body=P.slice(1);
+  $("#yearBody").innerHTML=`<div class="marks">${M.map(([k,l,st])=>`<label><input type="checkbox" data-k="${k}" ${off[k]?"":"checked"}><i style="${st}"></i>${l}</label>`).join("")}<a href="#brief" id="cmpBrief" style="align-self:center;margin-left:auto;font-size:13px">看这一年的速览 →</a></div>
+   <article class="doc ${Object.keys(off).filter(k=>off[k]).map(k=>"off-"+k).join(" ")}" id="docBody"><h3>${esc(title)}</h3><p class="dm">${y}年中央经济工作会议${meet?` · ${esc(meet.meet)} · 通稿 ${esc(meet.pub)}`:""} · 新华社</p>
+   ${body.map(t=>`<p>${markPara(t,keys)}</p>`).join("")}</article>`;
+  $("#yearBody").querySelectorAll(".marks input").forEach(c=>c.onchange=()=>{off[c.dataset.k]=!c.checked;$("#docBody").classList.toggle("off-"+c.dataset.k,!c.checked)});
   $("#cmpBrief").onclick=()=>{S.briefY=y;renderBrief()};
 }
 async function runSearch(){
@@ -460,7 +488,7 @@ async function runSearch(){
 }
 
 /* ===== 路由与初始化 ===== */
-const VIEWS={brief:null,terms:null,trends:()=>renderStance(),info:null,texts:null,about:null};
+const VIEWS={brief:null,terms:null,trends:()=>renderStance(),info:null,texts:()=>{if(!S.textsDone){S.textsDone=1;renderCompare()}},about:null};
 function route(){
   const v=(location.hash||"#brief").slice(1),ok=v in VIEWS?v:"brief";
   document.querySelectorAll("section.view").forEach(s=>s.hidden=s.id!=="v-"+ok);
@@ -492,7 +520,7 @@ async function init(){
   const D=S.D;
   [...D.usages].sort((a,b)=>a.y-b.y).forEach(u=>u.w.forEach(w=>{const k=u.s+"|"+w;if(!(k in FIRST))FIRST[k]=u.y}));
   $("#facts").innerHTML=`<span>收录会议通稿<b>32</b>份</span><span>新提法<b>${D.terms.length}</b>个</span><span>重点任务<b>${CYEARS.reduce((a,y)=>a+tasksOf(y).length,0)}</b>项</span><span>信息观念语句<b>${D.usages.filter(u=>u.s==="C").length}</b>条</span>`;
-  bind();renderBrief();renderTerms();renderRibbon();renderRank();renderCal();renderHist();renderCompare();route();
+  bind();renderBrief();renderTerms();renderRibbon();renderRank();renderCal();renderHist();route();
 }
 init();
 </script>

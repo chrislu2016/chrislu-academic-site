@@ -2,7 +2,7 @@
 
 1994 年以来中央经济工作会议通稿的逐年解读：新提法、重点任务排序、财政货币定调、信息观念。政府工作报告只作对照。
 
-- 页面：`index.html`（单文件，无构建步骤），数据：`data/site.json`、`data/corpus.json`
+- 页面：`index.html`（单文件，无构建步骤），数据：`data/site.json`、`data/corpus.json`（按句，供检索）、`data/fulltext.json`（按段，供全文阅读）
 - 部署：Vercel 项目 `cewc-yearbook`，Root Directory = `products/cewc-yearbook`，推送到 main 后自动发布
 
 ## 每年更新（会议结束后）

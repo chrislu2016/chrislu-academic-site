@@ -33,6 +33,15 @@ def to_sentences(paras):
         out += [s.strip() for s in re.split(r'(?<=[。！？；])', p) if s.strip()]
     return out
 
+def load_fulltext(src):
+    """会议通稿全文，按原文段落保存，供“原文”视图逐段阅读。"""
+    F = {}
+    for f in glob.glob(os.path.join(src, '当前/数据/99_原有数据包/数据/中央经济工作会议/*.docx')):
+        b = os.path.basename(f)
+        if b.startswith('~$'): continue
+        F[re.search(r'(\d{4})', b).group(1)] = [p.lstrip('■□●◆ ').strip() for p in read_docx(f) if p.strip()]
+    return dict(sorted(F.items()))
+
 def load_corpus(src):
     C, G = {}, {}
     for f in glob.glob(os.path.join(src, '当前/数据/99_原有数据包/数据/中央经济工作会议/*.docx')):
@@ -196,6 +205,7 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     json.dump(corpus, open(os.path.join(OUT, 'corpus.json'), 'w'), ensure_ascii=False, separators=(',', ':'))
     json.dump(site, open(os.path.join(OUT, 'site.json'), 'w'), ensure_ascii=False, separators=(',', ':'))
+    json.dump(load_fulltext(a.src), open(os.path.join(OUT, 'fulltext.json'), 'w'), ensure_ascii=False, separators=(',', ':'))
     print('概念句', len(U), '；注释', len(A), '（挂靠', sum(1 for x in A if x['match'] is not None), '）；任务',
           sum(len(v) for v in tasks.values()), '；新提法', len(site['terms']))
     print('任务领域分布', Counter(t['cat'] for v in tasks.values() for t in v).most_common())
