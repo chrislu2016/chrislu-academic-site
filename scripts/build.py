@@ -365,7 +365,6 @@ def render_home(data: dict, lang: str) -> str:
     <section class="wrap stats-grid" aria-label="{h(ui["academic_highlights"])}">
       {stat_block(data, lang)}
     </section>
-    {section(ui["products"], ui["products_eyebrow"], "".join(product_card(data, item, lang, depth) for item in data.get("products", [])) + f'<p class="section-link"><a href="products/">{h(ui["view_products"])}</a></p>') if data.get("products") else ""}
     {section(ui["education"], ui["education_eyebrow"], f'<div class="timeline">{timeline(data, data["education"], lang)}</div>', "education-first")}
     <section class="band">
       <div class="wrap section-heading">
