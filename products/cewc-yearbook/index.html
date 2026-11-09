@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>经济工作年鉴</title>
+<meta name="description" content="1994年以来中央经济工作会议通稿逐年解读：新提法、重点任务排序、财政货币定调与信息观念。">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Noto+Sans+SC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: archival register — year-first reading, ruled tables, ink-blue ramp for intensity, ochre reserved for "首次" */
+:root{
+  --paper:#f6f7f4; --surface:#fff; --ink:#18232e; --muted:#5d6874; --rule:#d9ddd6;
+  --blue:#1f4e79; --blue-soft:#e3ecf4; --ochre:#a8641a; --ochre-soft:#f6ead9;
+  --h0:#eef1ee; --h1:#cddbe7; --h2:#9cbad3; --h3:#5f8fb8; --h4:#2f6596; --h5:#173f66;
+  --c1:#1f4e79; --c2:#a8641a; --c3:#4f7a5a; --c4:#7a4f86; --c5:#b0423a; --c6:#3f7f95; --c7:#9aa3ab;
+  --display:"Noto Serif SC","Songti SC","STSong",serif;
+  --body:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#11161b; --surface:#182028; --ink:#e4e8ec; --muted:#9aa5b0; --rule:#2c3640;
+  --blue:#8fb8de; --blue-soft:#1d2d3c; --ochre:#e0a35a; --ochre-soft:#33281b;
+  --h0:#232d37; --h1:#22405c; --h2:#2b5378; --h3:#3f73a3; --h4:#6b9dcc; --h5:#a9cbeb; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#11161b; --surface:#182028; --ink:#e4e8ec; --muted:#9aa5b0; --rule:#2c3640;
+  --blue:#8fb8de; --blue-soft:#1d2d3c; --ochre:#e0a35a; --ochre-soft:#33281b;
+  --h0:#232d37; --h1:#22405c; --h2:#2b5378; --h3:#3f73a3; --h4:#6b9dcc; --h5:#a9cbeb; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.7}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+a{color:var(--blue)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.num,.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+:focus-visible{outline:2px solid var(--ochre);outline-offset:2px}
+
+/* header + nav */
+header.top{border-bottom:1px solid var(--rule);padding-block:32px 22px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--muted)}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,4.4vw,42px);line-height:1.25;margin:8px 0 10px}
+.lede{max-width:46em;margin:0}
+.facts{display:flex;flex-wrap:wrap;gap:6px 26px;margin-top:16px;font-size:13px;color:var(--muted)}
+.facts b{font-family:var(--mono);font-weight:500;color:var(--ink);font-size:15px;margin-right:4px}
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--rule)}
+nav.tabs .wrap{display:flex;gap:2px;overflow-x:auto}
+nav.tabs a{padding:12px 14px;color:var(--muted);text-decoration:none;font-size:14px;white-space:nowrap;border-bottom:2px solid transparent}
+nav.tabs a[aria-current="page"]{color:var(--ink);border-color:var(--blue);font-weight:500}
+nav.tabs a.end{margin-left:auto}
+
+/* shared */
+section.view{padding-block:26px 56px}
+h2{font-family:var(--display);font-size:22px;margin:0 0 6px}
+h3.sec{font-size:15px;margin:28px 0 8px}
+.sub{color:var(--muted);font-size:13.5px;margin:0 0 16px;max-width:52em}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px}
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:var(--surface);flex-wrap:wrap}
+.seg button{border:0;background:none;color:var(--muted);padding:6px 12px;font:inherit;font-size:13px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--blue);color:var(--surface)}
+select,input[type=search]{font:inherit;font-size:14px;color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:6px 10px}
+input[type=search]{min-width:0;flex:1 1 220px}
+.box{border:1px solid var(--rule);background:var(--surface);border-radius:8px;padding:14px;overflow-x:auto}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:16px 18px;min-width:0}
+.card>h3{font-size:13px;letter-spacing:.06em;color:var(--muted);font-weight:500;margin:0 0 10px}
+.chip{font-size:11.5px;padding:1px 7px;border-radius:999px;border:1px solid var(--rule);color:var(--muted);white-space:nowrap;display:inline-block}
+.chip.first{border-color:var(--ochre);color:var(--ochre);background:var(--ochre-soft)}
+.chip.src{font-family:var(--mono);color:var(--ink)}
+.tag{font-size:11px;padding:1px 7px;border-radius:999px;color:#fff;white-space:nowrap}
+.empty{color:var(--muted);font-size:14px;padding:14px;border:1px dashed var(--rule);border-radius:8px}
+.list{display:flex;flex-direction:column;gap:10px}
+.item{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:12px 14px;min-width:0}
+.item .meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12px;color:var(--muted);margin-bottom:4px}
+.item p{margin:0}
+mark{background:var(--blue-soft);color:var(--ink);padding:0 1px;border-radius:2px}
+mark.o{background:var(--ochre-soft)}
+.note{margin-top:8px;padding-top:8px;border-top:1px dashed var(--rule);font-size:13px;color:var(--muted)}
+.note b{color:var(--ink);font-weight:500}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pills span,.pills button{font:inherit;font-size:13px;padding:3px 9px;border-radius:999px;border:1px solid var(--rule);color:var(--ink);background:var(--paper)}
+.pills .first{border-color:var(--ochre);background:var(--ochre-soft)}
+.pills small{color:var(--muted);font-family:var(--mono);margin-left:4px;font-size:11px}
+.legend{display:flex;gap:6px 12px;align-items:center;font-size:12px;color:var(--muted);margin-top:10px;flex-wrap:wrap}
+.legend i{display:inline-block;width:14px;height:11px;border-radius:2px;margin-right:3px;vertical-align:-1px}
+
+/* heat grids */
+.grid{display:grid;gap:3px;align-items:center}
+.grid .lab{font-size:13px;font-weight:500;padding-right:8px;white-space:nowrap}
+.grid .yr{font-family:var(--mono);font-size:10.5px;color:var(--muted);text-align:center}
+.cell{height:26px;border-radius:3px;border:0;padding:0;font-family:var(--mono);font-size:11px;color:var(--ink);background:var(--h0)}
+button.cell{cursor:pointer}
+button.cell:hover{box-shadow:inset 0 0 0 1px var(--ink)}
+.cell.sel{box-shadow:inset 0 0 0 2px var(--ochre)}
+.cell.na{background:repeating-linear-gradient(45deg,var(--h0),var(--h0) 3px,transparent 3px,transparent 6px)}
+
+/* brief */
+.yearstrip{display:flex;gap:4px;overflow-x:auto;padding-bottom:6px;margin-bottom:16px}
+.yearstrip button{font-family:var(--mono);font-size:13px;border:1px solid var(--rule);background:var(--surface);color:var(--muted);border-radius:6px;padding:5px 8px;cursor:pointer;flex:0 0 auto}
+.yearstrip button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.bigyear{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.bigyear .y{font-family:var(--display);font-size:40px;font-weight:700;line-height:1}
+.bigyear .t{color:var(--muted);font-size:14px}
+.bgrid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.s5{grid-column:span 5}.s7{grid-column:span 7}.s12{grid-column:span 12}
+@media (max-width:860px){.s5,.s7{grid-column:span 12}}
+.tone{display:grid;grid-template-columns:auto 1fr;gap:10px 14px;align-items:center}
+.tone .k{font-size:13px;color:var(--muted)}
+.tone .v{font-family:var(--display);font-size:20px;font-weight:700}
+.tone .v small{font-family:var(--body);font-size:12.5px;font-weight:400;color:var(--muted);margin-left:8px}
+.tone .v small.chg{color:var(--ochre)}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.vs>div{min-width:0}.vs .lbl{font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:4px}
+.vs p{margin:0;font-size:14px}.vs .now p{font-family:var(--display);font-size:15px}
+@media (max-width:600px){.vs{grid-template-columns:1fr}}
+.tasks{display:flex;flex-direction:column;gap:6px;margin:0;padding:0;list-style:none}
+.tasks li{display:grid;grid-template-columns:24px 1fr auto;gap:10px;align-items:baseline;background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:8px 12px;min-width:0}
+.tasks li.hit{border-color:var(--ochre);background:var(--ochre-soft)}
+.tasks .r{font-family:var(--mono);color:var(--blue);font-weight:500}
+.mv{font-family:var(--mono);font-size:12px;color:var(--muted)}.mv.up{color:var(--blue)}.mv.nw{color:var(--ochre)}
+.rules{margin:0;padding-left:1.2em;font-size:14px}.rules li{margin:3px 0}
+
+/* terms */
+.tstats{display:flex;flex-wrap:wrap;gap:8px 28px;margin:0 0 14px;font-size:13px;color:var(--muted)}
+.tstats b{font-family:var(--mono);font-size:20px;color:var(--ink);font-weight:500;margin-right:4px}
+.tmx{border-collapse:collapse;width:100%;min-width:820px;font-size:13px}
+.tmx th{font-weight:500;color:var(--muted);text-align:left;padding:10px;border-bottom:1px solid var(--rule);font-size:12.5px;white-space:nowrap}
+.tmx th .d{display:block;font-weight:400;font-size:11px}
+.tmx td{vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--rule)}
+.tmx td.yr{font-family:var(--mono);color:var(--blue);width:52px}
+.tmx tr.era td{background:var(--paper);font-size:12px;color:var(--muted);padding:6px 10px}
+.tmx .tc{display:flex;flex-wrap:wrap;gap:5px}
+.tb{font:inherit;font-size:13px;line-height:1.4;border:1px solid var(--rule);background:var(--surface);color:var(--ink);border-radius:5px;padding:2px 7px;cursor:pointer}
+.tb sup{font-family:var(--mono);font-size:10px;color:var(--muted);margin-left:2px}
+.tb.live{border-color:var(--h3)}.tb.fade{color:var(--muted);border-style:dashed}
+.tb.sel{background:var(--ink);color:var(--paper);border-color:var(--ink)}.tb.sel sup{color:var(--paper)}
+.tdet{border-color:var(--ochre);margin-bottom:14px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 24px}
+.tdet .h{font-family:var(--display);font-size:22px;font-weight:700;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.tdet .row{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px}
+.tdet p{grid-column:1/-1;margin:0;font-size:14px}
+@media (max-width:640px){.tdet{grid-template-columns:1fr}}
+.life{display:grid;grid-template-columns:repeat(33,7px);grid-template-rows:7px 7px;gap:2px}
+.life i{width:7px;height:7px;border-radius:1px;background:var(--h0)}
+.life i.on{background:var(--h3)}.life i.g.on{background:var(--h2)}.life i.f{background:var(--ochre)}
+.lifecap{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:3px}
+
+/* trends */
+.ribbon{display:grid;grid-template-columns:repeat(32,minmax(26px,1fr));gap:3px;min-width:860px}
+.ribbon .b{height:56px;border-radius:3px;writing-mode:vertical-rl;font-size:12px;display:flex;align-items:center;justify-content:center;color:#fff;letter-spacing:.08em;cursor:pointer;border:0;font-family:var(--body)}
+.ribbon .yl{font-family:var(--mono);font-size:10.5px;color:var(--muted);text-align:center}
+#stanceSvg{display:block;min-width:860px;width:100%;height:150px}
+
+/* info timeline */
+.hist{display:grid;grid-template-columns:64px 1fr;gap:0 18px}
+.hist .y{font-family:var(--mono);font-size:14px;color:var(--blue);padding-top:14px;text-align:right}
+.hist .e{border-left:2px solid var(--rule);padding:12px 0 12px 18px;position:relative;min-width:0}
+.hist .e::before{content:"";position:absolute;left:-6px;top:20px;width:10px;height:10px;border-radius:50%;background:var(--surface);border:2px solid var(--blue)}
+.hist .e.key::before{background:var(--ochre);border-color:var(--ochre)}
+.hist blockquote{margin:4px 0 6px;font-family:var(--display);font-size:15.5px}
+.hist .gloss{font-size:13.5px;color:var(--muted);margin:0}
+
+/* texts */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}.cols>div{min-width:0}
+.nodehdr{font-size:13px;font-weight:700;margin:16px 0 8px;display:flex;gap:8px;align-items:center}
+.nodehdr .n{font-family:var(--mono);font-weight:400;color:var(--muted)}
+.bars{display:grid;grid-template-columns:repeat(33,1fr);gap:2px;align-items:end;height:70px;margin:10px 0 2px}
+.bars .c{background:var(--blue)} .bars .g{background:var(--h2)}
+.barlab{display:grid;grid-template-columns:repeat(33,1fr);font-family:var(--mono);font-size:10px;color:var(--muted)}
+.presets{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;align-items:center;font-size:12.5px;color:var(--muted)}
+.presets button{font:inherit;font-size:12.5px;border:1px dashed var(--rule);background:none;color:var(--muted);border-radius:999px;padding:3px 10px;cursor:pointer}
+
+.about{max-width:48em}.about h3{font-size:16px;margin:24px 0 6px}
+.about table{border-collapse:collapse;font-size:13.5px;width:100%}
+.about td,.about th{border-bottom:1px solid var(--rule);padding:6px 8px;text-align:left;vertical-align:top}
+footer{border-top:1px solid var(--rule);padding-block:20px 40px;color:var(--muted);font-size:12.5px}
+@media (max-width:760px){.cols{grid-template-columns:1fr}.hist{grid-template-columns:44px 1fr;gap:0 12px}}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="eyebrow">中央经济工作会议 · 1994—2025</div>
+  <h1>经济工作年鉴</h1>
+  <p class="lede">把1994年以来三十多次中央经济工作会议的新闻通稿放在一起逐年读：每年提出了哪些新提法，先部署什么、后部署什么，财政和货币政策怎么定调，会议怎样谈论预期、信心和舆论。每年会议结束后更新。</p>
+  <div class="facts" id="facts"></div>
+</div></header>
+
+<nav class="tabs" aria-label="视图"><div class="wrap">
+  <a href="#brief">年度速览</a><a href="#terms">新提法</a><a href="#trends">长期趋势</a><a href="#info">信息观念</a><a href="#texts">原文</a><a href="#about" class="end">说明</a>
+</div></nav>
+
+<main class="wrap">
+<section class="view" id="v-brief">
+  <h2>年度速览</h2>
+  <p class="sub">选一年，看这次会议和上一次比变了什么，并把每个提法放回三十年里看：它是第一次出现，还是隔了多少年又回来。年份为会议召开年份，部署的是下一年的工作。</p>
+  <div class="yearstrip" id="ystrip" role="group" aria-label="会议年份"></div>
+  <div id="brief"></div>
+</section>
+
+<section class="view" id="v-terms" hidden>
+  <h2>新提法</h2>
+  <p class="sub">会议通稿里第一次出现的提法，按年份和类型排成一张表。点任一提法，上方显示原句和此后的去向：有没有写进次年的政府工作报告，通稿又沿用了几年，中间有没有中断。右上角数字是此后在通稿中又出现的年数；蓝框表示2023年以后仍在使用，虚线框表示已不再使用。</p>
+  <div class="tstats" id="tStats"></div>
+  <div class="controls"><div class="seg" role="group" aria-label="去向" id="tFate"></div></div>
+  <div id="tDetail"></div>
+  <div class="box" style="padding:0"><table class="tmx" id="tMatrix"></table></div>
+  <p class="sub" style="margin-top:12px">清单为人工精选，近十年收录较全，早年仍在补充。“首次”按1994年以来全部会议通稿判断；分期按会议召开年份所属的五年规划期。</p>
+</section>
+
+<section class="view" id="v-trends" hidden>
+  <h2>长期趋势</h2>
+  <p class="sub">财政、货币政策的定调怎样分段变化；每年排在第一位的重点任务属于哪个领域；各领域在任务清单里排第几。</p>
+  <h3 class="sec">政策定调</h3>
+  <div class="box"><svg id="stanceSvg" role="img" aria-label="财政与货币政策定调变化"></svg></div>
+  <h3 class="sec">每年的头号任务</h3>
+  <div class="box"><div id="ribbon"></div></div>
+  <h3 class="sec">各领域每年排第几</h3>
+  <p class="sub">数字为该领域在当年任务清单中的位次，越靠前颜色越深；空格表示当年未单列。领域按任务标题关键词自动归类，点格子可看当年完整清单。</p>
+  <div class="box"><div class="grid" id="rankGrid" style="grid-template-columns:100px repeat(32,minmax(20px,1fr));min-width:860px"></div><div class="legend" id="rankLegend"></div></div>
+  <div id="rankPanel" style="margin-top:16px"></div>
+</section>
+
+<section class="view" id="v-info" hidden>
+  <h2>信息观念</h2>
+  <p class="sub">会议通稿怎样谈论预期、信心、社会心理、舆论民意和国家传播。上图每格是该年通稿中含有该类说法的句子数，点开看原句；下面是从原文中选出的转折性表述。可切换到政府工作报告作对照。</p>
+  <div class="controls">
+    <div class="seg" role="group" aria-label="文本"><button id="srcC" aria-pressed="true">会议通稿</button><button id="srcG" aria-pressed="false">对照：政府工作报告</button></div>
+    <div class="seg" role="group" aria-label="预期义项"><button id="senseAll" aria-pressed="true">预期：全部义项</button><button id="senseB" aria-pressed="false">只看主体心理</button></div>
+  </div>
+  <div class="box"><div class="grid" id="cal" style="grid-template-columns:92px repeat(33,minmax(20px,1fr));min-width:860px"></div><div class="legend" id="calLegend"></div></div>
+  <div id="calPanel" style="margin-top:16px"></div>
+  <h3 class="sec">转折性表述</h3>
+  <p class="sub">引文为原文；灰字为作者解读；橙色节点表示该表述在所考察文本中首次出现。</p>
+  <div class="controls"><div class="seg" role="group" aria-label="线索" id="histSeg"></div></div>
+  <div class="hist" id="hist"></div>
+</section>
+
+<section class="view" id="v-texts" hidden>
+  <h2>原文</h2>
+  <div class="controls"><div class="seg" role="group"><button id="tabCmp" aria-pressed="true">逐年原文</button><button id="tabSearch" aria-pressed="false">提法检索</button></div></div>
+  <div id="cmpPane">
+    <p class="sub">每年通稿的重点任务清单，以及五类信息观念句子和研究者注释。</p>
+    <div class="controls"><select id="yearSel" aria-label="年份"></select><div class="seg" role="group"><button id="yPrev">上一年</button><button id="yNext">下一年</button></div></div>
+    <div id="yearBody"></div>
+  </div>
+  <div id="searchPane" hidden>
+    <p class="sub">在1994年以来的会议通稿中按句检索，看一个提法最早何时出现、中断过几年。需要对照时可勾选政府工作报告（浅色柱）。</p>
+    <div class="controls"><input type="search" id="q" placeholder="例如：以进促稳、投资于人、透明度" aria-label="检索词">
+      <div class="seg" role="group"><button id="qC" aria-pressed="true">通稿</button><button id="qG" aria-pressed="false">含政府工作报告</button></div></div>
+    <div class="presets" id="presets"></div>
+    <div id="qChart"></div><div id="qRes" class="list"></div>
+  </div>
+</section>
+
+<section class="view about" id="v-about" hidden>
+  <h2>说明</h2>
+  <h3>材料</h3>
+  <p>1994—2025年中央经济工作会议新闻通稿32份，据新华社发布稿整理，年份指会议召开年份。另收1994—2026年政府工作报告33份（据《人民日报》《国务院公报》及中国政府网刊载文本整理），只作对照：用来看新提法有没有写进次年的报告，以及在检索和信息观念中作参照，本站不对政府工作报告单独解读。</p>
+  <h3>新提法</h3>
+  <p>先由程序找出每年通稿中此前从未出现过的词组，再由作者挑出具有政策含义的提法，按判断、定调、方法、战略、抓手五类标注。“首次”指1994年以来的会议通稿中第一次出现；政府工作报告中的出现情况单独列示，以看出提法是由会议首提、次年写入报告，还是报告先提、会议沿用。</p>
+  <h3>重点任务与政策定调</h3>
+  <p>重点任务取自每年通稿“明年要抓好以下重点任务”一类段落，按原文序号排列；格式不规则的年份（1995、1998、2002、2015、2016年）为人工定位。每项任务按标题关键词归入一个主要领域，归类待逐条人工复核。财政、货币政策定调取自通稿中对次年的表述；1994年和1999年通稿未给货币政策定性，标为“未定性”。</p>
+  <h3>自动提取的部分</h3>
+  <p>年度速览中的“形势判断”取自通稿前半部分问题表述最集中的一句；“经验总结”取自“规律性认识”“认识和体会”等段落；“引号提法”为通稿中加引号的词。三项均为程序提取，个别年份可能取偏，以原文为准。</p>
+  <h3>信息观念编码</h3>
+  <div style="overflow-x:auto"><table id="lexTbl"></table></div>
+  <p>分析单位是句子。每处用例记录节点、匹配词、义项（如“预期”区分国家设定的计划目标与主体的心理判断）、治理角色和政策领域，误匹配已剔除。义项、治理角色为单人预填、部分复核，尚未做双人一致性检验。早期编码中的文本位置和开放编码以“研究者注释”显示，属于解读。</p>
+  <h3>读数时请注意</h3>
+  <p>句数和排序只说明说法出现的多少和先后，不说明重视程度或政策效果。两类文本篇幅相差约三倍，不宜直接比较绝对数。</p>
+  <h3>作者</h3>
+  <p>陆泓承（清华大学新闻与传播学院）。可自由引用，请注明出处；原文版权归原发布机构。</p>
+  <h3>更新记录</h3>
+  <p class="num" style="font-size:13px">v1.0 · 2026-11 · 正式上线；以会议通稿为主线，政府工作报告只作对照。<br>v0.5 · 2026-11 · 重新整理结构，数据由一个构建脚本统一生成。<br>v0.4 · 新提法表。v0.3 · 年度速览。v0.2 · 部署顺序与政策定调。v0.1 · 信息观念日历。</p>
+</section>
+</main>
+<footer><div class="wrap">经济工作年鉴 · 数据与编码持续修订中 · 陆泓承</div></footer>
+
+<script>
+/* ===== 常量 ===== */
+const NODES=["预期","信心","社会心理","舆论民意","国家传播"];
+const LEX={"预期":"预期","信心":"信心、人心、底气、士气","社会心理":"社会心理、心理、情绪、获得感、幸福感、安全感、期盼、期待","舆论民意":"舆论、舆情、民意、社情、呼声、关切、诉求","国家传播":"宣传、解读、新闻发布、沟通、透明、讲好、发声、唱响、信息公开、政务公开等"};
+const YEARS=[];for(let y=1994;y<=2026;y++)YEARS.push(y);
+const CYEARS=YEARS.filter(y=>y<=2025);
+const SRC={C:"会议通稿",G:"政府工作报告"};
+const RAMP=["--h0","--h1","--h2","--h3","--h4","--h5"];
+const CATS=["宏观调控","扩大内需","产业与结构","科技创新","改革","三农","区域与城镇化","对外开放","民生与就业","风险防范","生态与双碳","房地产","其他"];
+const CATCOL={"宏观调控":"--c1","扩大内需":"--c2","三农":"--c3","科技创新":"--c4","改革":"--c5","产业与结构":"--c6"};
+const SHORT={"宏观调控":"宏观","扩大内需":"内需","三农":"三农","科技创新":"科技","改革":"改革","产业与结构":"产业"};
+const TCOL={"判断":"--c5","定调":"--c1","方法":"--c4","战略":"--c6","抓手":"--c2"};
+const TDESC={"判断":"对形势和矛盾的新判断","定调":"政策基调与取向","方法":"方法论与经验总结","战略":"战略与发展主线","抓手":"具体任务、工具与行动"};
+const STCOL={"适度从紧":"--c2","从紧":"--c2","稳健":"--h2","适当":"--h1","未定性":"--h0","积极":"--h3","更加积极":"--h5","适度宽松":"--h5"};
+const ABBR={"适度从紧":"紧","从紧":"紧","稳健":"稳","适当":"适","积极":"积","更加积极":"积+","适度宽松":"宽","未定性":"·"};
+const ERAS=[[1994,1995,"“八五”后期"],[1996,2000,"“九五”时期"],[2001,2005,"“十五”时期"],[2006,2010,"“十一五”时期"],[2011,2015,"“十二五”时期"],[2016,2020,"“十三五”时期"],[2021,2025,"“十四五”时期"]];
+const PRESETS=["稳中求进","以进促稳","提质增效","扩大内需","投资于人","新质生产力","内卷","一致性","预期","信心","舆论","透明度"];
+
+/* ===== 状态与工具 ===== */
+const S={D:null,corpus:null,briefY:2025,termSel:null,termFate:"全部",rankSel:null,calSrc:"C",senseB:false,calSel:null,histLine:"全部",qC:true,qG:false};
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const hl=(t,ws,cls="")=>{let h=esc(t);[...ws].sort((a,b)=>b.length-a.length).forEach(w=>{if(w)h=h.split(esc(w)).join(`<mark class="${cls}">${esc(w)}</mark>`)});return h};
+const pressed=(el,on)=>el.setAttribute("aria-pressed",on);
+const tasksOf=y=>S.D.tasks[y]||[];
+const stOf=y=>S.D.stance[y]||{};
+const yearHead=(ys,cls="yr")=>ys.map(y=>`<div class="${cls}">${String(y).slice(2)}</div>`).join("");
+
+/* ===== 新提法：通用片段 ===== */
+function fate(t){const later=t.c.filter(v=>v>t.y).length;if(t.y>=2025)return "刚提出";if(!later)return "仅用一年";return t.c.some(v=>v>=2023)?"沿用至今":"已不再用"}
+function lifeStrip(t){let h='<div class="life" aria-hidden="true">';for(const s of ["c","g"])for(const y of YEARS){h+=`<i class="${s}${t[s].includes(y)?" on":""}${s==="c"&&y===t.y?" f":""}"></i>`}return h+'</div><div class="lifecap">1994 ······ 2026　上：通稿　下：报告</div>'}
+function fateNotes(t){const later=t.c.filter(v=>v>t.y).length,gl=t.g.filter(v=>v>t.y),a=[];
+  if(t.gBefore)a.push(`${t.gBefore}年政府工作报告已先提`);else if(t.g.includes(t.y+1))a.push("次年写入政府工作报告");else if(gl.length)a.push(`${gl[0]}年写入政府工作报告`);else if(t.y<2025)a.push("未进入政府工作报告");
+  a.push(later?`此后通稿又用${later}年`:(t.y>=2025?"刚提出":"此后通稿未再用"));
+  t.gaps.forEach(([y,g])=>a.push(`${y}年隔${g}年重提`));return a}
+const tag=t=>`<span class="tag" style="background:var(${TCOL[t.t]})">${t.t}</span>`;
+
+/* ===== 视图：年度速览 ===== */
+function stanceRun(k,y){const v=stOf(y)[k];let a=y;while(a>1994&&stOf(a-1)[k]===v)a--;let z=a-1;while(z>=1994&&stOf(z)[k]!==v)z--;return {from:a,last:z>=1994?z:null}}
+function toneRow(lab,k,y){const cur=stOf(y)[k]||"—",prev=stOf(y-1)[k];let note="";
+  if(y>1994){const r=stanceRun(k,y);note=prev!==cur?`<small class="chg">较上年调整；${r.last?`上一次用“${cur}”是${r.last}年`:"首次使用这一定调"}</small>`:`<small>延续，自${r.from}年起连续${y-r.from+1}年</small>`}
+  return `<div class="k">${lab}</div><div class="v">${prev&&y>1994&&prev!==cur?`<span class="muted" style="font-weight:500">${esc(prev)}</span> → `:""}${esc(cur)}${note}</div>`}
+function renderBrief(){
+  const y=S.briefY,D=S.D,T=tasksOf(y),P=tasksOf(y-1),meet=D.meet[y];
+  $("#ystrip").innerHTML=CYEARS.map(v=>`<button aria-pressed="${v===y}" data-y="${v}">${v}</button>`).join("");
+  $("#ystrip").querySelectorAll("button").forEach(b=>b.onclick=()=>{S.briefY=+b.dataset.y;renderBrief()});
+  $("#ystrip").querySelector('[aria-pressed="true"]')?.scrollIntoView({block:"nearest",inline:"center"});
+  const mv=t=>{if(!P.length)return "";const p=P.find(x=>x.cat===t.cat);if(!p)return `<span class="mv nw">新增领域</span>`;const d=p.r-t.r;return d>0?`<span class="mv up">↑${d}（去年第${p.r}）</span>`:d<0?`<span class="mv">↓${-d}（去年第${p.r}）</span>`:`<span class="mv">＝ 去年也是第${p.r}</span>`};
+  const top=t=>{if(t.r!==1)return "";const pv=CYEARS.filter(v=>v<y&&tasksOf(v)[0]?.cat===t.cat);return pv.length?`<span class="chip">上次排第一：${pv.at(-1)}年</span>`:`<span class="chip first">首次排第一</span>`};
+  const dropped=P.filter(p=>!T.find(t=>t.cat===p.cat));
+  const NT=D.terms.filter(t=>t.y===y),RT=D.terms.filter(t=>t.gaps.some(([g])=>g===y));
+  const QO=(D.quotes[y]||[]).filter(q=>q.prev);
+  const rl=D.rules[y],rp=D.rules[y-1];
+  const keyM=D.milestones.filter(m=>m.y===y&&m.s==="C");
+  $("#brief").innerHTML=`
+  <div class="bigyear"><span class="y">${y}</span><span class="t">中央经济工作会议${meet?` · ${esc(meet.meet)} · 通稿 ${esc(meet.pub)}`:""} · 部署${y+1}年工作${D.themes[y]?` · 主题（作者概括）：${esc(D.themes[y])}`:""}</span></div>
+  <div class="bgrid">
+   <div class="card s5"><h3>政策定调</h3><div class="tone">${toneRow("财政","f",y)}${toneRow("货币","m",y)}</div><div class="note" style="font-size:12.5px">${esc(stOf(y).fs)}</div></div>
+   <div class="card s7"><h3>形势判断</h3><div class="vs"><div class="now"><div class="lbl">${y}</div><p>${esc(D.diag[y]||"本年通稿未单列问题判断。")}</p></div><div><div class="lbl">${y-1}</div><p class="muted">${esc(D.diag[y-1]||"—")}</p></div></div></div>
+   <div class="card s7"><h3>重点任务：顺序与变化</h3><ol class="tasks">${T.map(t=>`<li><span class="r">${t.r}</span><span>${esc(t.h)}<br>${mv(t)} ${top(t)}</span><span class="chip">${t.cat}</span></li>`).join("")}</ol>
+     ${dropped.length?`<div class="note">去年单列、今年未单列：${dropped.map(p=>`<b>${p.cat}</b>（去年第${p.r}）`).join("、")}</div>`:""}</div>
+   <div class="card s5"><h3>新提法</h3>
+     ${NT.length?`<p style="margin:0 0 6px;font-size:13px">在1994年以来的通稿中第一次出现：</p><div class="pills">${NT.map(t=>`<span class="first" title="${esc(t.ctx)}">${esc(t.k)}<small>${t.t}</small></span>`).join("")}</div>`:`<p class="sub" style="margin:0">精选清单中暂无这一年首次出现的提法。</p>`}
+     ${RT.length?`<p style="margin:12px 0 6px;font-size:13px">隔多年重新启用：</p><div class="pills">${RT.map(t=>`<span title="${esc(t.ctx)}">${esc(t.k)}<small>首见${t.y}</small></span>`).join("")}</div>`:""}
+     <p style="margin:8px 0 0;font-size:12.5px"><a href="#terms">每个提法的来龙去脉 →</a></p>
+     ${QO.length?`<p style="margin:14px 0 6px;font-size:13px">沿用的引号提法（上次出现年份）：</p><div class="pills">${QO.map(q=>`<span>${esc(q.q)}<small>${q.prev}</small></span>`).join("")}</div>`:""}
+     <h3 style="margin:18px 0 8px">经验总结${rl.anchor?`：${esc(rl.anchor)}`:""}</h3>
+     ${rl.items.length?`<ol class="rules">${rl.items.map(i=>`<li>${esc(i)}</li>`).join("")}</ol>${rp?.items.length?`<p class="sub" style="margin-top:8px">${y-1}年为：${rp.items.map(esc).join("；")}</p>`:""}`:`<p class="sub" style="margin:0">本年通稿没有单列“规律性认识”一类的经验总结。</p>`}</div>
+   <div class="card s12"><h3>信息观念这一年</h3><div class="pills" style="margin-bottom:8px">${NODES.map(n=>`<span>${n}<small>${D.usages.filter(u=>u.s==="C"&&u.y===y&&u.n===n).length}句</small></span>`).join("")}</div>
+     ${keyM.map(m=>`<p style="margin:6px 0 2px;font-family:var(--display)">“${esc(m.q)}”</p><p class="sub" style="margin:0 0 6px">${esc(m.g)}</p>`).join("")}
+     <p style="margin:6px 0 0;font-size:13px"><a href="#texts" data-goyear="${y}">在原文里查看这一年的全部相关句子 →</a></p></div>
+  </div>`;
+  $("#brief").querySelector("[data-goyear]").onclick=e=>{$("#yearSel").value=e.target.dataset.goyear;renderCompare()};
+}
+
+/* ===== 视图：新提法 ===== */
+function renderTerms(){
+  const D=S.D,F=["全部","沿用至今","已不再用","仅用一年","刚提出"];
+  $("#tFate").innerHTML=F.map(f=>`<button aria-pressed="${f===S.termFate}">${f}</button>`).join("");
+  $("#tFate").querySelectorAll("button").forEach(b=>b.onclick=()=>{S.termFate=b.textContent;renderTerms()});
+  const L=D.terms.filter(t=>S.termFate==="全部"||fate(t)===S.termFate);
+  const fresh=D.terms.filter(t=>!t.gBefore&&t.y<=2024),adopt=fresh.filter(t=>t.g.includes(t.y+1)).length;
+  $("#tStats").innerHTML=`<span><b>${D.terms.length}</b>个提法</span><span><b>${adopt}/${fresh.length}</b>由通稿首提、次年即写入政府工作报告</span><span><b>${D.terms.filter(t=>t.gBefore).length}</b>个是报告先提、会议后用</span><span><b>${D.terms.filter(t=>t.gaps.length).length}</b>个隔四年以上重新启用</span>`;
+  const types=Object.keys(TCOL);
+  let h=`<thead><tr><th>年份</th>${types.map(k=>`<th><span style="color:var(${TCOL[k]})">■</span> ${k}<span class="d">${TDESC[k]}</span></th>`).join("")}</tr></thead><tbody>`;
+  for(const [a,b,lab] of [...ERAS].reverse()){
+    const ys=[];for(let y=b;y>=a;y--)if(L.some(t=>t.y===y))ys.push(y);if(!ys.length)continue;
+    h+=`<tr class="era"><td colspan="6">${lab} · ${a}—${b}年</td></tr>`;
+    for(const y of ys)h+=`<tr><td class="yr">${y}</td>`+types.map(k=>`<td><div class="tc">${L.filter(t=>t.y===y&&t.t===k).map(t=>{const n=t.c.filter(v=>v>t.y).length,f=fate(t);
+      return `<button class="tb${f==="沿用至今"?" live":""}${f==="仅用一年"||f==="已不再用"?" fade":""}${S.termSel===t.k?" sel":""}" data-k="${esc(t.k)}" title="${f}">${esc(t.k)}${n?`<sup>${n}</sup>`:""}</button>`}).join("")}</div></td>`).join("")+`</tr>`}
+  $("#tMatrix").innerHTML=h+"</tbody>";
+  $("#tMatrix").querySelectorAll(".tb").forEach(b=>b.onclick=()=>{S.termSel=b.dataset.k;renderTerms();$("#tDetail").scrollIntoView({block:"nearest",behavior:"smooth"})});
+  const t=D.terms.find(x=>x.k===S.termSel)||D.terms.filter(x=>x.y===2025)[0];
+  $("#tDetail").innerHTML=t?`<div class="card tdet"><div class="h">${esc(t.k)}${tag(t)}<span class="chip">${fate(t)}</span></div><div>${lifeStrip(t)}</div>
+    <p><span class="chip src">${t.y} 会议通稿</span>　${hl(t.ctx,[t.k],"o")}</p><div class="row">${fateNotes(t).map(x=>`<span class="chip">${esc(x)}</span>`).join("")}</div></div>`:"";
+}
+
+/* ===== 视图：长期趋势 ===== */
+function renderStance(){
+  const svg=$("#stanceSvg"),W=Math.max(860,svg.clientWidth||860),H=150,L=70,R=10,x=y=>L+(y-1994)*(W-L-R)/32;
+  let g=`<text x="${x(1994)}" y="12" font-size="11" fill="var(--muted)">年份为会议召开年份，定调针对下一年</text>`;
+  [["财政政策","f",24],["货币政策","m",84]].forEach(([lab,k,top])=>{
+    g+=`<text x="0" y="${top+22}" font-size="13" fill="var(--ink)">${lab}</text>`;
+    let a=1994;for(let y=1995;y<=2026;y++){const va=stOf(a)[k];if(y===2026||stOf(y)[k]!==va){const x0=x(a),x1=x(y)-2,c=STCOL[va]||"--h0";
+      g+=`<rect x="${x0}" y="${top}" width="${x1-x0}" height="36" rx="3" fill="var(${c})"><title>${a}—${y-1}：${va}</title></rect>`;
+      if(x1-x0>34)g+=`<text x="${x0+6}" y="${top+23}" font-size="12.5" fill="${["--h5","--c2","--h3"].includes(c)?"var(--surface)":"var(--ink)"}">${va}</text>`;a=y}}});
+  for(let y=1994;y<=2025;y+=4)g+=`<text x="${x(y)}" y="142" font-size="11" fill="var(--muted)" font-family="IBM Plex Mono,monospace">${y}</text>`;
+  svg.setAttribute("viewBox",`0 0 ${W} ${H}`);svg.innerHTML=g;
+}
+function renderRibbon(){
+  $("#ribbon").innerHTML=`<div class="ribbon">${CYEARS.map(y=>{const t=tasksOf(y)[0];return t?`<button class="b" style="background:var(${CATCOL[t.cat]||"--c7"})" title="${y}：${esc(t.h)}" data-y="${y}">${SHORT[t.cat]||"其他"}</button>`:`<div class="b" style="background:var(--h0)"></div>`}).join("")}${yearHead(CYEARS,"yl")}</div>
+   <div class="legend">点击查看当年速览：${Object.entries(CATCOL).map(([k,v])=>`<span><i style="background:var(${v})"></i>${k}</span>`).join("")}<span><i style="background:var(--c7)"></i>其他</span></div>`;
+  $("#ribbon").querySelectorAll("button.b").forEach(b=>b.onclick=()=>{S.briefY=+b.dataset.y;location.hash="#brief";renderBrief()});
+}
+function renderRank(){
+  let h=`<div></div>${yearHead(CYEARS)}`;
+  [["财政","f"],["货币","m"]].forEach(([lab,k])=>{h+=`<div class="lab muted">${lab}</div>`;CYEARS.forEach(y=>{const v=stOf(y)[k];const c=STCOL[v]||"--h0";h+=`<div class="cell" style="display:flex;align-items:center;justify-content:center;background:var(${c});color:${["--h5","--c2","--h4"].includes(c)?"var(--surface)":"var(--ink)"};font-family:var(--body);font-size:12px" title="${y}：${esc(v)}">${ABBR[v]||"—"}</div>`})});
+  CATS.forEach(cat=>{h+=`<div class="lab">${cat}</div>`;CYEARS.forEach(y=>{const it=tasksOf(y).find(t=>t.cat===cat);
+    if(!it){h+=`<div class="cell"></div>`;return}
+    const b=it.r===1?5:it.r===2?4:it.r===3?3:it.r<=5?2:1,sel=S.rankSel&&S.rankSel.y===y&&S.rankSel.cat===cat?" sel":"";
+    h+=`<button class="cell${sel}" style="background:var(${RAMP[b]});color:${b>=3?"var(--surface)":"var(--ink)"}" data-y="${y}" data-cat="${cat}" title="${y}年第${it.r}项：${esc(it.h)}">${it.r}</button>`})});
+  $("#rankGrid").innerHTML=h;
+  $("#rankLegend").innerHTML="位次 "+[["第1",5],["第2",4],["第3",3],["4–5",2],["6+",1]].map(([l,b])=>`<span><i style="background:var(${RAMP[b]})"></i>${l}</span>`).join("")+"<span>　定调：紧＝（适度）从紧 稳＝稳健 适＝适当 积＝积极 积+＝更加积极 宽＝适度宽松 ·＝未定性</span>";
+  $("#rankGrid").querySelectorAll("button.cell").forEach(b=>b.onclick=()=>{S.rankSel={y:+b.dataset.y,cat:b.dataset.cat};renderRank()});
+  const y=S.rankSel?.y;
+  $("#rankPanel").innerHTML=y?`<h3 class="sec" style="margin-top:0">${y}年会议部署${y+1}年的重点任务 · <a href="#brief" id="toBrief">看这一年的速览 →</a></h3><ol class="tasks">${tasksOf(y).map(t=>`<li class="${t.cat===S.rankSel.cat?"hit":""}"><span class="r">${t.r}</span><span>${esc(t.h)}</span><span class="chip">${t.cat}</span></li>`).join("")}</ol>`:"";
+  $("#toBrief")?.addEventListener("click",()=>{S.briefY=y;renderBrief()});
+}
+
+/* ===== 视图：信息观念 ===== */
+const useU=u=>!(S.senseB&&u.n==="预期"&&u.sense?.startsWith("A"));
+const hasText=(s,y)=>s==="G"||y<=2025;
+let FIRST={};
+function usageItem(u){
+  const chips=[`<span class="chip">${u.n}</span>`];
+  if(u.sense)chips.push(`<span class="chip">${u.sense.replace(/^[AB] /,"")}</span>`);
+  if(u.role)chips.push(`<span class="chip">${u.role}</span>`);
+  u.w.forEach(w=>{if(FIRST[u.s+"|"+w]===u.y&&u.y>1994)chips.push(`<span class="chip first">首次：${esc(w)}</span>`)});
+  const notes=(u.ann||[]).map(i=>S.D.ann[i]).map(a=>`<div class="note"><b>研究者注释</b>　${esc(a.open)}${a.rank?` · 文本位置：${esc(a.rank)}`:""}</div>`).join("");
+  return `<div class="item"><div class="meta">${chips.join("")}</div><p>${hl(u.t,u.w)}</p>${notes}</div>`}
+function renderCal(){
+  const m={};NODES.forEach(n=>{m[n]={}});S.D.usages.forEach(u=>{if(u.s===S.calSrc&&useU(u))m[u.n][u.y]=(m[u.n][u.y]||0)+1});
+  const bk=v=>!v?0:v<=1?1:v<=2?2:v<=4?3:v<=7?4:5;
+  let h=`<div></div>${yearHead(YEARS)}`;
+  NODES.forEach(n=>{h+=`<div class="lab">${n}</div>`;YEARS.forEach(y=>{
+    if(!hasText(S.calSrc,y)){h+=`<div class="cell na" title="${y}年无该类文本"></div>`;return}
+    const v=m[n][y]||0,sel=S.calSel?.n===n&&S.calSel?.y===y?" sel":"";
+    h+=v?`<button class="cell${sel}" data-n="${n}" data-y="${y}" style="background:var(${RAMP[bk(v)]});color:${bk(v)>=3?"var(--surface)":"var(--ink)"}" title="${y}年 ${n}：${v}句">${v}</button>`:`<div class="cell"></div>`})});
+  $("#cal").innerHTML=h;
+  $("#calLegend").innerHTML="句数 "+[["1",1],["2",2],["3–4",3],["5–7",4],["8+",5]].map(([l,b])=>`<span><i style="background:var(${RAMP[b]})"></i>${l}</span>`).join("")+"<span>斜线：该年无此类文本</span>";
+  $("#cal").querySelectorAll("button.cell").forEach(b=>b.onclick=()=>{S.calSel={n:b.dataset.n,y:+b.dataset.y};renderCal()});
+  const c=S.calSel;
+  $("#calPanel").innerHTML=c?`<h3 class="sec" style="margin-top:0">${c.y}年${SRC[S.calSrc]} · ${c.n}</h3><div class="list">${S.D.usages.filter(u=>u.s===S.calSrc&&u.n===c.n&&u.y===c.y&&useU(u)).map(usageItem).join("")}</div>`:`<div class="empty">点击上方格子查看原句。</div>`;
+}
+function renderHist(){
+  const lines=["全部",...NODES,"国家认识"];
+  $("#histSeg").innerHTML=lines.map(l=>`<button aria-pressed="${l===S.histLine}">${l}</button>`).join("");
+  $("#histSeg").querySelectorAll("button").forEach(b=>b.onclick=()=>{S.histLine=b.textContent;renderHist()});
+  $("#hist").innerHTML=S.D.milestones.filter(m=>S.histLine==="全部"||m.n===S.histLine).map(m=>`<div class="y">${m.y}</div><div class="e${m.first?" key":""}"><div style="font-size:12px;color:var(--muted)">${SRC[m.s]} · ${m.n}${m.first?" · 首次出现":""}</div><blockquote>“${esc(m.q)}”</blockquote><p class="gloss">${esc(m.g)}</p></div>`).join("");
+}
+
+/* ===== 视图：原文 ===== */
+function renderCompare(){
+  const y=+$("#yearSel").value,D=S.D,meet=D.meet[y],T=tasksOf(y),extra=D.ann.filter(a=>a.y===y&&a.match==null);
+  const body=NODES.map(n=>{const L=D.usages.filter(u=>u.s==="C"&&u.y===y&&u.n===n);return L.length?`<div class="nodehdr">${n}<span class="n">${L.length}</span></div><div class="list">${L.map(usageItem).join("")}</div>`:""}).join("")||`<div class="empty">本年通稿无相关句子。</div>`;
+  $("#yearBody").innerHTML=`<p class="sub">${y}年中央经济工作会议${meet?`（${esc(meet.meet)}，通稿${esc(meet.pub)}）`:""} · 部署${y+1}年工作 · <a href="#brief" id="cmpBrief">看这一年的速览 →</a></p>
+   ${T.length?`<div class="nodehdr">重点任务<span class="n">${T.length}</span></div><ol class="tasks">${T.map(t=>`<li><span class="r">${t.r}</span><span>${esc(t.h)}</span><span class="chip">${t.cat}</span></li>`).join("")}</ol>`:""}
+   <h3 class="sec">信息观念句子</h3>${body}
+   ${extra.length?`<div class="nodehdr">其他研究者注释<span class="n">${extra.length}</span></div><div class="list">${extra.map(a=>`<div class="item"><div class="meta">${a.rank?`<span class="chip">${esc(a.rank)}</span>`:""}</div><p>${esc(a.e)}</p><div class="note"><b>研究者注释</b>　${esc(a.open)}</div></div>`).join("")}</div>`:""}`;
+  $("#cmpBrief").onclick=()=>{S.briefY=y;renderBrief()};
+}
+async function runSearch(){
+  const q=$("#q").value.trim();
+  if(!q){$("#qChart").innerHTML="";$("#qRes").innerHTML=`<div class="empty">输入词语，或点上面的常用提法。</div>`;return}
+  if(!S.corpus){$("#qRes").innerHTML=`<div class="empty">正在载入全文……</div>`;try{S.corpus=await (await fetch("data/corpus.json")).json()}catch(e){$("#qRes").innerHTML=`<div class="empty">全文没有载入成功，请刷新页面再试。</div>`;return}}
+  const hits=[],cnt={C:{},G:{}};
+  ["C","G"].forEach(s=>{if(s==="C"?!S.qC:!S.qG)return;for(const y in S.corpus[s])S.corpus[s][y].forEach(t=>{if(t.includes(q)){hits.push({s,y:+y,t});cnt[s][y]=(cnt[s][y]||0)+1}})});
+  hits.sort((a,b)=>a.y-b.y||a.s.localeCompare(b.s));
+  const max=Math.max(1,...YEARS.map(y=>Math.max(cnt.C[y]||0,cnt.G[y]||0))),ys=[...new Set(hits.map(h=>h.y))];
+  const fc=hits.filter(h=>h.s==="C").map(h=>h.y),fg=hits.filter(h=>h.s==="G").map(h=>h.y);
+  $("#qChart").innerHTML=`<div class="bars">${YEARS.map(y=>`<div style="display:flex;gap:1px;align-items:flex-end;height:100%" title="${y}：通稿${cnt.C[y]||0} 报告${cnt.G[y]||0}"><div class="c" style="flex:1;height:${(cnt.C[y]||0)/max*100}%"></div><div class="g" style="flex:1;height:${(cnt.G[y]||0)/max*100}%"></div></div>`).join("")}</div><div class="barlab">${YEARS.map(y=>`<span>${y%4===2?y:""}</span>`).join("")}</div>
+   <p class="sub" style="margin-top:8px">${ys.length?`最早见于${ys[0]}年（${fc.length?`通稿${Math.min(...fc)}年`:"通稿未见"}，${fg.length?`报告${Math.min(...fg)}年`:"报告未见"}），最近一次${ys.at(-1)}年，共${ys.length}个年份出现。`:""}共 <span class="num">${hits.length}</span> 句${hits.length>300?"，下面显示最早的300句":""}。</p>`;
+  $("#qRes").innerHTML=hits.length?hits.slice(0,300).map(h=>`<div class="item"><div class="meta"><span class="chip src">${h.y} ${SRC[h.s]}</span></div><p>${hl(h.t,[q])}</p></div>`).join(""):`<div class="empty">没有找到含“${esc(q)}”的句子。</div>`;
+}
+
+/* ===== 路由与初始化 ===== */
+const VIEWS={brief:null,terms:null,trends:()=>renderStance(),info:null,texts:null,about:null};
+function route(){
+  const v=(location.hash||"#brief").slice(1),ok=v in VIEWS?v:"brief";
+  document.querySelectorAll("section.view").forEach(s=>s.hidden=s.id!=="v-"+ok);
+  document.querySelectorAll("nav.tabs a").forEach(a=>a.setAttribute("aria-current",a.getAttribute("href")==="#"+ok?"page":"false"));
+  VIEWS[ok]?.();
+}
+function bind(){
+  $("#srcC").onclick=()=>{S.calSrc="C";S.calSel=null;pressed($("#srcC"),true);pressed($("#srcG"),false);renderCal()};
+  $("#srcG").onclick=()=>{S.calSrc="G";S.calSel=null;pressed($("#srcC"),false);pressed($("#srcG"),true);renderCal()};
+  $("#senseAll").onclick=()=>{S.senseB=false;pressed($("#senseAll"),true);pressed($("#senseB"),false);renderCal()};
+  $("#senseB").onclick=()=>{S.senseB=true;pressed($("#senseAll"),false);pressed($("#senseB"),true);renderCal()};
+  $("#yearSel").innerHTML=[...CYEARS].reverse().map(y=>`<option value="${y}">${y}年会议</option>`).join("");$("#yearSel").value="2025";
+  $("#yearSel").onchange=renderCompare;
+  $("#yPrev").onclick=()=>{const s=$("#yearSel");if(s.selectedIndex<s.options.length-1){s.selectedIndex++;renderCompare()}};
+  $("#yNext").onclick=()=>{const s=$("#yearSel");if(s.selectedIndex>0){s.selectedIndex--;renderCompare()}};
+  $("#tabCmp").onclick=()=>{pressed($("#tabCmp"),true);pressed($("#tabSearch"),false);$("#cmpPane").hidden=false;$("#searchPane").hidden=true};
+  $("#tabSearch").onclick=()=>{pressed($("#tabCmp"),false);pressed($("#tabSearch"),true);$("#cmpPane").hidden=true;$("#searchPane").hidden=false;runSearch()};
+  $("#presets").innerHTML="常用提法："+PRESETS.map(p=>`<button data-q="${p}">${p}</button>`).join("");
+  $("#presets").querySelectorAll("button").forEach(b=>b.onclick=()=>{$("#q").value=b.dataset.q;runSearch()});
+  let tm;$("#q").oninput=()=>{clearTimeout(tm);tm=setTimeout(runSearch,250)};
+  $("#qC").onclick=()=>{S.qC=!S.qC;pressed($("#qC"),S.qC);runSearch()};
+  $("#qG").onclick=()=>{S.qG=!S.qG;pressed($("#qG"),S.qG);runSearch()};
+  $("#lexTbl").innerHTML="<tr><th>节点</th><th>检索词</th></tr>"+NODES.map(n=>`<tr><td>${n}</td><td>${LEX[n]}</td></tr>`).join("");
+  window.addEventListener("hashchange",route);
+  window.addEventListener("resize",()=>{if(!$("#v-trends").hidden)renderStance()});
+}
+async function init(){
+  try{S.D=await (await fetch("data/site.json")).json()}catch(e){$("#brief").innerHTML=`<div class="empty">数据没有载入成功，请刷新页面。</div>`;return}
+  const D=S.D;
+  [...D.usages].sort((a,b)=>a.y-b.y).forEach(u=>u.w.forEach(w=>{const k=u.s+"|"+w;if(!(k in FIRST))FIRST[k]=u.y}));
+  $("#facts").innerHTML=`<span><b>32</b>次会议</span><span><b>${D.terms.length}</b>个新提法</span><span><b>${CYEARS.reduce((a,y)=>a+tasksOf(y).length,0)}</b>项重点任务</span><span><b>${D.usages.filter(u=>u.s==="C").length}</b>条信息观念句</span>`;
+  bind();renderBrief();renderTerms();renderRibbon();renderRank();renderCal();renderHist();renderCompare();route();
+}
+init();
+</script>
+
+</body>
+</html>

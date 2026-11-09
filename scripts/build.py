@@ -508,7 +508,7 @@ def product_card(data: dict, item: dict, lang: str, depth: int, featured: bool =
         <ul class="product-points">{bullets}</ul>
         <div class="research-tags">{chips(tags)}</div>
         <div class="button-row">
-          <a class="button primary" href="{h(item["url"])}" target="_blank" rel="noopener">{h(ui["open_product"])}</a>
+          <a class="button primary" href="{h(item["url"])}" target="_blank" rel="noopener">{h(item.get("open_label_" + lang) or item.get("open_label") or ui["open_product"]) if lang != "en" else h(item.get("open_label") or ui["open_product"])}</a>
           <a class="button ghost" href="{h(item["methods_url"])}" target="_blank" rel="noopener">{h(ui["product_methods"])}</a>
         </div>
       </div>

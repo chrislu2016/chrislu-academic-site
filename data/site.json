@@ -926,6 +926,44 @@
         "Python",
         "GitHub Actions"
       ]
+    },
+    {
+      "id": "cewc-yearbook",
+      "title": "Central Economic Work Conference Yearbook",
+      "title_zh": "经济工作年鉴",
+      "tagline": "A year-by-year reading of China's Central Economic Work Conference communiqués since 1994.",
+      "tagline_zh": "1994年以来中央经济工作会议通稿的逐年解读：每年有哪些新提法，先部署什么，政策怎么定调。",
+      "highlights": [
+        "New formulations: 101 hand-curated new policy phrases, traced to first use, uptake in the next Government Work Report, and later reuse.",
+        "Priorities: the order of key tasks each year, grouped into policy areas, plus fiscal and monetary stance since 1994.",
+        "Information ideas: how the conference talks about expectations, confidence, public opinion and communication.",
+        "Full-text search across all communiqués; updated after each December conference."
+      ],
+      "highlights_zh": [
+        "新提法：101个人工精选提法，可追溯首次出现、是否写入次年政府工作报告及此后沿用情况。",
+        "部署顺序：每年重点任务的先后与所属领域，以及1994年以来财政、货币政策定调的变化。",
+        "信息观念：会议怎样谈论预期、信心、舆论与政策传播。",
+        "全部通稿可按句检索；每年12月会议结束后更新。"
+      ],
+      "url": "https://cewc-yearbook.vercel.app/",
+      "methods_url": "https://cewc-yearbook.vercel.app/#about",
+      "image": "assets/products/cewc-yearbook.jpg",
+      "status": "Live · v1.0 · updated yearly (Chinese interface)",
+      "status_zh": "运行中 · v1.0 · 每年会议后更新",
+      "open_label": "Open yearbook",
+      "open_label_zh": "打开年鉴",
+      "tags": [
+        "Policy text",
+        "Concept history",
+        "Economic communication",
+        "Python"
+      ],
+      "tags_zh": [
+        "政策文本",
+        "概念史",
+        "经济传播",
+        "Python"
+      ]
     }
   ]
 }
