@@ -89,7 +89,7 @@
       "products_title": "Research products",
       "products_intro": "Open, continuously updated research tools built from my work on economic communication and China's international image.",
       "open_product": "Open dashboard",
-      "product_methods": "Methods & validation",
+      "product_methods": "Methods",
       "view_products": "View all products"
     },
     "zh": {
@@ -173,7 +173,7 @@
       "products_title": "研究产品",
       "products_intro": "基于经济传播与中国国际形象研究开发、持续更新的开放研究工具。",
       "open_product": "打开看板",
-      "product_methods": "方法与验证",
+      "product_methods": "方法说明",
       "view_products": "查看全部产品"
     }
   },
