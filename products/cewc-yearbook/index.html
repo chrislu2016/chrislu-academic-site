@@ -573,7 +573,7 @@ function bind(){
   window.addEventListener("hashchange",route);
   window.addEventListener("resize",()=>{if(!$("#v-trends").hidden)renderStance()});
 }
-const DV="20261109d";
+const DV="20261109e";
 async function init(){
   try{S.D=await (await fetch("data/site.json?v="+DV)).json()}catch(e){$("#brief").innerHTML=`<div class="empty">数据没有载入成功，请刷新页面。</div>`;return}
   const D=S.D;
