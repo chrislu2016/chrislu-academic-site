@@ -10,4 +10,5 @@
 1. 新一年的通稿 docx 放进原始材料目录 `当前/数据/99_原有数据包/数据/中央经济工作会议/`
 2. `python3 scripts/build.py --src <原始材料目录>`；脚本会打印新年份自动切分的重点任务，核对后写入 `scripts/tasks_curated.json`
 3. 在 `scripts/terms.json` 补充当年新提法（按判断/定调/方法/战略/抓手分类），必要时在 `scripts/milestones.json` 补充信息观念转折句
+   会后2—4周内，在 `scripts/opinions/<年份>.json` 整理国内外解读的观点地图（格式参照2025.json：summary 三段、topics 按议题列各方观点、sources 附出处）；观点须为自行概括，不复制原文
 4. 再运行一次 build，提交 `data/` 与 `scripts/` 的改动

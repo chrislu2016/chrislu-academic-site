@@ -179,6 +179,20 @@ def build_terms(corpus):
     return sorted(out, key=lambda x: (x['y'], x['k']))
 
 # ---------- main ----------
+def load_opinions():
+    """scripts/opinions/<年份>.json：人工整理的会后解读观点地图，按年份收录。"""
+    d = os.path.join(HERE, 'opinions'); out = {}
+    if os.path.isdir(d):
+        for f in sorted(os.listdir(d)):
+            if f.endswith('.json'):
+                o = json.load(open(os.path.join(d, f), encoding='utf-8'))
+                ids = {x['id'] for x in o['sources']}
+                for t in o['topics']:
+                    for q in t['positions']:
+                        assert q['src'] in ids, (f, q['src'])
+                out[str(o['year'])] = o
+    return out
+
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('--src', required=True); a = ap.parse_args()
     corpus = load_corpus(a.src)
@@ -201,7 +215,8 @@ def main():
         quotes[y] = qs
     site = {'usages': U, 'ann': A, 'meet': meet, 'themes': themes, 'tasks': tasks, 'stance': st,
             'diag': diag, 'rules': rules, 'quotes': quotes, 'terms': build_terms(corpus),
-            'milestones': json.load(open(os.path.join(HERE, 'milestones.json'), encoding='utf-8'))}
+            'milestones': json.load(open(os.path.join(HERE, 'milestones.json'), encoding='utf-8')),
+            'opinions': load_opinions()}
     os.makedirs(OUT, exist_ok=True)
     json.dump(corpus, open(os.path.join(OUT, 'corpus.json'), 'w'), ensure_ascii=False, separators=(',', ':'))
     json.dump(site, open(os.path.join(OUT, 'site.json'), 'w'), ensure_ascii=False, separators=(',', ':'))

@@ -81,6 +81,15 @@ input[type=search]{min-width:0;flex:1 1 220px}
 .item p{margin:0}
 mark{background:var(--blue-soft);color:var(--ink);padding:0 1px;border-radius:2px}
 mark.o{background:var(--ochre-soft)}
+.opsum{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:14px 0 6px}
+.opsum .card b{display:block;font-size:12.5px;color:var(--muted);font-weight:500;margin-bottom:4px}.opsum .card p{margin:0;font-size:14px}
+.optopic{margin-top:18px}.optopic>h3{font-size:16px;margin:0 0 4px;color:var(--ink);letter-spacing:0}
+.optopic .tk{margin:0 0 10px;font-size:13.5px;color:var(--muted)}
+.opcols{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}@media(max-width:720px){.opcols{grid-template-columns:1fr}}
+.opcols h4{font-size:12px;font-weight:500;color:var(--muted);margin:0 0 6px;letter-spacing:.06em}
+.opv{padding:8px 0;border-top:1px solid var(--rule);font-size:14px}.opv .who{font-size:12px;color:var(--muted);margin-bottom:2px}
+.opv .who a{color:var(--muted)}.opdiv{margin-top:10px;font-size:13px;padding:6px 10px;border-left:3px solid var(--ochre);background:var(--ochre-soft)}
+.opsrc{font-size:13px}.opsrc li{margin:4px 0}
 .note{margin-top:8px;padding-top:8px;border-top:1px dashed var(--rule);font-size:13px;color:var(--muted)}
 .note b{color:var(--ink);font-weight:500}
 .pills{display:flex;flex-wrap:wrap;gap:6px}
@@ -210,7 +219,7 @@ footer a{text-decoration:none}footer .mail{user-select:all}
 </div></header>
 
 <nav class="tabs" aria-label="视图"><div class="wrap">
-  <a href="#brief">年度速览</a><a href="#terms">新提法</a><a href="#trends">长期趋势</a><a href="#info">信息观念</a><a href="#texts">原文</a><a href="#about" class="end">说明</a>
+  <a href="#brief">年度速览</a><a href="#terms">新提法</a><a href="#trends">长期趋势</a><a href="#info">信息观念</a><a href="#views">舆情与评价</a><a href="#texts">原文</a><a href="#about" class="end">说明</a>
 </div></nav>
 
 <main class="wrap">
@@ -257,6 +266,13 @@ footer a{text-decoration:none}footer .mail{user-select:all}
   <p class="sub">引文为原文；灰字为作者解读；橙色节点表示该表述在所考察文本中首次出现。</p>
   <div class="controls"><div class="seg" role="group" aria-label="线索" id="histSeg"></div></div>
   <div class="hist" id="hist"></div>
+</section>
+
+<section class="view" id="v-views" hidden>
+  <h2>舆情与评价</h2>
+  <p class="sub">汇集会议闭幕后国内外机构、学者与媒体的公开解读，按议题整理为观点地图：各方的共识、分歧，以及国内与海外关注点的差异。每条观点均为本站对原文的概括并附出处链接；数字预测为各机构发布时的判断，不代表实际结果。</p>
+  <div class="controls"><div class="seg" role="group" aria-label="来源" id="opFilter"></div></div>
+  <div id="opBody"></div>
 </section>
 
 <section class="view" id="v-texts" hidden>
@@ -368,6 +384,7 @@ function renderBrief(){
      ${QO.length?`<p style="margin:14px 0 6px;font-size:13px">沿用的引号提法（括号内为上次出现年份）：</p><div class="pills">${QO.map(q=>`<span>${esc(q.q)}<small>${q.prev}</small></span>`).join("")}</div>`:""}
      <h3 style="margin:18px 0 8px">经验总结${rl.anchor?`：${esc(rl.anchor)}`:""}</h3>
      ${rl.items.length?`<ol class="rules">${rl.items.map(i=>`<li>${esc(i)}</li>`).join("")}</ol>${rp?.items.length?`<p class="sub" style="margin-top:8px">${y-1}年为：${rp.items.map(esc).join("；")}</p>`:""}`:`<p class="sub" style="margin:0">本年通稿未单列“规律性认识”一类的经验总结。</p>`}</div>
+   ${D.opinions?.[y]?`<div class="card s12"><h3>会后舆情与评价</h3><div class="opsum" style="margin:0">${D.opinions[y].summary.map(x=>`<div><b style="font-size:12.5px;color:var(--muted);font-weight:500">${x.k}</b><p style="margin:2px 0 0;font-size:13.5px">${esc(x.t)}</p></div>`).join("")}</div><p style="margin:10px 0 0;font-size:13px"><a href="#views">按议题查看${D.opinions[y].sources.length}篇国内外解读 →</a></p></div>`:""}
    <div class="card s12"><h3>本年信息观念表述</h3><div class="pills" style="margin-bottom:8px">${NODES.map(n=>`<span>${n}<small>${D.usages.filter(u=>u.s==="C"&&u.y===y&&u.n===n).length}句</small></span>`).join("")}</div>
      ${keyM.map(m=>`<p style="margin:6px 0 2px;font-family:var(--display)">“${esc(m.q)}”</p><p class="sub" style="margin:0 0 6px">${esc(m.g)}</p>`).join("")}
      <p style="margin:6px 0 0;font-size:13px"><a href="#texts" data-goyear="${y}">阅读本年通稿全文 →</a></p></div>
@@ -501,13 +518,32 @@ async function runSearch(){
   $("#qRes").innerHTML=hits.length?hits.slice(0,300).map(h=>`<div class="item"><div class="meta"><span class="chip src">${h.y} ${SRC[h.s]}</span></div><p>${hl(h.t,[q])}</p></div>`).join(""):`<div class="empty">没有找到含“${esc(q)}”的句子。</div>`;
 }
 
+/* ===== 视图：舆情与评价 ===== */
+const isFor=x=>/^海外/.test(x.type);
+function opWho(o,x){return `<div class="who">${esc(x.org)}${x.who?` · ${esc(x.who)}`:""} · ${x.date}${x.url?` · <a href="${esc(x.url)}" target="_blank" rel="noopener">原文</a>`:` · ${esc(x.outlet)}`}</div>`}
+function renderViews(){
+  const ys=Object.keys(S.D.opinions||{}).sort();if(!ys.length){$("#opBody").innerHTML=`<div class="empty">暂无收录。</div>`;return}
+  const o=S.D.opinions[ys.at(-1)],src=Object.fromEntries(o.sources.map(x=>[x.id,x])),F=["全部","国内","海外"];
+  $("#opFilter").innerHTML=F.map(f=>`<button aria-pressed="${f===(S.opF||"全部")}">${f}</button>`).join("");
+  $("#opFilter").querySelectorAll("button").forEach(b=>b.onclick=()=>{S.opF=b.textContent;renderViews()});
+  const keep=x=>!S.opF||S.opF==="全部"||(S.opF==="海外")===isFor(x);
+  const col=(t,f,lab)=>{const L=t.positions.filter(p=>isFor(src[p.src])===f&&keep(src[p.src]));return L.length?`<div><h4>${lab}</h4>${L.map(p=>`<div class="opv">${opWho(o,src[p.src])}${esc(p.view)}</div>`).join("")}</div>`:""};
+  const nD=o.sources.filter(x=>!isFor(x)).length,nF=o.sources.length-nD;
+  $("#opBody").innerHTML=`<div class="bigyear"><span class="y">${o.year}</span><span class="t">中央经济工作会议会后解读 · 收录${o.sources.length}篇（国内${nD}、海外${nF}） · 整理于${o.updated}</span></div>
+   <div class="opsum">${o.summary.map(x=>`<div class="card"><b>${x.k}</b><p>${esc(x.t)}</p></div>`).join("")}</div>
+   ${o.topics.map(t=>`<div class="card optopic"><h3>${esc(t.title)}</h3><p class="tk">${esc(t.takeaway)}</p><div class="opcols">${col(t,false,"国内解读")}${col(t,true,"海外解读")}</div>${t.divergence?`<div class="opdiv">分歧：${esc(t.divergence)}</div>`:""}</div>`).join("")}
+   ${o.blindspot?`<p class="note">相对本站关注点：${esc(o.blindspot)}</p>`:""}
+   <h3 class="sec">收录范围与局限</h3><p class="sub" style="max-width:52em">${esc(o.note)} 收录以公开可检索的中英文解读为主，券商与海外机构占比较高，不代表全部舆论；社交媒体评论未纳入。</p>
+   <h3 class="sec">来源</h3><ol class="opsrc">${o.sources.map(x=>`<li>${esc(x.org)}${x.who?`（${esc(x.who)}）`:""}：${x.url?`<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a>`:esc(x.title)}，${esc(x.outlet)}，${x.date}。<span class="chip">${x.type}</span></li>`).join("")}</ol>`;
+}
+
 /* ===== 路由与初始化 ===== */
-const VIEWS={brief:()=>{if(S.pendingY){S.briefY=S.pendingY;S.pendingY=null;renderBrief()}},terms:null,trends:()=>renderStance(),info:null,texts:()=>{if(!S.textsDone){S.textsDone=1;renderCompare()}},about:null};
+const VIEWS={brief:()=>{if(S.pendingY){S.briefY=S.pendingY;S.pendingY=null;renderBrief()}},terms:null,trends:()=>renderStance(),info:null,views:()=>{if(!S.viewsDone){S.viewsDone=1;renderViews()}},texts:()=>{if(!S.textsDone){S.textsDone=1;renderCompare()}},about:null};
 function scrollBoxesEnd(){document.querySelectorAll(".box.scrollend").forEach(b=>{if(b.scrollWidth>b.clientWidth+4)b.scrollLeft=b.scrollWidth})}
 function route(){
   let v=(location.hash||"#brief").slice(1);const m=v.match(/^y(\d{4})$/);if(m&&+m[1]>=1994&&+m[1]<=2025){S.pendingY=+m[1];v="brief"}const ok=v in VIEWS?v:"brief";
   document.querySelectorAll("section.view").forEach(s=>s.hidden=s.id!=="v-"+ok);
-  document.querySelectorAll("nav.tabs a").forEach(a=>a.setAttribute("aria-current",a.getAttribute("href")==="#"+ok?"page":"false"));
+  document.querySelectorAll("nav.tabs a").forEach(a=>{const on=a.getAttribute("href")==="#"+ok;a.setAttribute("aria-current",on?"page":"false");if(on)a.scrollIntoView({block:"nearest",inline:"nearest"})});
   if(ok!=="brief"||!m)window.scrollTo(0,0);
   VIEWS[ok]?.();
   requestAnimationFrame(scrollBoxesEnd);
