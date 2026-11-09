@@ -1,0 +1,68 @@
+{
+  "year": 2018,
+  "updated": "2026-11-09",
+  "note": "观点均为本站对原文的概括，非原文引述；数字预测为各机构当时的判断，不代表实际结果。本年海外部分以通讯社报道为主，专门的智库分析较少。",
+  "summary": [
+    {"k": "共识", "t": "各方都读出政策明显转向托底：承认经济“稳中有变、变中有忧”，财政“加力提效”、更大规模减税降费、较大幅度增加地方专项债，并强调支持民营企业。"},
+    {"k": "分歧", "t": "分歧集中在赤字率能否突破3%和专项债增加多少：预测从1.9万亿元到3万亿元不等；也有学者主张减税不应靠举债和赤字。"},
+    {"k": "国内外差异", "t": "国内解读几乎都在讨论财政数字和减税结构；海外报道把会议放在中美贸易摩擦和增长放缓的背景下，关注开放承诺能否兑现。"}
+  ],
+  "topics": [
+    {
+      "id": "tone", "title": "总基调：变局中危和机同生并存",
+      "takeaway": "国内外都认为官方罕见地直面下行压力，政策取向转为逆周期托底。",
+      "positions": [
+        {"src": "reuters", "view": "交通银行唐建伟认为随着下行压力加大，2019年政府会加大政策放松力度；政府顾问建议2019年增长目标设为6%—6.5%。"},
+        {"src": "at", "view": "瑞银汪涛对彭博表示，政策层看到经济面临更大的下行压力和更具挑战的外部环境，会议发出越来越具体的放松信号，并更重视改革和支持民企。"},
+        {"src": "afp", "view": "分析人士预计在三季度放缓之后，增长会进一步减速；批评者认为北京的开放承诺多于实际兑现。"}
+      ]
+    },
+    {
+      "id": "fiscal", "title": "财政：加力提效，赤字率是否破3%",
+      "takeaway": "赤字率约3%是多数机构的判断；专项债增幅预测差距较大。",
+      "positions": [
+        {"src": "yc", "view": "国家行政学院冯俏彬认为“加力提效”与市场预期一致，2019年赤字率将高于2018年的2.6%，可能到3%。"},
+        {"src": "jm", "view": "界面新闻调查的12家机构中9家预计赤字率为3%；海通证券姜超预计专项债增加8000亿—1万亿元，至2.15万—2.35万亿元；联讯证券李奇霖预计2.5万—3万亿元。"},
+        {"src": "jm2", "view": "全国政协委员贾康认为3%不是绝对红线，3%左右风险可控；中国社科院高培勇认为减税不应靠发债和赤字来弥补，赤字率应控制在3%以内以稳定社会预期。"},
+        {"src": "reuters", "view": "唐建伟预计2019年地方专项债1.9万亿元（2018年1.35万亿元）；部分经济学家认为若减税更激进，赤字率可能升至3%。"},
+        {"src": "cx", "view": "瑞银汪涛预计专项债增加5000亿—7000亿元，并指出专项债资金使用慢、相当部分流向土地储备；中金陈健恒预计专项债总额达2.5万亿元。"}
+      ],
+      "divergence": "专项债：唐建伟预计1.9万亿元，中金约2.5万亿元，李奇霖2.5万—3万亿元；高培勇与贾康对赤字是否应突破3%看法相反。"
+    },
+    {
+      "id": "tax", "title": "更大规模减税降费",
+      "takeaway": "减税降费被放在积极财政的首位，讨论集中在规模和增值税改革。",
+      "positions": [
+        {"src": "yc", "view": "中国政法大学施正文认为会议把减税降费放在积极财政首位，预计2019年减税降费规模1.5万亿—2万亿元。"},
+        {"src": "cx", "view": "中国财政科学研究院刘尚希建议把增值税三档并为两档，并下调16%的税率。"}
+      ]
+    },
+    {
+      "id": "monetary", "title": "货币与民营企业融资",
+      "takeaway": "国内外都预期降准但不急于降息；支持民企融资被视为本年重点。",
+      "positions": [
+        {"src": "reuters", "view": "政策知情人士预计会继续降准，但近期下调基准利率的可能性不大，以免影响人民币。"},
+        {"src": "at", "view": "2019年的放松措施包括减税降费、稳健货币和扩大专项债；重点缓解中小企业融资难、稳就业稳投资、抑制金融市场波动。"},
+        {"src": "cx", "view": "会议强调提高直接融资比重、解决民营和小微企业融资难，货币政策要松紧适度、保持流动性合理充裕。"}
+      ]
+    },
+    {
+      "id": "property", "title": "房地产",
+      "takeaway": "国内机构对房地产措辞的位置和力度解读不同：有的预期一二线城市放松，有的读出对房价更谨慎。",
+      "positions": [
+        {"src": "cx", "view": "华泰证券李超预计一线和部分二线城市将放松，如降低首付和房贷利率；中信证券固收团队从房地产在通稿中的位置读出对房价更谨慎的态度。"}
+      ],
+      "divergence": "华泰预期放松，中信固收读出更谨慎。"
+    }
+  ],
+  "blindspot": "本年通稿首次把“稳预期”与稳就业、稳金融等并列为“六稳”之一，并提出“提振市场信心”；收录的解读集中在财政数字上，几乎没有讨论“稳预期”被正式列为政策目标的意义。",
+  "sources": [
+    {"id": "yc", "org": "第一财经", "who": "陈益刊（引述国家行政学院冯俏彬、中国政法大学施正文）", "type": "国内学者", "title": "详解2019财政政策要点：加力增效、减税降费和地方债券", "outlet": "第一财经", "date": "2018-12-21", "url": "https://www.yicai.com/news/100084798.html"},
+    {"id": "jm", "org": "界面新闻", "who": "引述海通证券姜超、联讯证券李奇霖及12家机构调查", "type": "国内机构", "title": "界面预言家⑬｜2019年中国赤字率目标突破3%可能性不大", "outlet": "界面新闻", "date": "2018-12", "url": "https://m.jiemian.com/article/2751524.html"},
+    {"id": "jm2", "org": "界面新闻", "who": "引述贾康、高培勇", "type": "国内学者", "title": "界面预言家⑬｜2019年中国赤字率目标突破3%可能性不大", "outlet": "界面新闻", "date": "2018-12", "url": "https://m.jiemian.com/article/2751524.html"},
+    {"id": "cx", "org": "财新", "who": "于海荣、张欣等（引述瑞银汪涛、中金陈健恒、刘尚希、华泰李超）", "type": "国内机构", "title": "Update: China Vows Deeper Tax Cuts, More Spending", "outlet": "Caixin Global", "date": "2018-12-21", "url": "https://www.caixinglobal.com/2018-12-21/top-economic-meeting-ends-with-pledges-of-support-for-private-companies-101365677.html"},
+    {"id": "reuters", "org": "Reuters", "who": "Kevin Yao、Yawen Chen（引述交通银行唐建伟）", "type": "海外媒体", "title": "China to step up support for economy in 2019 amid trade war", "outlet": "Reuters（Business Standard转载）", "date": "2018-12-21", "url": "https://business-standard.com/article/reuters/china-to-step-up-support-for-economy-in-2019-amid-trade-war-118122100800_1.html"},
+    {"id": "at", "org": "Asia Times", "who": "编辑部（引述瑞银汪涛对彭博的评论）", "type": "海外媒体", "title": "China rolls out new measures to ease economic downturn", "outlet": "Asia Times", "date": "2018-12-21", "url": "https://asiatimes.com/2018/12/china-rolls-out-new-measures-to-ease-economic-downturn/"},
+    {"id": "afp", "org": "AFP", "who": "法新社报道", "type": "海外媒体", "title": "China signals more support for economy", "outlet": "AFP（Solar Daily转载）", "date": "2018-12-21", "url": "https://www.solardaily.com/reports/China_signals_more_support_for_economy_999.html"}
+  ]
+}

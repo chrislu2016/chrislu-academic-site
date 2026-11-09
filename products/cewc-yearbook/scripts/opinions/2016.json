@@ -1,0 +1,127 @@
+{
+ "year": 2016,
+ "updated": "2026-11-09",
+ "note": "观点均为本站对原文的概括，非原文引述。本年可检索到的会后公开解读较少、多为定性判断，几乎没有数字预测；结论代表性有限。",
+ "summary": [
+  {
+   "k": "共识",
+   "t": "各方都把重点放在“稳中求进”、防控资产泡沫和金融风险上：货币政策由“稳健”改为“稳健中性”，并首次提出“房子是用来住的、不是用来炒的”。"
+  },
+  {
+   "k": "分歧",
+   "t": "国内解读多强调“稳是进的前提”、不求速效；海外机构更直接地把“中性”读作货币政策转紧的信号。"
+  },
+  {
+   "k": "国内外差异",
+   "t": "国内关注房地产定位、国企混改和农业供给侧改革；海外关注货币政策转向、资产泡沫和债务规模（约为GDP的250%）。"
+  }
+ ],
+ "topics": [
+  {
+   "id": "tone",
+   "title": "总基调：稳中求进，稳是前提",
+   "takeaway": "国内解读把“稳”放在首位，强调不求速效；海外更多从风险控制角度理解。",
+   "positions": [
+    {
+     "src": "cctv",
+     "view": "国务院发展研究中心王一鸣认为经济工作不能追求立竿见影，在新常态和全球长周期调整中要有耐心转向更可持续的增长；稳是进的前提，进得好才能稳得住。"
+    },
+    {
+     "src": "reuters",
+     "view": "三季度增长6.7%，有望实现6.5%—7%的全年目标；会议提出通过债转股等方式降低企业杠杆，总债务约为GDP的250%。"
+    }
+   ]
+  },
+  {
+   "id": "monetary",
+   "title": "货币：从“稳健”到“稳健中性”",
+   "takeaway": "国内外都把“中性”读作收紧倾向；海外机构表述更直接。",
+   "positions": [
+    {
+     "src": "reuters",
+     "view": "民生银行温彬认为货币政策可能收紧，原因是美联储政策外溢和国内通胀回升。"
+    },
+    {
+     "src": "bbg",
+     "view": "德国商业银行周浩认为从“稳健”改为“稳健中性”清楚表明当局严重担忧资产泡沫；Medley Global Advisors的Andrew Polk认为央行的考量正在缓慢变化，这一转变始于9月且不会突然发生。"
+    },
+    {
+     "src": "pp",
+     "view": "去杠杆是五大任务中的重中之重，部分企业杠杆过高、资金脱实向虚；明年货币政策要稳健中性，限制投机购房贷款，人民币汇率保持基本稳定并增强弹性。"
+    }
+   ]
+  },
+  {
+   "id": "property",
+   "title": "“房子是用来住的、不是用来炒的”",
+   "takeaway": "国内外都把这一表述视为本年最重要的新信号，并预期抑制投机和泡沫。",
+   "positions": [
+    {
+     "src": "yc",
+     "view": "这是住房政策最基本的原则：住房一旦成为投资品就会吸引投机资本，宽松货币和低融资成本会放大投机。"
+    },
+    {
+     "src": "cctv",
+     "view": "刘世锦认为要正视并化解突出的金融风险点，防范房地产等资产泡沫，加强监管，避免区域性、系统性危机。"
+    },
+    {
+     "src": "reuters",
+     "view": "当局将抑制投机性购房和泡沫，在房价上涨压力大的城市增加土地供应。"
+    }
+   ]
+  }
+ ],
+ "blindspot": "本年通稿提出“加强预期引导，提高政府公信力”，并把“引导形成良好社会预期”列为当年的工作经验；“房住不炒”本身也是直接面向公众预期的表述。收录的解读没有讨论这些内容。",
+ "sources": [
+  {
+   "id": "cctv",
+   "org": "央视网",
+   "who": "引述国务院发展研究中心王一鸣、刘世锦",
+   "type": "国内学者",
+   "title": "中央经济工作会议精神解读：稳中求进 稳什么？进什么？",
+   "outlet": "央视网（浙江在线转载）",
+   "date": "2016-12-17",
+   "url": "https://china.zjol.com.cn/gnxw/201612/t20161217_2200760.shtml"
+  },
+  {
+   "id": "yc",
+   "org": "第一财经",
+   "who": "专栏作者蔡云伟",
+   "type": "国内机构",
+   "title": "房子，本是用来居住的",
+   "outlet": "第一财经",
+   "date": "2016-12-16",
+   "url": "https://www.yicai.com/news/5185347.html"
+  },
+  {
+   "id": "pp",
+   "org": "“学习大国”微信公众号",
+   "who": "洪乐风",
+   "type": "国内机构",
+   "title": "中央经济工作会议给中国经济开药方：把金融虚火的苗头降下去",
+   "outlet": "澎湃新闻转载",
+   "date": "2016-12-19",
+   "url": "https://www.thepaper.cn/newsDetail_forward_1582732"
+  },
+  {
+   "id": "reuters",
+   "org": "Reuters",
+   "who": "路透社报道（引述民生银行温彬）",
+   "type": "海外媒体",
+   "title": "China vows to contain asset bubbles, avert financial risk in 2017",
+   "outlet": "Reuters（Business Standard转载）",
+   "date": "2016-12-16",
+   "url": "https://www.business-standard.com/amp/article/reuters/china-vows-to-contain-asset-bubbles-avert-financial-risk-in-2017-116121600875_1.html"
+  },
+  {
+   "id": "bbg",
+   "org": "Bloomberg",
+   "who": "彭博报道（引述Medley Global Advisors Andrew Polk、德国商业银行周浩）",
+   "type": "海外媒体",
+   "title": "China Plans Prudent, Neutral Monetary Policy for Next Year",
+   "outlet": "Bloomberg（BloombergQuint转载）",
+   "date": "2016-12-16",
+   "url": "https://www.bloombergquint.com/markets/2016/12/16/china-says-monetary-policy-will-be-prudent-and-neutral-next-year"
+  }
+ ]
+}
