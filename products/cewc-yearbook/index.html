@@ -185,6 +185,9 @@ button.cell:hover{box-shadow:inset 0 0 0 1px var(--ink)}
 .about table{border-collapse:collapse;font-size:13.5px;width:100%}
 .about td,.about th{border-bottom:1px solid var(--rule);padding:6px 8px;text-align:left;vertical-align:top}
 footer{border-top:1px solid var(--rule);padding-block:20px 40px;color:var(--muted);font-size:12.5px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:6px 20px}
+footer a{text-decoration:none}footer .mail{user-select:all}
+.author{font-size:13px;color:var(--muted);margin:10px 0 0}.author a{text-decoration:none}.author a:hover,footer a:hover{text-decoration:underline}
 @media (max-width:760px){.cols{grid-template-columns:1fr}.hist{grid-template-columns:44px 1fr;gap:0 12px}}
 </style>
 </head>
@@ -195,6 +198,7 @@ footer{border-top:1px solid var(--rule);padding-block:20px 40px;color:var(--mute
   <h1>经济工作年鉴</h1>
   <p class="lede">本站以1994年以来历次中央经济工作会议的新闻通稿为材料，逐年整理会议提出的新提法、重点任务的部署次序、财政与货币政策的定调，以及会议有关预期、信心与舆论的表述。每年会议召开后更新。</p>
   <div class="facts" id="facts"></div>
+  <p class="author">作者：陆泓承（清华大学新闻与传播学院）· <a href="https://chrislu-academic-site.vercel.app/zh/" target="_blank" rel="noopener">个人主页</a> · <a href="mailto:luhc23@mails.tsinghua.edu.cn">luhc23@mails.tsinghua.edu.cn</a></p>
 </div></header>
 
 <nav class="tabs" aria-label="视图"><div class="wrap">
@@ -280,12 +284,13 @@ footer{border-top:1px solid var(--rule);padding-block:20px 40px;color:var(--mute
   <h3>读数时请注意</h3>
   <p>句数和排序只说明说法出现的多少和先后，不说明重视程度或政策效果。两类文本篇幅相差约三倍，不宜直接比较绝对数。</p>
   <h3>作者</h3>
-  <p>陆泓承（清华大学新闻与传播学院）。可自由引用，请注明出处；原文版权归原发布机构。</p>
+  <p>陆泓承（清华大学新闻与传播学院）。个人主页：<a href="https://chrislu-academic-site.vercel.app/zh/" target="_blank" rel="noopener">chrislu-academic-site.vercel.app</a>；联系邮箱：<span class="mail" style="user-select:all">luhc23@mails.tsinghua.edu.cn</span>。可自由引用，请注明出处；原文版权归原发布机构。</p>
+  <p class="muted" style="font-size:13.5px">建议引用：陆泓承. 经济工作年鉴：中央经济工作会议通稿逐年解读 [数据库与网站]. 2026. https://cewc-yearbook.vercel.app/ （访问日期）</p>
   <h3>更新记录</h3>
   <p class="num" style="font-size:13px">v1.1 · 2026-11 · “原文”改为通稿全文并标注重点。<br>v1.0 · 2026-11 · 正式上线；以会议通稿为主线，政府工作报告只作对照。<br>v0.5 · 2026-11 · 重新整理结构，数据由一个构建脚本统一生成。<br>v0.4 · 新提法表。v0.3 · 年度速览。v0.2 · 部署顺序与政策定调。v0.1 · 信息观念日历。</p>
 </section>
 </main>
-<footer><div class="wrap">经济工作年鉴 · 数据与编码持续修订中 · 陆泓承</div></footer>
+<footer><div class="wrap"><span>经济工作年鉴 · 陆泓承</span><span>个人主页：<a href="https://chrislu-academic-site.vercel.app/zh/" target="_blank" rel="noopener">chrislu-academic-site.vercel.app</a></span><span>联系邮箱：<span class="mail">luhc23@mails.tsinghua.edu.cn</span></span><span>更多研究产品：<a href="https://chrislu-academic-site.vercel.app/zh/products/" target="_blank" rel="noopener">产品页</a></span></div></footer>
 
 <script>
 /* ===== 常量 ===== */
