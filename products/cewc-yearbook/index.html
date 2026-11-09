@@ -489,7 +489,7 @@ function markPara(t,keys){
 }
 async function renderCompare(){
   const y=+$("#yearSel").value,D=S.D,meet=D.meet[y];
-  if(!S.full){$("#yearBody").innerHTML=`<div class="empty">正在载入全文……</div>`;try{S.full=await (await fetch("data/fulltext.json")).json()}catch(e){$("#yearBody").innerHTML=`<div class="empty">全文没有载入成功，请刷新页面再试。</div>`;return}}
+  if(!S.full){$("#yearBody").innerHTML=`<div class="empty">正在载入全文……</div>`;try{S.full=await (await fetch("data/fulltext.json?v="+DV)).json()}catch(e){$("#yearBody").innerHTML=`<div class="empty">全文没有载入成功，请刷新页面再试。</div>`;return}}
   const P=S.full[y]||[];
   const words=new Set();D.usages.filter(u=>u.s==="C"&&u.y===y).forEach(u=>u.w.forEach(w=>words.add(w)));
   const keys=[...D.terms.filter(t=>t.y===y).map(t=>({s:t.k,c:"nt",p:0,title:`新提法 · ${t.t}`})),
@@ -507,7 +507,7 @@ async function renderCompare(){
 async function runSearch(){
   const q=$("#q").value.trim();
   if(!q){$("#qChart").innerHTML="";$("#qRes").innerHTML=`<div class="empty">输入词语，或点上面的常用提法。</div>`;return}
-  if(!S.corpus){$("#qRes").innerHTML=`<div class="empty">正在载入全文……</div>`;try{S.corpus=await (await fetch("data/corpus.json")).json()}catch(e){$("#qRes").innerHTML=`<div class="empty">全文没有载入成功，请刷新页面再试。</div>`;return}}
+  if(!S.corpus){$("#qRes").innerHTML=`<div class="empty">正在载入全文……</div>`;try{S.corpus=await (await fetch("data/corpus.json?v="+DV)).json()}catch(e){$("#qRes").innerHTML=`<div class="empty">全文没有载入成功，请刷新页面再试。</div>`;return}}
   const hits=[],cnt={C:{},G:{}};
   ["C","G"].forEach(s=>{if(s==="C"?!S.qC:!S.qG)return;for(const y in S.corpus[s])S.corpus[s][y].forEach(t=>{if(t.includes(q)){hits.push({s,y:+y,t});cnt[s][y]=(cnt[s][y]||0)+1}})});
   hits.sort((a,b)=>a.y-b.y||a.s.localeCompare(b.s));
@@ -568,8 +568,9 @@ function bind(){
   window.addEventListener("hashchange",route);
   window.addEventListener("resize",()=>{if(!$("#v-trends").hidden)renderStance()});
 }
+const DV="20261109b";
 async function init(){
-  try{S.D=await (await fetch("data/site.json")).json()}catch(e){$("#brief").innerHTML=`<div class="empty">数据没有载入成功，请刷新页面。</div>`;return}
+  try{S.D=await (await fetch("data/site.json?v="+DV)).json()}catch(e){$("#brief").innerHTML=`<div class="empty">数据没有载入成功，请刷新页面。</div>`;return}
   const D=S.D;
   [...D.usages].sort((a,b)=>a.y-b.y).forEach(u=>u.w.forEach(w=>{const k=u.s+"|"+w;if(!(k in FIRST))FIRST[k]=u.y}));
   $("#facts").innerHTML=`<span>收录会议通稿<b>32</b>份</span><span>新提法<b>${D.terms.length}</b>个</span><span>重点任务<b>${CYEARS.reduce((a,y)=>a+tasksOf(y).length,0)}</b>项</span><span>信息观念语句<b>${D.usages.filter(u=>u.s==="C").length}</b>条</span>`;
