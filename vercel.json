@@ -1,5 +1,16 @@
 {
   "framework": null,
   "buildCommand": "python3 scripts/build.py",
-  "outputDirectory": "docs"
+  "outputDirectory": "docs",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
+      ]
+    }
+  ]
 }
