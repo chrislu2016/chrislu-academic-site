@@ -101,7 +101,7 @@ def nav(data: dict, lang: str, active: str, depth: int, page_path: str) -> str:
     items = [
         ("home", ""),
         ("publications", "publications/"),
-        ("media", "media/"),
+        *([("media", "media/")] if data.get("show_media", True) else []),
         ("products", "products/"),
         ("cv", "cv/"),
         ("data", "data/"),
@@ -377,7 +377,7 @@ def render_home(data: dict, lang: str) -> str:
     {section(ui["conference_presentations"], ui["conference_eyebrow"], f'<div class="conference-list">{conference_rows(data, lang, depth)}</div>')}
     {section(ui["working_papers"], ui["working_eyebrow"], list_items(localized_list(data, "working_papers", lang)), "prose-section")}
     {section(ui["research_projects"], ui["projects_eyebrow"], object_list(data["projects"], lang), "prose-section")}
-    {section(ui["media_work"], ui["media_eyebrow"], f'<div class="media-grid wide">{media}</div><p class="section-link"><a href="media/">{h(ui["view_media"])}</a></p>')}
+    {section(ui["media_work"], ui["media_eyebrow"], f'<div class="media-grid wide">{media}</div><p class="section-link"><a href="media/">{h(ui["view_media"])}</a></p>') if data.get("show_media", True) else ""}
     {section(ui["professional_experience"], ui["experience_eyebrow"], object_list(data["experience"], lang, "organization"), "prose-section")}
     {section(ui["teaching"], ui["teaching_eyebrow"], list_items(localized_list(data, "teaching", lang)), "prose-section")}
     {section(ui["honors"], ui["honors_eyebrow"], list_items(localized_list(data, "honors", lang)), "prose-section")}
@@ -614,9 +614,10 @@ def build() -> None:
     for lang in LANGS:
         write(DOCS / lang / "index.html", render_home(data, lang))
         write(DOCS / lang / "publications" / "index.html", render_publications(data, lang))
-        write(DOCS / lang / "media" / "index.html", render_media_index(data, lang))
-        for item in data["media"]:
-            write(DOCS / lang / "media" / item["id"] / "index.html", render_media_detail(data, lang, item))
+        if data.get("show_media", True):  # 在 data/site.json 里把 show_media 设为 true 即可恢复媒体作品页
+            write(DOCS / lang / "media" / "index.html", render_media_index(data, lang))
+            for item in data["media"]:
+                write(DOCS / lang / "media" / item["id"] / "index.html", render_media_detail(data, lang, item))
         write(DOCS / lang / "products" / "index.html", render_products(data, lang))
         write(DOCS / lang / "cv" / "index.html", render_cv(data, lang))
         write(DOCS / lang / "data" / "index.html", render_data(data, lang))
