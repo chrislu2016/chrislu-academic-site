@@ -323,18 +323,22 @@
       "id": "global-entertainment-media-industry-2025",
       "year": "2026",
       "type": "Book chapter",
-      "title": "Report on the Development of the Global Entertainment and Media Industry in 2025",
-      "title_cn": "2025 年全球娱乐及传媒产业发展报告",
+      "title": "Report on the development of the global entertainment and media industry in 2025",
+      "title_cn": "2025年全球娱乐及传媒产业发展报告",
       "authors": "Hang, M., & Lu, H.",
-      "authors_zh": "杭敏, 陆泓承",
-      "venue": "In Baoguo Cui & Jian Yu (Eds.), Media Blue Book: Annual Report on Development of China’s Media Industry (2026). Beijing: Social Sciences Academic Press",
-      "venue_zh": "崔保国, 虞坚, 主编. 传媒蓝皮书：中国传媒产业发展报告（2026）[M]. 北京: 社会科学文献出版社",
-      "status": "2026: 314-340.",
+      "authors_zh": "杭敏, & 陆泓承",
+      "venue": "Media blue book: Annual report on development of China’s media industry (2026)",
+      "venue_zh": "传媒蓝皮书：中国传媒产业发展报告（2026）",
       "tags": [
         "CSSCI 集刊"
       ],
       "selected": true,
-      "url": "assets/files/【2026】中国传媒产业发展报告（2026）.pdf"
+      "url": "assets/files/【2026】中国传媒产业发展报告（2026）.pdf",
+      "editors": "B. Cui & J. Yu",
+      "editors_zh": "崔保国、虞坚",
+      "publisher": "Social Sciences Academic Press",
+      "publisher_zh": "社会科学文献出版社",
+      "pages": "314–340"
     },
     {
       "id": "new-quality-productive-forces-media-transformation",

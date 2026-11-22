@@ -222,13 +222,20 @@ def pub_card(data: dict, pub: dict, lang: str, depth: int, compact: bool = False
     if pub.get("slides"):
         actions.append(link(local_url(pub["slides"], depth), t(data, lang, "slides"), "text-link"))
     action_html = f'<div class="card-actions">{"".join(actions)}</div>' if actions else ""
+    meta_html = f'{h(item_text(pub, "authors", lang))} · <em>{h(item_text(pub, "venue", lang))}</em> {h(pub.get("status", ""))}'
+    if pub.get("type") == "Book chapter" and pub.get("editors"):
+        editors = h(item_text(pub, "editors", lang))
+        container = f'<em>{h(item_text(pub, "venue", lang))}</em>'
+        source = (f'载{editors}（主编），{container}（第{h(pub["pages"])}页）' if lang == "zh"
+                  else f'In {editors} (Eds.), {container} (pp. {h(pub["pages"])})')
+        meta_html = f'{h(item_text(pub, "authors", lang))}. ({h(pub["year"])}). {h(title)}. {source}. {h(item_text(pub, "publisher", lang))}.'
     compact_class = " compact" if compact else ""
     return f"""<article class="pub-card{compact_class}">
       <div class="pub-year">{h(pub["year"])}</div>
       <div>
         <h3>{h(title)}</h3>
         {cn_html}
-        <p class="pub-meta">{h(item_text(pub, "authors", lang))} · <em>{h(item_text(pub, "venue", lang))}</em> {h(pub.get("status", ""))}</p>
+        <p class="pub-meta">{meta_html}</p>
         <div class="chip-row">{tag_html}</div>
         {action_html}
       </div>
