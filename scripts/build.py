@@ -228,7 +228,7 @@ def pub_card(data: dict, pub: dict, lang: str, depth: int, compact: bool = False
         container = f'<em>{h(item_text(pub, "venue", lang))}</em>'
         source = (f'载{editors}（主编），{container}（第{h(pub["pages"])}页）' if lang == "zh"
                   else f'In {editors} (Eds.), {container} (pp. {h(pub["pages"])})')
-        meta_html = f'{h(item_text(pub, "authors", lang))}. ({h(pub["year"])}). {h(title)}. {source}. {h(item_text(pub, "publisher", lang))}.'
+        meta_html = f'{h(item_text(pub, "authors", lang).rstrip("."))}. ({h(pub["year"])}). {h(title)}. {source}. {h(item_text(pub, "publisher", lang))}.'
     compact_class = " compact" if compact else ""
     return f"""<article class="pub-card{compact_class}">
       <div class="pub-year">{h(pub["year"])}</div>
