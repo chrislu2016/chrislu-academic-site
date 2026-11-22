@@ -228,7 +228,7 @@ def pub_card(data: dict, pub: dict, lang: str, depth: int, compact: bool = False
       <div>
         <h3>{h(title)}</h3>
         {cn_html}
-        <p class="pub-meta">{h(pub["authors"])} · <em>{h(item_text(pub, "venue", lang))}</em> {h(pub.get("status", ""))}</p>
+        <p class="pub-meta">{h(item_text(pub, "authors", lang))} · <em>{h(item_text(pub, "venue", lang))}</em> {h(pub.get("status", ""))}</p>
         <div class="chip-row">{tag_html}</div>
         {action_html}
       </div>

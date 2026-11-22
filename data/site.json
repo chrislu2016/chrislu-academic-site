@@ -5,7 +5,7 @@
     "base_path": "",
     "description": "Lu Hongcheng, Tsinghua University Ph.D. student researching human–machine communication, economic communication, and international communication.",
     "description_zh": "陆泓承，清华大学博士研究生，研究人机传播、经济传播与国际传播。",
-    "last_updated": "2026-11-05"
+    "last_updated": "2026-11-22"
   },
   "ui": {
     "en": {
@@ -319,6 +319,23 @@
     }
   ],
   "publications": [
+    {
+      "id": "global-entertainment-media-industry-2025",
+      "year": "2026",
+      "type": "Book chapter",
+      "title": "Report on the Development of the Global Entertainment and Media Industry in 2025",
+      "title_cn": "2025 年全球娱乐及传媒产业发展报告",
+      "authors": "Hang, M., & Lu, H.",
+      "authors_zh": "杭敏, 陆泓承",
+      "venue": "In Baoguo Cui & Jian Yu (Eds.), Media Blue Book: Annual Report on Development of China’s Media Industry (2026). Beijing: Social Sciences Academic Press",
+      "venue_zh": "崔保国, 虞坚, 主编. 传媒蓝皮书：中国传媒产业发展报告（2026）[M]. 北京: 社会科学文献出版社",
+      "status": "2026: 314-340.",
+      "tags": [
+        "CSSCI 集刊"
+      ],
+      "selected": true,
+      "url": "assets/files/【2026】中国传媒产业发展报告（2026）.pdf"
+    },
     {
       "id": "new-quality-productive-forces-media-transformation",
       "year": "2026",
