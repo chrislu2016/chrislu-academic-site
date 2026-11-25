@@ -449,21 +449,19 @@ def publication_metrics(data: dict, lang: str) -> str:
     conferences = data["conferences"]
     international = sum(any(name in item["venue"] for name in ("ICA", "AEJMC", "IAMCR", "NCA")) for item in conferences)
     if lang == "zh":
-        metrics = [(cssci, "C刊论文", f"CSSCI 来源期刊；另有扩展版 {extended} 篇、集刊 {collections} 篇"),
-                   (four, "新闻传播四大刊", "已计入 C刊数量，不另行累加"),
-                   (ssci, "S刊论文", "SSCI 收录期刊"),
-                   (len(conferences), "会议论文", f"其中 ICA / AEJMC / IAMCR / NCA 共 {international} 篇")]
-        note = "按本站成果条目统计；四大刊口径为《国际新闻界》《现代传播》《新闻大学》《新闻与传播研究》。会议论文按报告条目计数，工作论文不计入。"
+        metrics = [(cssci, "CSSCI 来源期刊论文", f"另有 CSSCI 扩展版 {extended} 篇、集刊 {collections} 篇"),
+                   (four, "新闻传播四大刊", "《国际新闻界》《现代传播》"),
+                   (ssci, "SSCI 期刊论文", "社会科学引文索引收录"),
+                   (len(conferences), "学术会议论文", f"四大国际会议（ICA、AEJMC、IAMCR、NCA）{international} 篇")]
         label = "成果数量概览"
     else:
         metrics = [(cssci, "CSSCI articles", f"Source journals; plus {extended} expanded-index article and {collections} collection chapter"),
-                   (four, "Four key communication journals", "Included in the CSSCI total"),
+                   (four, "Four key communication journals", "Chinese Journal of Journalism & Communication; Modern Communication"),
                    (ssci, "SSCI articles", "SSCI-indexed journals"),
                    (len(conferences), "Conference papers", f"Including {international} at ICA / AEJMC / IAMCR / NCA")]
-        note = "Counts reflect entries on this site. The four-journal category covers Chinese Journal of Journalism & Communication, Modern Communication, Journalism Bimonthly, and Journalism & Communication. Conference counts refer to presentation entries; working papers are excluded."
         label = "Publication overview"
     cards = "".join(f'<div class="publication-stat"><strong>{value}</strong><span>{h(title)}</span><p>{h(detail)}</p></div>' for value, title, detail in metrics)
-    return f'<section class="wrap publication-overview" aria-label="{h(label)}"><div class="publication-metrics">{cards}</div><p class="metrics-note">{h(note)}</p></section>'
+    return f'<section class="wrap publication-overview" aria-label="{h(label)}"><div class="publication-metrics">{cards}</div></section>'
 
 
 def render_publications(data: dict, lang: str) -> str:
