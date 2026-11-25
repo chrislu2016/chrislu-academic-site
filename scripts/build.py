@@ -400,14 +400,6 @@ def render_home(data: dict, lang: str) -> str:
           <h1>{h(hero_primary)} <span>{h(hero_secondary)}</span></h1>
           <p class="hero-affiliation">{h(item_text(profile, "affiliation", lang))} · {h(item_text(profile, "title", lang))}</p>
           <div class="hero-bio">{summary_html}</div>
-        </div>
-        <aside class="profile-panel" aria-label="{h(ui["profile_summary"])}">
-          <img src="{h(local_url(profile["photo"], depth))}" alt="{h(profile["preferred"])} portrait">
-          <div>
-            <p>{h(item_text(profile, "location", lang))}</p>
-            <a class="text-link" href="mailto:{h(profile["email"])}">{h(profile["email"])}</a>
-          </div>
-        </aside>
         <div class="hero-footer">
           <div class="hero-details">
             <div class="research-tags">{chips(interests)}</div>
@@ -417,6 +409,14 @@ def render_home(data: dict, lang: str) -> str:
           </div>
           <div class="button-row">{links}</div>
         </div>
+        </div>
+        <aside class="profile-panel" aria-label="{h(ui["profile_summary"])}">
+          <img src="{h(local_url(profile["photo"], depth))}" alt="{h(profile["preferred"])} portrait">
+          <div>
+            <p>{h(item_text(profile, "location", lang))}</p>
+            <a class="text-link" href="mailto:{h(profile["email"])}">{h(profile["email"])}</a>
+          </div>
+        </aside>
       </div>
     </section>
     <section class="band research-band">
