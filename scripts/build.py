@@ -609,18 +609,20 @@ def render_data(data: dict, lang: str) -> str:
 
 def render_root(data: dict) -> str:
     return f"""<!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=en/">
-  <title>{h(data["site"]["title"])}</title>
+  <meta http-equiv="refresh" content="6; url=zh/">
+  <title>{h(data["site"]["title_zh"])}</title>
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
   <main class="root-choice wrap">
-    <h1>{h(data["site"]["title"])}</h1>
-    <p><a class="button primary" href="en/">English</a> <a class="button ghost" href="zh/">中文</a></p>
+    <h1>{h(data["site"]["title_zh"])}</h1>
+    <p>请选择语言 / Choose your language</p>
+    <p><a class="button primary" href="zh/" lang="zh-CN">中文</a> <a class="button ghost" href="en/" lang="en">English</a></p>
+    <p>6 秒后自动进入中文主页<br><span lang="en">The Chinese homepage opens automatically after 6 seconds.</span></p>
   </main>
 </body>
 </html>
@@ -708,18 +710,20 @@ def render_data(data: dict, lang: str) -> str:
 
 def render_root(data: dict) -> str:
     return f"""<!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=en/">
-  <title>{h(data["site"]["title"])}</title>
+  <meta http-equiv="refresh" content="6; url=zh/">
+  <title>{h(data["site"]["title_zh"])}</title>
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
   <main class="root-choice wrap">
-    <h1>{h(data["site"]["title"])}</h1>
-    <p><a class="button primary" href="en/">English</a> <a class="button ghost" href="zh/">中文</a></p>
+    <h1>{h(data["site"]["title_zh"])}</h1>
+    <p>请选择语言 / Choose your language</p>
+    <p><a class="button primary" href="zh/" lang="zh-CN">中文</a> <a class="button ghost" href="en/" lang="en">English</a></p>
+    <p>6 秒后自动进入中文主页<br><span lang="en">The Chinese homepage opens automatically after 6 seconds.</span></p>
   </main>
 </body>
 </html>
