@@ -388,6 +388,11 @@ def render_home(data: dict, lang: str) -> str:
     language_items = profile.get(f"working_languages_{lang}", profile["working_languages"])
     language_list = "".join(f"<li>{h(item)}</li>" for item in language_items)
     summary_html = f'<p>{h(item_text(profile, "summary", lang))}</p>'
+    product_previews = "".join(
+        f'<article class="product-preview"><a href="{h(item["url"])}" target="_blank" rel="noopener"><img src="{h(local_url(item["image"], depth))}" alt="{h(item_text(item, "title", lang))}" loading="lazy"><h3>{h(item_text(item, "title", lang))}</h3></a><p>{h(item_text(item, "tagline", lang))}</p></article>'
+        for item in data.get("products", [])
+    )
+    product_link = link("products/", "查看全部研究产品" if lang == "zh" else "View all research products", "text-link")
     media_section = section(ui["media_work"], ui["media_eyebrow"], f'<div class="media-grid wide">{media}</div><p class="section-link"><a href="media/">{h(ui["view_media"])}</a></p>') if data.get("show_media", True) else ""
     body = f"""<section class="hero">
       <div class="wrap hero-grid intro-panel">
@@ -422,6 +427,7 @@ def render_home(data: dict, lang: str) -> str:
       <p class="wrap research-scroll-hint">{"左右滑动查看研究方向" if lang == "zh" else "Scroll horizontally to explore research areas"}</p>
       <div class="wrap theme-grid" tabindex="0" role="region" aria-label="{h(ui['research_areas'])}">{themes}</div>
     </section>
+    {section("研究产品" if lang == "zh" else "Research products", "交互看板" if lang == "zh" else "Interactive dashboards", f'<div class="product-previews">{product_previews}</div><p class="section-link">{product_link}</p>')}
     {section("论文发表" if lang == "zh" else "Publications", "代表成果" if lang == "zh" else "Selected work", f'<div class="pub-list">{pubs}</div><p class="section-link"><a href="publications/">{h(ui["view_publications"])}</a></p>')}
     {section("会议发表" if lang == "zh" else "Conference presentations", "四大会议 · 第一作者" if lang == "zh" else "ICA · AEJMC · IAMCR · NCA · First author", f'<div class="conference-list">{conference_rows(conference_data, lang, depth)}</div><p class="section-link">{conference_link}</p>')}
     {section(ui["honors"], ui["honors_eyebrow"], list_items(localized_list(data, "honors", lang)), "prose-section")}
