@@ -427,9 +427,9 @@ def render_home(data: dict, lang: str) -> str:
       <p class="wrap research-scroll-hint">{"左右滑动查看研究方向" if lang == "zh" else "Scroll horizontally to explore research areas"}</p>
       <div class="wrap theme-grid" tabindex="0" role="region" aria-label="{h(ui['research_areas'])}">{themes}</div>
     </section>
-    {section("研究产品" if lang == "zh" else "Research products", "交互看板" if lang == "zh" else "Interactive dashboards", f'<div class="product-previews">{product_previews}</div><p class="section-link">{product_link}</p>')}
     {section("论文发表" if lang == "zh" else "Publications", "代表成果" if lang == "zh" else "Selected work", f'<div class="pub-list">{pubs}</div><p class="section-link"><a href="publications/">{h(ui["view_publications"])}</a></p>')}
     {section("会议发表" if lang == "zh" else "Conference presentations", "四大会议 · 第一作者" if lang == "zh" else "ICA · AEJMC · IAMCR · NCA · First author", f'<div class="conference-list">{conference_rows(conference_data, lang, depth)}</div><p class="section-link">{conference_link}</p>')}
+    {section("研究产品" if lang == "zh" else "Research products", "交互看板" if lang == "zh" else "Interactive dashboards", f'<div class="product-previews">{product_previews}</div><p class="section-link">{product_link}</p>')}
     {section(ui["honors"], ui["honors_eyebrow"], list_items(localized_list(data, "honors", lang)), "prose-section")}
     {media_section}
     {section(ui["contact"], ui["contact_eyebrow"], f'<p><a href="mailto:{h(profile["email"])}">{h(profile["email"])}</a></p><div class="button-row">{profile_actions(data, lang, depth)}</div>', "prose-section")}
