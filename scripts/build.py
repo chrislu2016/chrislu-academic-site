@@ -437,6 +437,34 @@ def render_home(data: dict, lang: str) -> str:
     return layout(data, lang, "home", "home", "", body, depth)
 
 
+def publication_metrics(data: dict, lang: str) -> str:
+    pubs = data["publications"]
+    cssci = sum(bool(set(pub.get("tags", [])) & {"CSSCI", "CSSCI TOP"}) for pub in pubs)
+    extended = sum("CSSCI Extended" in pub.get("tags", []) for pub in pubs)
+    collections = sum("CSSCI 集刊" in pub.get("tags", []) for pub in pubs)
+    four_venues = {"国际新闻界", "现代传播", "新闻大学", "新闻与传播研究"}
+    four = sum(pub.get("venue_zh", pub["venue"]) in four_venues for pub in pubs)
+    ssci = sum("SSCI" in pub.get("tags", []) for pub in pubs)
+    conferences = data["conferences"]
+    international = sum(any(name in item["venue"] for name in ("ICA", "AEJMC", "IAMCR", "NCA")) for item in conferences)
+    if lang == "zh":
+        metrics = [(cssci, "C刊论文", f"CSSCI 来源期刊；另有扩展版 {extended} 篇、集刊 {collections} 篇"),
+                   (four, "新闻传播四大刊", "已计入 C刊数量，不另行累加"),
+                   (ssci, "S刊论文", "SSCI 收录期刊"),
+                   (len(conferences), "会议论文", f"其中 ICA / AEJMC / IAMCR / NCA 共 {international} 篇")]
+        note = "按本站成果条目统计；四大刊口径为《国际新闻界》《现代传播》《新闻大学》《新闻与传播研究》。会议论文按报告条目计数，工作论文不计入。"
+        label = "成果数量概览"
+    else:
+        metrics = [(cssci, "CSSCI articles", f"Source journals; plus {extended} expanded-index article and {collections} collection chapter"),
+                   (four, "Four key communication journals", "Included in the CSSCI total"),
+                   (ssci, "SSCI articles", "SSCI-indexed journals"),
+                   (len(conferences), "Conference papers", f"Including {international} at ICA / AEJMC / IAMCR / NCA")]
+        note = "Counts reflect entries on this site. The four-journal category covers Chinese Journal of Journalism & Communication, Modern Communication, Journalism Bimonthly, and Journalism & Communication. Conference counts refer to presentation entries; working papers are excluded."
+        label = "Publication overview"
+    cards = "".join(f'<div class="publication-stat"><strong>{value}</strong><span>{h(title)}</span><p>{h(detail)}</p></div>' for value, title, detail in metrics)
+    return f'<section class="wrap publication-overview" aria-label="{h(label)}"><div class="publication-metrics">{cards}</div><p class="metrics-note">{h(note)}</p></section>'
+
+
 def render_publications(data: dict, lang: str) -> str:
     ui = data["ui"][lang]
     depth = 2
@@ -447,6 +475,7 @@ def render_publications(data: dict, lang: str) -> str:
       <h1>{h(ui["publications_title"])}</h1>
       <p>{h(ui["publications_intro"])}</p>
     </section>
+    {publication_metrics(data, lang)}
     <section class="wrap pub-list">{publications}</section>
     <section class="band" id="conferences">
       <div class="wrap section-heading tight">

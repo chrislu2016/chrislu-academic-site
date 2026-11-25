@@ -1134,3 +1134,17 @@ code {
   .home-page .intro-panel .hero-footer { grid-column: 1 / -1; grid-row: 2; }
   .home-page .intro-panel h1 { font-size: 2.5rem; }
 }
+
+.publication-overview { margin-bottom: 2rem; }
+.publication-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.2rem; }
+.publication-stat { min-width: 0; border-top: 3px solid var(--green); padding-top: 0.85rem; }
+.publication-stat:nth-child(2) { border-color: var(--gold); }
+.publication-stat:nth-child(3) { border-color: var(--blue); }
+.publication-stat:nth-child(4) { border-color: var(--red); }
+.publication-stat strong { display: block; font-size: 2.25rem; color: var(--green-dark); line-height: 1.2; font-variant-numeric: tabular-nums; }
+.publication-stat span { display: block; margin-top: 0.4rem; font-size: 1rem; font-weight: 650; }
+.publication-stat p, .metrics-note { color: var(--muted); font-size: 0.875rem; line-height: 1.6; }
+.publication-stat p { margin: 0.4rem 0 0; }
+.metrics-note { margin: 1rem 0 0; }
+@media (max-width: 860px) { .publication-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; } }
+@media (max-width: 380px) { .publication-metrics { grid-template-columns: 1fr; } }
