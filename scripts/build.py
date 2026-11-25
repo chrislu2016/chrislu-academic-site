@@ -419,6 +419,7 @@ def render_home(data: dict, lang: str) -> str:
         </div>
       </div>
     </section>
+    {section(ui["education"], ui["education_eyebrow"], f'<div class="timeline home-education">{timeline(data, data["education"], lang)}</div>')}
     <section class="band research-band">
       <div class="wrap section-heading">
         <p class="eyebrow">{h(ui["research_areas"])}</p>
