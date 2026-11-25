@@ -362,7 +362,7 @@
       "title": "Report on the development of the global entertainment and media industry in 2025",
       "title_cn": "2025年全球娱乐及传媒产业发展报告",
       "authors": "Hang, M., & Lu, H.",
-      "authors_zh": "杭敏, & 陆泓承",
+      "authors_zh": "杭敏、陆泓承",
       "venue": "Media blue book: Annual report on development of China’s media industry (2026)",
       "venue_zh": "传媒蓝皮书：中国传媒产业发展报告（2026）",
       "tags": [
@@ -388,7 +388,8 @@
       "status": "(2), 19-28",
       "tags": [],
       "selected": true,
-      "url": "assets/files/【2026】新质生产力驱动系统性变革：传媒要素禀赋、赋能路径与核心挑战_杭敏.pdf"
+      "url": "assets/files/【2026】新质生产力驱动系统性变革：传媒要素禀赋、赋能路径与核心挑战_杭敏.pdf",
+      "authors_zh": "杭敏、陆泓承"
     },
     {
       "id": "digital-feminist-humor",
@@ -436,7 +437,8 @@
         "CSSCI"
       ],
       "selected": true,
-      "url": "assets/files/【2025】【中国编辑】从人机竞争回归以人为本：人与AI协作的发展进路与主体性反思_张自中_.pdf"
+      "url": "assets/files/【2025】【中国编辑】从人机竞争回归以人为本：人与AI协作的发展进路与主体性反思_张自中_.pdf",
+      "authors_zh": "张自中、陆泓承"
     },
     {
       "id": "data-empowerment-publishing-youth",
@@ -452,7 +454,8 @@
         "CSSCI Extended"
       ],
       "selected": true,
-      "url": "assets/files/【2025】【当代青年研究】边缘化与离心化：土味二创文化中的权力关系_陆泓承.pdf"
+      "url": "assets/files/【2025】【当代青年研究】边缘化与离心化：土味二创文化中的权力关系_陆泓承.pdf",
+      "authors_zh": "陆泓承"
     },
     {
       "id": "ai-financial-commentary",
@@ -468,7 +471,8 @@
         "CSSCI TOP"
       ],
       "selected": true,
-      "url": "assets/files/【2024】【国际新闻界】.pdf"
+      "url": "assets/files/【2024】【国际新闻界】.pdf",
+      "authors_zh": "陆泓承"
     },
     {
       "id": "data-empowerment-publishing",
@@ -484,7 +488,8 @@
         "CSSCI"
       ],
       "selected": false,
-      "url": "assets/files/【2024】【中国编辑】数据要素赋能出版业发展的路径与机制探讨_杭敏_.pdf"
+      "url": "assets/files/【2024】【中国编辑】数据要素赋能出版业发展的路径与机制探讨_杭敏_.pdf",
+      "authors_zh": "杭敏、陆泓承"
     },
     {
       "id": "digital-platforms-geopolitical-risks",
@@ -500,7 +505,8 @@
         "CSSCI TOP"
       ],
       "selected": false,
-      "url": "assets/files/【2024】【现代传播】信息地缘政治博弈中跨国数字平台舆论风险的成因与应对-陆泓承.pdf"
+      "url": "assets/files/【2024】【现代传播】信息地缘政治博弈中跨国数字平台舆论风险的成因与应对-陆泓承.pdf",
+      "authors_zh": "陆泓承、郑苏晖"
     },
     {
       "id": "micro-drama-industry-logic",
@@ -516,7 +522,8 @@
         "CSSCI"
       ],
       "selected": false,
-      "url": "assets/files/【2024】【当代电视】制度逻辑视角下短视频微短剧行业的发展逻辑研究_陆泓承.pdf"
+      "url": "assets/files/【2024】【当代电视】制度逻辑视角下短视频微短剧行业的发展逻辑研究_陆泓承.pdf",
+      "authors_zh": "陆泓承"
     },
     {
       "id": "theater-window-period",
@@ -532,7 +539,8 @@
         "CSSCI TOP"
       ],
       "selected": false,
-      "url": "assets/files/【2022】【电影艺术】制度逻辑视角下院线窗口期缩短趋势的动因探究.pdf"
+      "url": "assets/files/【2022】【电影艺术】制度逻辑视角下院线窗口期缩短趋势的动因探究.pdf",
+      "authors_zh": "郑苏晖、陆泓承、殷雯馨"
     },
     {
       "id": "brand-management-variety-shows",
@@ -548,7 +556,8 @@
         "CSSCI"
       ],
       "selected": false,
-      "url": "assets/files/【2022】【电视研究】文化类综艺节目的品牌化经营策略——以《朗读者》为例.pdf"
+      "url": "assets/files/【2022】【电视研究】文化类综艺节目的品牌化经营策略——以《朗读者》为例.pdf",
+      "authors_zh": "郑苏晖、郗展弘、陆泓承"
     },
     {
       "id": "variety-show-derivatives",
@@ -564,7 +573,8 @@
         "Journal article"
       ],
       "selected": false,
-      "url": "assets/files/【2021】【国际品牌观察】1+N不止于N：网综衍生节目如何联动？_陆泓承.pdf"
+      "url": "assets/files/【2021】【国际品牌观察】1+N不止于N：网综衍生节目如何联动？_陆泓承.pdf",
+      "authors_zh": "陆泓承"
     }
   ],
   "conferences": [
