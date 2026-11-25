@@ -66,7 +66,7 @@ def brand_name(profile: dict, lang: str) -> tuple[str, str]:
 
 def hero_name(profile: dict, lang: str) -> tuple[str, str]:
     if lang == "zh":
-        return profile["name_cn"], f'/ {profile["preferred"]}'
+        return profile["name_cn"], profile["preferred"]
     return profile["preferred"], profile["name"]
 
 
@@ -101,13 +101,15 @@ def nav(data: dict, lang: str, active: str, depth: int, page_path: str) -> str:
     items = [
         ("home", ""),
         ("publications", "publications/"),
-        *([("media", "media/")] if data.get("show_media", True) else []),
         ("products", "products/"),
+        ("media", "media/"),
         ("cv", "cv/"),
         ("data", "data/"),
     ]
     nav_items = []
     for key, path in items:
+        if key == "media" and not data.get("show_media", True):
+            continue
         aria = ' aria-current="page"' if key == active else ""
         nav_items.append(f'<a href="{root}{lang}/{path}"{aria}>{h(labels[key])}</a>')
 
@@ -143,7 +145,7 @@ def layout(
   <title>{h(page_title(data, lang, title_key))}</title>
   <link rel="stylesheet" href="{root}assets/styles.css">
 </head>
-<body>
+<body class="{'home-body' if active == 'home' else 'inner-body'}">
   <a class="skip-link" href="#main">{h(skip)}</a>
   <header class="site-header">
     <div class="wrap header-inner">
@@ -159,7 +161,7 @@ def layout(
       </nav>
     </div>
   </header>
-  <main id="main">
+  <main id="main" class="{'home-page' if active == 'home' else 'inner-page'}">
     {body}
   </main>
   <footer class="site-footer">
@@ -334,61 +336,96 @@ def object_list(items: list[dict], lang: str, title_field: str = "title") -> str
     return "<ul>" + "".join(rows) + "</ul>"
 
 
+def theme_outcomes(data: dict, theme: dict, lang: str, depth: int) -> str:
+    publications = {pub["id"]: pub for pub in data["publications"]}
+    conferences = {item["title"]: item for item in data["conferences"]}
+    rows = []
+    for ref in theme.get("outcomes", []):
+        if "publication_id" in ref:
+            pub = publications[ref["publication_id"]]
+            title = pub.get("title_cn", pub["title"]) if lang == "zh" else pub["title"]
+            title_html = link(local_url(pub["url"], depth), title) if pub.get("url") else h(title)
+            meta = f'{item_text(pub, "venue", lang)} · {pub["year"]}'
+        elif "conference_title" in ref:
+            item = conferences[ref["conference_title"]]
+            title_html = h(item_text(item, "title", lang))
+            kind = "会议报告" if lang == "zh" else "Conference presentation"
+            meta = f'{kind} · {item["venue"]} · {item["year"]}'
+            if item.get("note"):
+                meta += f' · {item_text(item, "note", lang)}'
+        else:
+            title_html = h(localized_list(data, "working_papers", lang)[ref["working_paper_index"]])
+            meta = "工作论文" if lang == "zh" else "Working paper"
+        rows.append(f'<li>{title_html}<span class="outcome-meta">{h(meta)}</span></li>')
+    label = "相关成果" if lang == "zh" else "Related work"
+    return f'<h4 class="outcome-heading">{label}</h4><ul class="theme-outcomes">{"".join(rows)}</ul>' if rows else ""
+
+
 def render_home(data: dict, lang: str) -> str:
     profile = data["profile"]
     ui = data["ui"][lang]
     depth = 1
-    links = profile_actions(data, lang, depth)
+    home = data["home"]
+    links = link("publications/", "代表成果" if lang == "zh" else "Publications", "button primary")
+    links += link("cv/", "完整简历" if lang == "zh" else "Full CV", "button ghost")
+    conference_map = {item["title"]: item for item in data["conferences"]}
+    conference_data = {**data, "conferences": [conference_map[title] for title in home["conference_titles"]]}
+    conference_link = link("publications/#conferences", "查看全部会议成果" if lang == "zh" else "View all conference presentations", "text-link")
+    publication_map = {pub["id"]: pub for pub in data["publications"]}
     interests = profile.get(f"research_interests_{lang}", profile["research_interests"])
     hero_primary, hero_secondary = hero_name(profile, lang)
     themes = "\n".join(
         f"""<article class="theme">
           <h3>{h(item_text(item, "name", lang))}</h3>
           <p>{h(item_text(item, "text", lang))}</p>
+          {theme_outcomes(data, item, lang, depth)}
         </article>"""
         for item in data["themes"]
     )
-    pubs = "".join(pub_card(data, pub, lang, depth, compact=True) for pub in data["publications"])
-    media = "".join(media_card(data, item, lang, depth) for item in data["media"])
+    pubs = "".join(pub_card(data, pub, lang, depth, compact=True) for pub in (publication_map[pub_id] for pub_id in home["publication_ids"]))
+    media = "".join(media_card(data, item, lang, depth) for item in data["media"][:2])
+    language_label = "工作语言" if lang == "zh" else "Working languages"
+    language_items = profile.get(f"working_languages_{lang}", profile["working_languages"])
+    language_list = "".join(f"<li>{h(item)}</li>" for item in language_items)
+    summary_html = f'<p>{h(item_text(profile, "summary", lang))}</p>'
+    media_section = section(ui["media_work"], ui["media_eyebrow"], f'<div class="media-grid wide">{media}</div><p class="section-link"><a href="media/">{h(ui["view_media"])}</a></p>') if data.get("show_media", True) else ""
     body = f"""<section class="hero">
-      <div class="wrap hero-grid">
+      <div class="wrap hero-grid intro-panel">
         <div class="hero-copy">
-          <p class="eyebrow">{h(item_text(profile, "title", lang))} · {h(item_text(profile, "affiliation", lang))}</p>
           <h1>{h(hero_primary)} <span>{h(hero_secondary)}</span></h1>
-          <p class="lead">{h(item_text(profile, "summary", lang))}</p>
-          <div class="button-row">{links}</div>
-          <div class="research-tags">{chips(interests)}</div>
+          <p class="hero-affiliation">{h(item_text(profile, "affiliation", lang))} · {h(item_text(profile, "title", lang))}</p>
+          <div class="hero-bio">{summary_html}</div>
         </div>
         <aside class="profile-panel" aria-label="{h(ui["profile_summary"])}">
           <img src="{h(local_url(profile["photo"], depth))}" alt="{h(profile["preferred"])} portrait">
           <div>
-            <h2>{h(profile_card_name(profile, lang))}</h2>
             <p>{h(item_text(profile, "location", lang))}</p>
             <a class="text-link" href="mailto:{h(profile["email"])}">{h(profile["email"])}</a>
           </div>
         </aside>
+        <div class="hero-footer">
+          <div class="hero-details">
+            <div class="research-tags">{chips(interests)}</div>
+            <div class="working-languages" aria-label="{h(language_label)}">
+              <strong>{h(language_label)}</strong><ul>{language_list}</ul>
+            </div>
+          </div>
+          <div class="button-row">{links}</div>
+        </div>
       </div>
     </section>
-    <section class="wrap stats-grid" aria-label="{h(ui["academic_highlights"])}">
-      {stat_block(data, lang)}
-    </section>
-    {section(ui["education"], ui["education_eyebrow"], f'<div class="timeline">{timeline(data, data["education"], lang)}</div>', "education-first")}
-    <section class="band">
+    <section class="band research-band">
       <div class="wrap section-heading">
         <p class="eyebrow">{h(ui["research_areas"])}</p>
         <h2>{h(ui["research_blurb"])}</h2>
       </div>
-      <div class="wrap theme-grid">{themes}</div>
+      <p class="wrap research-scroll-hint">{"左右滑动查看研究方向" if lang == "zh" else "Scroll horizontally to explore research areas"}</p>
+      <div class="wrap theme-grid" tabindex="0" role="region" aria-label="{h(ui['research_areas'])}">{themes}</div>
     </section>
-    {section(ui["publications"], ui["publications_eyebrow"], f'<div class="pub-list">{pubs}</div><p class="section-link"><a href="publications/">{h(ui["view_publications"])}</a></p>')}
-    {section(ui["conference_presentations"], ui["conference_eyebrow"], f'<div class="conference-list">{conference_rows(data, lang, depth)}</div>')}
-    {section(ui["working_papers"], ui["working_eyebrow"], list_items(localized_list(data, "working_papers", lang)), "prose-section")}
-    {section(ui["research_projects"], ui["projects_eyebrow"], object_list(data["projects"], lang), "prose-section")}
-    {section(ui["media_work"], ui["media_eyebrow"], f'<div class="media-grid wide">{media}</div><p class="section-link"><a href="media/">{h(ui["view_media"])}</a></p>') if data.get("show_media", True) else ""}
-    {section(ui["professional_experience"], ui["experience_eyebrow"], object_list(data["experience"], lang, "organization"), "prose-section")}
-    {section(ui["teaching"], ui["teaching_eyebrow"], list_items(localized_list(data, "teaching", lang)), "prose-section")}
+    {section("论文发表" if lang == "zh" else "Publications", "代表成果" if lang == "zh" else "Selected work", f'<div class="pub-list">{pubs}</div><p class="section-link"><a href="publications/">{h(ui["view_publications"])}</a></p>')}
+    {section("会议发表" if lang == "zh" else "Conference presentations", "四大会议 · 第一作者" if lang == "zh" else "ICA · AEJMC · IAMCR · NCA · First author", f'<div class="conference-list">{conference_rows(conference_data, lang, depth)}</div><p class="section-link">{conference_link}</p>')}
     {section(ui["honors"], ui["honors_eyebrow"], list_items(localized_list(data, "honors", lang)), "prose-section")}
-    {section(ui["skills"], ui["skills_eyebrow"], "<ul>" + "".join(f"<li><strong>{h(item_text(item, 'category', lang))}:</strong> {h(item_text(item, 'items', lang))}</li>" for item in data["skills"]) + "</ul>", "prose-section")}
+    {media_section}
     {section(ui["contact"], ui["contact_eyebrow"], f'<p><a href="mailto:{h(profile["email"])}">{h(profile["email"])}</a></p><div class="button-row">{profile_actions(data, lang, depth)}</div>', "prose-section")}
     """
     return layout(data, lang, "home", "home", "", body, depth)
@@ -405,7 +442,7 @@ def render_publications(data: dict, lang: str) -> str:
       <p>{h(ui["publications_intro"])}</p>
     </section>
     <section class="wrap pub-list">{publications}</section>
-    <section class="band">
+    <section class="band" id="conferences">
       <div class="wrap section-heading tight">
         <p class="eyebrow">{h(ui["conference_presentations"])}</p>
         <h2>{h(ui["conference_title"])}</h2>
@@ -496,6 +533,64 @@ def render_cv(data: dict, lang: str) -> str:
       </div>
     </section>"""
     return layout(data, lang, "cv", "cv", "cv/", body, depth)
+
+
+def render_data(data: dict, lang: str) -> str:
+    ui = data["ui"][lang]
+    depth = 2
+    cards = []
+    for item in data.get("data_resources", []):
+        if item.get("visibility") == "private":
+            continue
+        files = []
+        for file_item in item.get("files", []):
+            label = file_item.get(f"label_{lang}", file_item.get("label", ui["file"]))
+            files.append(f'                <li>{link(local_url(file_item["url"], depth), label, "resource-link")}</li>')
+        file_rows = "\n".join(files)
+        file_html = f'\n              <ul class="resource-files">\n{file_rows}\n              </ul>' if files else ""
+        actions = []
+        if item.get("external_url"):
+            actions.append(link(item["external_url"], ui["external_link"], "text-link"))
+        action_html = f'\n              <div class="card-actions">{"".join(actions)}</div>' if actions else ""
+        cards.append(
+            f"""<article class="resource-card">
+              <div>
+                <p class="eyebrow">{h(item_text(item, "type", lang))} · {h(str(item.get("year", "")))}</p>
+                <h3>{h(item_text(item, "title", lang))}</h3>
+                <p>{h(item_text(item, "project", lang))}</p>
+                <p>{h(item_text(item, "description", lang))}</p>
+              </div>{file_html}{action_html}
+            </article>"""
+        )
+    body = f"""<section class="page-hero wrap">
+      <p class="eyebrow">{h(ui["data"])}</p>
+      <h1>{h(ui["data_title"])}</h1>
+      <p>{h(ui["data_intro"])}</p>
+    </section>
+    <section class="wrap resource-grid">
+      {''.join(cards)}
+    </section>"""
+    return layout(data, lang, "data", "data", "data/", body, depth)
+
+
+def render_root(data: dict) -> str:
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="0; url=en/">
+  <title>{h(data["site"]["title"])}</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <main class="root-choice wrap">
+    <h1>{h(data["site"]["title"])}</h1>
+    <p><a class="button primary" href="en/">English</a> <a class="button ghost" href="zh/">中文</a></p>
+  </main>
+</body>
+</html>
+"""
 
 
 def product_card(data: dict, item: dict, lang: str, depth: int, featured: bool = False) -> str:
@@ -621,10 +716,9 @@ def build() -> None:
     for lang in LANGS:
         write(DOCS / lang / "index.html", render_home(data, lang))
         write(DOCS / lang / "publications" / "index.html", render_publications(data, lang))
-        if data.get("show_media", True):  # 在 data/site.json 里把 show_media 设为 true 即可恢复媒体作品页
-            write(DOCS / lang / "media" / "index.html", render_media_index(data, lang))
-            for item in data["media"]:
-                write(DOCS / lang / "media" / item["id"] / "index.html", render_media_detail(data, lang, item))
+        write(DOCS / lang / "media" / "index.html", render_media_index(data, lang))
+        for item in data["media"]:
+            write(DOCS / lang / "media" / item["id"] / "index.html", render_media_detail(data, lang, item))
         write(DOCS / lang / "products" / "index.html", render_products(data, lang))
         write(DOCS / lang / "cv" / "index.html", render_cv(data, lang))
         write(DOCS / lang / "data" / "index.html", render_data(data, lang))
