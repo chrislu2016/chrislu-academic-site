@@ -1170,3 +1170,13 @@ code {
 @media (max-width: 620px) {
   .home-page .hero-copy .hero-footer { gap: 0.9rem; }
 }
+
+@media (min-width: 1001px) {
+  .home-page .hero-copy .hero-footer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1rem 1.25rem;
+  }
+  .home-page .hero-copy .hero-footer .button-row { justify-content: flex-end; }
+}
